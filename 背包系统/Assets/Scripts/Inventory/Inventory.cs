@@ -92,10 +92,14 @@ public class Inventory : MonoBehaviour
     {
         foreach (var slot in slotArr)
         {
+            if (slot.transform.childCount==0)
+            {
+                continue;
+            }
             ItemUI itemUI = slot.GetItme();
             //检测是否相同物品 并检测当前物品的容量是否已到达最大
             if (slot.transform.childCount >= 1
-                && itemUI.item.Type == item.Type && itemUI.amount != itemUI.item.Capacity)
+                && itemUI.item.Id == item.Id && itemUI.amount != itemUI.item.Capacity)
             {
                 return slot;
             }

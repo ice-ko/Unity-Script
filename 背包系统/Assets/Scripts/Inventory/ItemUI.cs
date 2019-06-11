@@ -27,7 +27,14 @@ public class ItemUI : MonoBehaviour
     {
         item = _item;
         amount = _amount;
-        amountText.text = _amount.ToString();
+        if (item.Capacity > 1)
+        {
+            amountText.text = _amount.ToString();
+        }
+        else
+        {
+            amountText.text = "";
+        }
         image.sprite = Resources.Load<Sprite>(item.Sprite);
     }
     /// <summary>
@@ -37,6 +44,13 @@ public class ItemUI : MonoBehaviour
     public void AddAmount(int _amount = 1)
     {
         amount += _amount;
-        amountText.text = _amount.ToString();
+        if (item.Capacity > 1)
+        {
+            amountText.text = _amount.ToString();
+        }
+        else
+        {
+            amountText.text = "";
+        }
     }
 }

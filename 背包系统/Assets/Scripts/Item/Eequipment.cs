@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 /// <summary>
 /// 装备
 /// </summary>
-public class Eequipment : Item
+public class Equipment : Item
 {
     /// <summary>
     /// 力量
@@ -30,14 +31,21 @@ public class Eequipment : Item
     /// </summary>
     public EequipmentType EquipType { get; set; }
 
-
-    public Eequipment(Item item, Eequipment equipment) : base(item)
+    public Equipment()
+    {
+    }
+    public Equipment(Item item, Equipment equipment) : base(item)
     {
         Strength = equipment.Strength;
         Intellect = equipment.Intellect;
         Agile = equipment.Agile;
         Stamina = equipment.Stamina;
         EquipType = equipment.EquipType;
+    }
+    public override string GetToolTipText()
+    {
+        var text = base.GetToolTipText();
+        return string.Format("{0}\n<color=blue>装备类型：{1}\n力量：{2}\n精神：{3}\n敏捷：{4}\n体力：{5}</color>",text, EquipType.GetDescription(), Strength, Intellect, Agile, Stamina);
     }
 }
 /// <summary>
@@ -48,37 +56,56 @@ public enum EequipmentType
     /// <summary>
     /// 头部
     /// </summary>
+    [Description("头部")]
     Head,
     /// <summary>
     /// 颈部
     /// </summary>
+    [Description("颈部")]
     Neck,
+    /// <summary>
+    /// 胸部
+    /// </summary>
+    [Description("胸部")]
+    Chest,
     /// <summary>
     /// 戒指
     /// </summary>
+    [Description("戒指")]
     Ring,
     /// <summary>
     /// 腿
     /// </summary>
+    [Description("腿")]
     Leg,
     /// <summary>
     /// 护腕
     /// </summary>
-    Bracers,
+    [Description("护腕")]
+    Bracer,
     /// <summary>
     /// 饰品
     /// </summary>
+    [Description("饰品")]
     Trinket,
     /// <summary>
     /// 肩
     /// </summary>
+    [Description("肩")]
     Shoulder,
     /// <summary>
     /// 腰带
     /// </summary>
+    [Description("腰带")]
     Belt,
     /// <summary>
     /// 副手
     /// </summary>
-    OffHand
+    [Description("副手")]
+    OffHand,
+    /// <summary>
+    /// 鞋子
+    /// </summary>
+    [Description("鞋子")]
+    Boots
 }

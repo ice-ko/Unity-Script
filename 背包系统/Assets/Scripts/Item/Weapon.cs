@@ -15,12 +15,27 @@ public class Weapon : Item
     /// <summary>
     /// 武器类型
     /// </summary>
-    public WeaponType wpType { get; set; }
-
-    public Weapon(Item item, int damage, WeaponType type) : base(item)
+    public WeaponType WeaponType { get; set; }
+    public Weapon()
     {
-        Damage = damage;
-        wpType = type;
+    }
+    public Weapon(Item item, Weapon _weapon) : base(item)
+    {
+        Damage = _weapon.Damage;
+        WeaponType = _weapon.WeaponType;
+    }
+    public override string GetToolTipText()
+    {
+        var text = base.GetToolTipText();
+        var type =string.Empty;
+        switch (WeaponType)
+        {
+            case WeaponType.OffHand:
+                type = "副手"; break;
+            case WeaponType.MainHand:
+                type = "主手"; break;
+        }
+        return string.Format("{0}\n武器类型：{1}\n伤害：{2}", text, type, Damage);
     }
 }
 /// <summary>
@@ -33,7 +48,7 @@ public enum WeaponType
     /// </summary>
     OffHand,
     /// <summary>
-    /// 住手
+    /// 主手
     /// </summary>
     MainHand
 }

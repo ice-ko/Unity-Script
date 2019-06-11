@@ -25,7 +25,7 @@ public class Item
     /// <summary>
     /// 描述
     /// </summary>
-    public string Ddescription { get; set; }
+    public string Description { get; set; }
     /// <summary>
     /// 容量
     /// </summary>
@@ -52,11 +52,31 @@ public class Item
         this.Name = item.Name;
         this.Type = item.Type;
         this.Quality = item.Quality;
-        this.Ddescription = item.Ddescription;
+        this.Description = item.Description;
         this.Capacity = item.Capacity;
         this.BuyPrice = item.BuyPrice;
         this.SellPrice = item.SellPrice;
         this.Sprite = item.Sprite;
+    }
+    /// <summary>
+    /// 获取提示面板显示内容
+    /// </summary>
+    /// <returns></returns>
+    public virtual string GetToolTipText()
+    {
+        var color = string.Empty;
+        switch (Quality)
+        {
+            case Quality.Common:
+                color = "white";break;//白色
+            case Quality.Rare:
+                color = "navy"; break;//深蓝色
+            case Quality.Epic:
+                color = "magenta"; break;//品红
+            case Quality.Legend:
+                color = "orange"; break;//橙色
+        }
+        return string.Format("<color={4}>{0}</color>\n购买价格：{1}\n出售价格：{2}\n{3}", Name, BuyPrice, SellPrice, Description, color); ;
     }
 }
 /// <summary>
@@ -102,5 +122,4 @@ public enum Quality
     /// 传说
     /// </summary>
     Legend,
-
 }

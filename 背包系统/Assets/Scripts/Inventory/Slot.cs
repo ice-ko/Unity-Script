@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 /// <summary>
 /// 物品槽
 /// </summary>
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     public GameObject itmePrefab;
     /// <summary>
@@ -19,9 +20,8 @@ public class Slot : MonoBehaviour
         {
             //创建新的物品
             var itemObj = Instantiate(itmePrefab);
-            itemObj.transform.SetParent(transform);
+            itemObj.transform.SetParent(transform, false);
             itemObj.transform.localPosition = Vector3.zero;
-            itemObj.transform.localScale = new Vector3(1, 1, 1);
             itemObj.GetComponent<ItemUI>().SetItem(item);
             //调整ui显示
             var pos = itemObj.transform.localPosition;
@@ -39,5 +39,36 @@ public class Slot : MonoBehaviour
     public ItemUI GetItme()
     {
         return transform.GetChild(0).GetComponent<ItemUI>();
+    }
+    /// <summary>
+    /// 鼠标进入
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (transform.childCount > 0)
+        {
+            string text = transform.GetChild(0).GetComponent<ItemUI>().item.GetToolTipText();
+            InventoryManager.Instance.ShowToolTip(text);
+        }
+    }
+    /// <summary>
+    /// 鼠标移出
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InventoryManager.Instance.HideToolTip();
+    }
+    /// <summary>
+    /// 鼠标按下
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (transform.childCount > 0)
+        {
+
+        }
     }
 }

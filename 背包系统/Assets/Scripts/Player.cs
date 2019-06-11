@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     void Start()
     {
-
     }
 
     void Update()
@@ -14,7 +13,7 @@ public class Player : MonoBehaviour
         //测试背包
         if (Input.GetKeyDown(KeyCode.A))
         {
-            int id = Random.Range(0,18);
+            int id = Random.Range(1,18);
             Knapsack.Instance.StoreItem(id);
         }
     }
