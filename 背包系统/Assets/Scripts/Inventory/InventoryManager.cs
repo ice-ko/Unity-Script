@@ -8,20 +8,30 @@ using Newtonsoft.Json.Linq;
 public class InventoryManager : Singleton<InventoryManager>
 {
     public ToolTip toolTip;//提示面板
+    public RectTransform moveParentTransform;//物品移动父对象
 
     private List<Item> itemList = new List<Item>();//物品信息
 
     private bool isToolTipShow = false;//是否显示面板
+    [HideInInspector]
+    public bool isClickItem = false;//是否点击物品
     private Vector2 toolTipPosionOffset = new Vector2(20, -25);//面板偏移位置
+    [HideInInspector]
+    public ItemUI clickItemUI;//点击后的物品
     private void Start()
     {
         ParseItemJson();
     }
     private void Update()
     {
-        if (isToolTipShow)
+        if (isClickItem && moveParentTransform.childCount > 0)
         {
-            toolTip.transform.localPosition=Utility.GetWorldToScreenPos()+ toolTipPosionOffset;
+            moveParentTransform.transform.localPosition = Utility.GetWorldToScreenPos()+ new Vector2(15, -15);
+            toolTip.Hide();
+        }
+        else if (isToolTipShow)
+        {
+            toolTip.transform.localPosition = Utility.GetWorldToScreenPos() + toolTipPosionOffset;
         }
     }
     /// <summary>
@@ -42,7 +52,7 @@ public class InventoryManager : Singleton<InventoryManager>
             switch (type)
             {
                 case ItemType.Consumable:
-                    itemList.Add(new Consumables(itemInfo, (int)item["hp"],(int)item["mp"]));
+                    itemList.Add(new Consumables(itemInfo, (int)item["hp"], (int)item["mp"]));
                     break;
                 case ItemType.Equipment:
                     var equipmentInfo = JsonConvert.DeserializeObject<Equipment>(item.ToString());
@@ -50,7 +60,7 @@ public class InventoryManager : Singleton<InventoryManager>
                     break;
                 case ItemType.Weapon:
                     var weaponInfo = JsonConvert.DeserializeObject<Weapon>(item.ToString());
-                    itemList.Add(new Weapon(itemInfo,weaponInfo));
+                    itemList.Add(new Weapon(itemInfo, weaponInfo));
                     break;
                 case ItemType.Material:
                     itemList.Add(itemInfo);
@@ -83,6 +93,10 @@ public class InventoryManager : Singleton<InventoryManager>
     /// <param name="text"></param>
     public void ShowToolTip(string text)
     {
+        if (isClickItem)
+        {
+            return;
+        }
         toolTip.Show(text);
         isToolTipShow = true;
     }
@@ -91,6 +105,10 @@ public class InventoryManager : Singleton<InventoryManager>
     /// </summary>
     public void HideToolTip()
     {
+        if (isClickItem)
+        {
+            return;
+        }
         toolTip.Hide();
         isToolTipShow = false;
     }

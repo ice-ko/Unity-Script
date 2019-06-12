@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : Singleton<Inventory>
 {
-    private Slot[] slotArr;
+    public int slotCount;//背包格子数量
+    public GameObject slotPrefab;
+    public GameObject slotPanel;//背包格子父对象
+    //
+    private Slot[] slotArr;//slot（物品槽）数组
     public virtual void Start()
     {
+        //生成指定数量的物品槽
+        for (int i = 0; i < slotCount; i++)
+        {
+            GameObject go = Instantiate(slotPrefab);
+            go.transform.SetParent(slotPanel.transform, false);
+        }
+        //获取所有的slot（物品槽）
         slotArr = GetComponentsInChildren<Slot>();
     }
     /// <summary>
@@ -48,14 +59,14 @@ public class Inventory : MonoBehaviour
         else
         {
             Slot slot = FindSameTypeSlot(item);
-            if (slot!=null)
+            if (slot != null)
             {
                 slot.StoreItem(item);
             }
             else
             {
                 Slot emptySlot = FindEmptySlot();
-                if (emptySlot!=null)
+                if (emptySlot != null)
                 {
                     emptySlot.StoreItem(item);
                 }
@@ -92,7 +103,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (var slot in slotArr)
         {
-            if (slot.transform.childCount==0)
+            if (slot.transform.childCount == 0)
             {
                 continue;
             }
