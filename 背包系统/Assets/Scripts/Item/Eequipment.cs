@@ -45,7 +45,7 @@ public class Equipment : Item
     public override string GetToolTipText()
     {
         var text = base.GetToolTipText();
-        return string.Format("{0}\n<color=blue>装备类型：{1}\n力量：{2}\n精神：{3}\n敏捷：{4}\n体力：{5}</color>",text, EquipType.GetDescription(), Strength, Intellect, Agile, Stamina);
+        return string.Format("{0}\n<color=blue>装备类型：{1}\n力量：{2}\n精神：{3}\n敏捷：{4}\n体力：{5}</color>", text, EquipType.GetDescription(), Strength, Intellect, Agile, Stamina);
     }
 }
 /// <summary>
@@ -53,6 +53,8 @@ public class Equipment : Item
 /// </summary>
 public enum EequipmentType
 {
+    [Description("没有类型")]
+    None,
     /// <summary>
     /// 头部
     /// </summary>

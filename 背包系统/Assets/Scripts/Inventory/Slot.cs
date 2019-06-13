@@ -75,29 +75,40 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         {
             //获取当前物品槽下的子物体
             var currentItem = transform.GetChild(0).GetComponent<ItemUI>();
-            //按下左边ctrl
-            if (Input.GetKey(KeyCode.LeftControl))
+            //按下左边ctrl 并且当前物品数量必须大于1才允许拆分物品
+            if (Input.GetKey(KeyCode.LeftControl) && currentItem.amount > 1)
             {
+                if (InventoryManager.Instance.isClickItem && currentItem.item.Id != moveItem.item.Id)
+                {
+                    SetItemParent();
+                    return;
+                }
                 var count = currentItem.amount / 2;
                 //没有移动的物品并且数量小于0 则创建信息的物品
-                if (count <= 0 && moveItemParent.childCount == 0 && !InventoryManager.Instance.isClickItem)
+                if (count <= 0)
                 {
                     //在当前物品槽实例化一个新的子物体
-                    transform.GetChild(0).SetParent(moveItemParent);
-                    moveItemParent.GetChild(0).transform.localPosition = Vector3.zero;
-                    InventoryManager.Instance.isClickItem = true;
-                    InventoryManager.Instance.clickItemUI = currentItem;
+                    Destroy(transform.GetChild(0).gameObject);
+                    moveItem.AddAmount();
                 }
                 else
                 {
-                    //拆分物品 在当前物品总数量减去一半并创建新的物品 放到跟随鼠标移动的物品槽中
-                    currentItem.AddAmount(-count);
-                    //
-                    this.StoreItem(currentItem.item, moveItemParent);
-                    moveItemParent.GetChild(0).GetComponent<ItemUI>().AddAmount(count - 1);
+                    //移动物品槽无可移动子物体则新建子物体
+                    if (moveItemParent.childCount == 0)
+                    {
+                        this.StoreItem(currentItem.item, moveItemParent);
+                        currentItem.AddAmount(-count);
+                        moveItemParent.GetChild(0).GetComponent<ItemUI>().AddAmount(count-1);
+                    }
+                    else
+                    {
+                        //拆分物品 在当前物品总数量减去一半并创建新的物品 放到跟随鼠标移动的物品槽中
+                        currentItem.AddAmount(-count);
+                        moveItemParent.GetChild(0).GetComponent<ItemUI>().AddAmount(count);
+                    }
                     //
                     InventoryManager.Instance.isClickItem = true;
-                    InventoryManager.Instance.clickItemUI = currentItem;
+                    InventoryManager.Instance.clickItemUI = moveItemParent.GetChild(0).GetComponent<ItemUI>();
                 }
             }
             else
@@ -114,6 +125,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
                     }
                     else
                     {
+                        //如果拆分的物品数量等于1则交换两位物品
                         SetItemParent();
                     }
                     if (moveItem.amount <= 0)

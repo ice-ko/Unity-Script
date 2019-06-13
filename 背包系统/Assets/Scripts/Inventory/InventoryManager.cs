@@ -4,6 +4,7 @@ using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
+using UnityEngine.EventSystems;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
@@ -24,14 +25,23 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     private void Update()
     {
+        //物品跟随鼠标移动
         if (isClickItem && moveParentTransform.childCount > 0)
         {
             moveParentTransform.transform.localPosition = Utility.GetWorldToScreenPos()+ new Vector2(15, -15);
             toolTip.Hide();
         }
+        //提示信息面板跟随鼠标移动
         else if (isToolTipShow)
         {
             toolTip.transform.localPosition = Utility.GetWorldToScreenPos() + toolTipPosionOffset;
+        }
+        //判断当前鼠标左键下是否存在ui(丢弃物品)
+        if (isClickItem&&Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject(-1))
+        {
+            isClickItem = false;
+            clickItemUI = null;
+            Destroy(moveParentTransform.GetChild(0).gameObject);
         }
     }
     /// <summary>
