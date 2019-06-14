@@ -8,7 +8,7 @@ public class Inventory : Singleton<Inventory>
     public GameObject slotPrefab;
     public GameObject slotPanel;//背包格子父对象
     //
-    protected Slot[] slotArr;//slot（物品槽）数组
+    public Slot[] slotArr;//slot（物品槽）数组
     public virtual void Start()
     {
         //生成指定数量的物品槽

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         //测试背包
         if (Input.GetKeyDown(KeyCode.A))
         {
-            int id = Random.Range(1,3);
+            int id = Random.Range(1,18);
             Inventory.Instance.StoreItem(id);
         }
     }

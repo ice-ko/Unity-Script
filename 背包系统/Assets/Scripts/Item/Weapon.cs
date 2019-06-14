@@ -44,6 +44,10 @@ public class Weapon : Item
 public enum WeaponType
 {
     /// <summary>
+    /// 没有类型
+    /// </summary>
+    Nono,
+    /// <summary>
     /// 副手
     /// </summary>
     OffHand,

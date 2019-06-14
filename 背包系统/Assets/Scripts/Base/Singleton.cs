@@ -4,7 +4,7 @@ using UnityEngine;
 /// 单例模板
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
     private static T _instance;
     public static T Instance

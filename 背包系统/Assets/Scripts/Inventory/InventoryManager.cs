@@ -12,8 +12,8 @@ public class InventoryManager : Singleton<InventoryManager>
     public RectTransform moveParentTransform;//物品移动父对象
 
     private List<Item> itemList = new List<Item>();//物品信息
-
-    private bool isToolTipShow = false;//是否显示面板
+    [HideInInspector]
+    public bool isToolTipShow = false;//是否显示面板
     [HideInInspector]
     public bool isClickItem = false;//是否点击物品
     private Vector2 toolTipPosionOffset = new Vector2(20, -25);//面板偏移位置
@@ -28,7 +28,7 @@ public class InventoryManager : Singleton<InventoryManager>
         //物品跟随鼠标移动
         if (isClickItem && moveParentTransform.childCount > 0)
         {
-            moveParentTransform.transform.localPosition = Utility.GetWorldToScreenPos()+ new Vector2(15, -15);
+            moveParentTransform.transform.localPosition = Utility.GetWorldToScreenPos() + new Vector2(15, -15);
             toolTip.Hide();
         }
         //提示信息面板跟随鼠标移动
@@ -37,7 +37,7 @@ public class InventoryManager : Singleton<InventoryManager>
             toolTip.transform.localPosition = Utility.GetWorldToScreenPos() + toolTipPosionOffset;
         }
         //判断当前鼠标左键下是否存在ui(丢弃物品)
-        if (isClickItem&&Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject(-1))
+        if (isClickItem && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(-1))
         {
             isClickItem = false;
             clickItemUI = null;
@@ -121,5 +121,17 @@ public class InventoryManager : Singleton<InventoryManager>
         }
         toolTip.Hide();
         isToolTipShow = false;
+    }
+    /// <summary>
+    /// 移除当前跟随鼠标移动的物品
+    /// </summary>
+    public void RemoveItem()
+    {
+        isClickItem = false;
+        clickItemUI = null;
+        if (moveParentTransform.childCount > 0)
+        {
+            Destroy(moveParentTransform.GetChild(0).gameObject);
+        }
     }
 }
