@@ -12,9 +12,17 @@ public class EquipmentSlot : Slot
     public WeaponType wpType;//武器类型
     public override void OnPointerDown(PointerEventData eventData)
     {
-        
+        //右键点击脱掉装备
+        if (eventData.button == PointerEventData.InputButton.Right && transform.childCount > 0)
+        {
+            ItemUI currentItemUI = transform.GetChild(0).GetComponent<ItemUI>();
+            CharacterPanel._Instance.PutOff(currentItemUI.item);
+            Destroy(currentItemUI.gameObject);
+            InventoryManager.Instance.HideToolTip();
+        }
+
         //装备栏必须是鼠标左键才能操作
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button != PointerEventData.InputButton.Left)
         {
             return;
         }

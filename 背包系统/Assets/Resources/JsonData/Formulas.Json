@@ -1,16 +1,16 @@
 [
   {
-    "Item1ID": 15,
+    "Item1Id": 15,
     "Item1Amount": 1,
-    "Item2ID": 17,
+    "Item2Id": 17,
     "Item2Amount": 2,
-    "ResID": 13
+    "ResId": 13
   },
   {
-    "Item1ID": 16,
+    "Item1Id": 16,
     "Item1Amount": 1,
-    "Item2ID": 17,
+    "Item2Id": 17,
     "Item2Amount": 5,
-    "ResID": 8
+    "ResId": 8
   }
 ]

@@ -75,17 +75,18 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         //右键点击穿戴装备
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Right && transform.childCount > 0)
         {
             ItemUI currentItemUI = transform.GetChild(0).GetComponent<ItemUI>();
             if (currentItemUI.item is Equipment || currentItemUI.item is Weapon)
             {
-                //CharacterPanel.Instance.PutOn(currentItemUI);
+                CharacterPanel._Instance.PutOn(currentItemUI);
                 Destroy(currentItemUI.gameObject);
+                InventoryManager.Instance.HideToolTip();
             }
         }
         //必须是鼠标左键才能操作
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button != PointerEventData.InputButton.Left)
         {
             return;
         }

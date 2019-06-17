@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterPanel : Singleton<Inventory>
+public class CharacterPanel : Inventory
 {
+    public static CharacterPanel _Instance;
+    private void Awake()
+    {
+        _Instance = this;
+    }
     /// <summary>
     /// 穿戴装备
     /// </summary>
@@ -11,7 +16,7 @@ public class CharacterPanel : Singleton<Inventory>
     public void PutOn(ItemUI itemUI)
     {
         Item exitItem = null;
-        foreach (Slot slot in Inventory.Instance.slotArr)
+        foreach (Slot slot in slotArr)
         {
             if (slot is EquipmentSlot)
             {
@@ -31,5 +36,14 @@ public class CharacterPanel : Singleton<Inventory>
         {
             Inventory.Instance.StoreItem(exitItem);
         }
+    }
+    /// <summary>
+    /// 脱掉装备
+    /// </summary>
+    /// <param name="item"></param>
+    public void PutOff(Item item)
+    {
+
+        Inventory.Instance.StoreItem(item);
     }
 }
