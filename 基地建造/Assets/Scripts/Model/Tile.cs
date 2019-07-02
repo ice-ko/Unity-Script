@@ -23,9 +23,9 @@ public class Tile
     Action<Tile> cbTileTypeChanged;
 
     LooseObject looseObject;
-    InstalledObject installedObject;
+    public Furniture furniture;
 
-    World world;
+    public World world;
     public int x;
     public int y;
 
@@ -50,6 +50,20 @@ public class Tile
     public void UnregisterTileTypeChangedCallback(Action<Tile> action)
     {
         cbTileTypeChanged -= action;
+    }
+    public bool PlaceObject(Furniture objInstance)
+    {
+        if (objInstance == null)
+        {
+            furniture = null;
+            return true;
+        }
+        if (furniture!=null)
+        {
+            return false;
+        }
+        furniture = objInstance;
+        return true;
     }
 }
 /// <summary>

@@ -44,3 +44,6 @@ TagManager:
   - name: TileUI
     uniqueID: 758416481
     locked: 0
+  - name: Wall
+    uniqueID: 3232968957
+    locked: 0
