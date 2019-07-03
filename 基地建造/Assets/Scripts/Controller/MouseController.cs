@@ -109,7 +109,7 @@ public class MouseController : MonoBehaviour
         //结束拖动
         if (Input.GetMouseButtonUp(0))
         {
-
+            var buildMode = GameObject.FindObjectOfType<BuildModeController>();
             // 循环遍历所有瓷砖
             for (int x = start_x; x <= end_x; x++)
             {
@@ -118,18 +118,7 @@ public class MouseController : MonoBehaviour
                     Tile t = WorldController.instance.world.GetTileAt(x, y);
                     if (t != null)
                     {
-                        if (buildModeIsObjects == true)
-                        {
-                            // 创建Furniture并将其分配给磁贴
-
-                            // FIXME：现在，我们只是假设墙壁。
-                            WorldController.instance.world.PlaceFurniture(buindModeObjectType,t);
-                        }
-                        else
-                        {
-                            // 我们处于换砖模式。
-                            t.TileType = buildModeTile;
-                        }
+                        buildMode.DoBuild(t);
                     }
                 }
             }
@@ -151,53 +140,4 @@ public class MouseController : MonoBehaviour
         //限制摄像机缩放范围
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 3f, 25f);
     }
-
-    TileType buildModeTile = TileType.Floor;
-    //是否构建模式
-    bool buildModeIsObjects = false;
-    string buindModeObjectType;
-    /// <summary>
-    /// 建造地板
-    /// </summary>
-    public void SetMode_BuildFloor()
-    {
-        buildModeIsObjects = false;
-        buildModeTile = TileType.Floor;
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public void SetMode_Bulldoze()
-    {
-        buildModeIsObjects = false;
-        buildModeTile = TileType.Empty;
-    }
-    /// <summary>
-    /// 建造墙
-    /// </summary>
-    public void SetMode_BuilWoll(string objecttype)
-    {
-        // 墙不是瓷砖！ Wall是存在于tile的TOP上的“Furniture”。
-        buildModeIsObjects = true;
-        buindModeObjectType = objecttype;
-    }
-    /// <summary>
-    /// 更新光标位置
-    /// </summary>
-    //void UpdateCursor()
-    //{
-    //    //更新圆圈光标位置
-    //    Tile tileUnderMouse = WorldController.instance.GetTileAtWorldCoord(currFramePosition);
-    //    if (tileUnderMouse != null)
-    //    {
-    //        circleCursorPrefab.SetActive(true);
-    //        Vector3 cursorPosition = new Vector3(tileUnderMouse.x, tileUnderMouse.y, 0);
-    //        circleCursorPrefab.transform.position = cursorPosition;
-    //    }
-    //    else
-    //    {
-    //        //鼠标位于有效Tile空间之外，因此隐藏光标。
-    //        circleCursorPrefab.SetActive(false);
-    //    }
-    //}
 }

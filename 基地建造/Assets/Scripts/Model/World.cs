@@ -13,10 +13,21 @@ public class World
     public int height;
     //
     Action<Furniture> cbFurnitureCreated;
-
-
+    Action<Tile> cbTileChanged;
+    // TODO：很可能会被专用的替换掉
+    //用于管理作业队列的类（复数！）也可能
+    //半静态或自我初始化或某些该死的东西。
+    //现在，这只是世界公共成员
+    public JobQueue jobsQueue;
+    /// <summary>
+    /// 初始化<see cref ="World"/>类的新实例。
+    /// <param name ="width"> tile中的宽度。</ param>
+    /// <param name ="height">瓷砖高度。</ param>
+    ///</ summary>
     public World(int width = 100, int height = 100)
     {
+        jobsQueue = new JobQueue();
+
         this.width = width;
         this.height = height;
 
@@ -26,6 +37,7 @@ public class World
             for (int y = 0; y < height; y++)
             {
                 tiles[x, y] = new Tile(this, x, y);
+                tiles[x, y].RegisterTileTypeChangedCallback(OnTileChanged);
             }
         }
 
@@ -103,5 +115,51 @@ public class World
     public void UnregisterFurnitureCreated(Action<Furniture> cakkbackFunc)
     {
         cbFurnitureCreated -= cakkbackFunc;
+    }
+    /// <summary>
+    /// 注册已创建的 Tile
+    /// </summary>
+    /// <param name="cakkbackFunc"></param>
+    public void RegisterTileChanged(Action<Tile> cakkbackFunc)
+    {
+        cbTileChanged += cakkbackFunc;
+    }
+    /// <summary>
+    ///注销已创建的 Tile
+    /// </summary>
+    /// <param name="cakkbackFunc"></param>
+    public void UnregisterTileChanged(Action<Tile> cakkbackFunc)
+    {
+        cbTileChanged -= cakkbackFunc;
+    }
+    /// <summary>
+    /// tile改变时调用委托
+    /// </summary>
+    /// <param name="tile"></param>
+    public void OnTileChanged(Tile tile)
+    {
+        if (cbTileChanged == null)
+        {
+            return;
+        }
+        cbTileChanged(tile);
+    }
+    /// <summary>
+    /// 家具布置是否有效
+    /// </summary>
+    /// <param name="furnitureType">类型</param>
+    /// <param name="tile">tile</param>
+    /// <returns></returns>
+    public bool IsFurniturePlacementValid(string furnitureType, Tile tile)
+    {
+        return furniturePrototype[furnitureType].funcPositionValidation(tile);
+    }
+    public Furniture GetFurniture(string objectType)
+    {
+        if (!furniturePrototype.ContainsKey(objectType))
+        {
+            return null;
+        }
+        return furniturePrototype[objectType];
     }
 }

@@ -26,6 +26,9 @@ public class Furniture
 
     //
     System.Action<Furniture> cbOnChanged;
+    //位置验证
+    public System.Func<Tile, bool> funcPositionValidation;
+
     /// <summary>
     /// 创建原型
     /// </summary>
@@ -43,8 +46,9 @@ public class Furniture
             movementCost = movementCost,
             width = width,
             height = height,
-            linksToNeighbour = linksToNeighbour
+            linksToNeighbour = linksToNeighbour,
         };
+        info.funcPositionValidation = info.IsValidPosition;
         return info;
     }
     /// <summary>
@@ -55,6 +59,11 @@ public class Furniture
     /// <returns></returns>
     public static Furniture PlaceObject(Furniture proto, Tile tile)
     {
+        if (!proto.funcPositionValidation(tile))
+        {
+            //Debug.LogError("PlaceObject  - 位置有效性函数返回FALSE。");
+            return null;
+        }
         var info = new Furniture
         {
             objectType = proto.objectType,
@@ -74,7 +83,7 @@ public class Furniture
             // 这种类型的家具与其邻居相连，
             //所以我们应该通知你的邻居他们有一个新的伙伴。 只需触发他们的OnChange回调。
             int x = tile.x; int y = tile.y;
-            var t =tile.world.GetTileAt(x, y + 1);
+            var t = tile.world.GetTileAt(x, y + 1);
             if (t != null && t.furniture != null && t.furniture.objectType == info.objectType)
             {
                 //我们有一个与我们相同的对象类型的北方邻居，所以
@@ -115,5 +124,25 @@ public class Furniture
     public void UnregisterOnChangedCallback(System.Action<Furniture> cakkbackFunc)
     {
         cbOnChanged -= cakkbackFunc;
+    }
+    public bool IsValidPosition(Tile tile)
+    {
+        if (tile.TileType != TileType.Floor)
+        {
+            return false;
+        }
+        if (tile.furniture != null)
+        {
+            return false;
+        }
+        return true;
+    }
+    public bool IsValidPosition_Door(Tile tile)
+    {
+        if (!IsValidPosition(tile))
+        {
+            return false;
+        }
+        return true;
     }
 }
