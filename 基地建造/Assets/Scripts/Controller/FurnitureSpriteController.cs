@@ -9,13 +9,13 @@ public class FurnitureSpriteController : MonoBehaviour
 
     public World world { get { return WorldController.instance.world; } }
 
-    public Dictionary<Furniture, GameObject> FurnitureGameObjectMap;
+    public Dictionary<Furniture, GameObject> furnitureGameObjectMap;
     public Dictionary<string, Sprite> furnitureSprite;
     void Start()
     {
         LoadSprites();
         //
-        FurnitureGameObjectMap = new Dictionary<Furniture, GameObject>();
+        furnitureGameObjectMap = new Dictionary<Furniture, GameObject>();
 
         //注册委托
         world.RegisterFurnitureCreated(OnFurnitureCreated);
@@ -43,7 +43,7 @@ public class FurnitureSpriteController : MonoBehaviour
         //这会创建一个新的GameObject并将其添加到我们的场景中。
         GameObject obj_go = new GameObject();
         //将我们的tile / GO对添加到字典中。
-        FurnitureGameObjectMap.Add(obj, obj_go);
+        furnitureGameObjectMap.Add(obj, obj_go);
 
         obj_go.name = obj.objectType + "_" + obj.tile.x + "_" + obj.tile.y;
         obj_go.transform.position = new Vector3(obj.tile.x, obj.tile.y, 0);
@@ -52,7 +52,7 @@ public class FurnitureSpriteController : MonoBehaviour
         //添加SpriteRenderer
         var sr = obj_go.AddComponent<SpriteRenderer>();
         sr.sprite = GetSpriteForFurniture(obj);
-        sr.sortingLayerName = "Wall";
+        sr.sortingLayerName = "Furniture";
         //注册我们的回调，以便我们的GameObject随时更新
         obj.RegisterOnChangedCallback(OnFurnitureChanged);
     }
@@ -106,11 +106,11 @@ public class FurnitureSpriteController : MonoBehaviour
     /// <param name="furniture"></param>
     void OnFurnitureChanged(Furniture furniture)
     {
-        if (!FurnitureGameObjectMap.ContainsKey(furniture))
+        if (!furnitureGameObjectMap.ContainsKey(furniture))
         {
             return;
         }
-        GameObject obj_go = FurnitureGameObjectMap[furniture];
+        GameObject obj_go = furnitureGameObjectMap[furniture];
         obj_go.GetComponent<SpriteRenderer>().sprite = GetSpriteForFurniture(furniture);
     }
     /// <summary>

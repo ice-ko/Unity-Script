@@ -31,6 +31,7 @@ public class JobSpriteController : MonoBehaviour
         var sprite = job_go.AddComponent<SpriteRenderer>();
         sprite.sprite = furniture.GetSpriteFurniture(job.jobObjectType);
         sprite.color = new Color(1f, 1f, 1f, 0.25f);
+        sprite.sortingLayerName = "Jobs";
         //注册委托
         job.RegisterJobCompleteCallback(OnJobEnded);
         job.RegisterJobCancelCallback(OnJobEnded);

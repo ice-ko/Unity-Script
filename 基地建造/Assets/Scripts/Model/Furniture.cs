@@ -23,7 +23,7 @@ public class Furniture
     int height;
     //链接到邻居
     public bool linksToNeighbour = false;
-
+    public float movementedCost;
     //
     System.Action<Furniture> cbOnChanged;
     //位置验证

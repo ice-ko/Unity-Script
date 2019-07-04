@@ -25,6 +25,7 @@ public class Job
         this.tile = tile;
         this.cbJobComplete += cbJobComplete;
         this.jobObjectType = jobObjectType;
+        this.jobTime = jobTime;
     }
    
     /// <summary>

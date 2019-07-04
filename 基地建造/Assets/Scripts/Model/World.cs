@@ -6,6 +6,10 @@ using UnityEngine;
 public class World
 {
     Tile[,] tiles;
+    //人物
+    List<Character> charactersList;
+    //用于导航我们的世界地图的寻路图。
+    Path_TileGraph tileGraph;
 
     Dictionary<string, Furniture> furniturePrototype = new Dictionary<string, Furniture>();
     //地图宽高
@@ -14,6 +18,7 @@ public class World
     //
     Action<Furniture> cbFurnitureCreated;
     Action<Tile> cbTileChanged;
+    Action<Character> cbCharacterCreated;
     // TODO：很可能会被专用的替换掉
     //用于管理作业队列的类（复数！）也可能
     //半静态或自我初始化或某些该死的东西。
@@ -42,8 +47,18 @@ public class World
         }
 
         CreateFurniturePrototype();
+
+        charactersList = new List<Character>();
+        var characterInfo = new Character(this.tiles[width / 2, height / 2]);
     }
 
+    public void Update(float deltaTime)
+    {
+        foreach (Character item in charactersList)
+        {
+            item.Update(deltaTime);
+        }
+    }
     void CreateFurniturePrototype()
     {
         // 类型、是否可以链接邻居、是否可以移动、宽、高（墙，不能移动，1,1）
@@ -83,6 +98,11 @@ public class World
             }
         }
     }
+    /// <summary>
+    /// 放置家具
+    /// </summary>
+    /// <param name="objecttype"></param>
+    /// <param name="tile"></param>
     public void PlaceFurniture(string objecttype, Tile tile)
     {
         if (!furniturePrototype.ContainsKey(objecttype))
@@ -98,6 +118,8 @@ public class World
         if (cbFurnitureCreated != null)
         {
             cbFurnitureCreated(obj);
+            //重置寻路点
+            InvalidateTileGraph();
         }
     }
     /// <summary>
@@ -116,6 +138,23 @@ public class World
     {
         cbFurnitureCreated -= cakkbackFunc;
     }
+    /// <summary>
+    ///注销已创建的 Furniture
+    /// </summary>
+    /// <param name="cakkbackFunc"></param>
+    public void UnregisterCharacterCreated(Action<Character> cakkbackFunc)
+    {
+        cbCharacterCreated -= cakkbackFunc;
+    }
+    /// <summary>
+    /// 注册已创建的 Character
+    /// </summary>
+    /// <param name="cakkbackFunc"></param>
+    public void RegisterCharacterCreated(Action<Character> cakkbackFunc)
+    {
+        cbCharacterCreated += cakkbackFunc;
+    }
+
     /// <summary>
     /// 注册已创建的 Tile
     /// </summary>
@@ -144,6 +183,12 @@ public class World
         }
         cbTileChanged(tile);
     }
+    //每当改变世界时都应该调用它
+    //表示我们的旧寻路信息无效。
+    public void InvalidateTileGraph()
+    {
+        tileGraph = null;
+    }
     /// <summary>
     /// 家具布置是否有效
     /// </summary>
@@ -161,5 +206,44 @@ public class World
             return null;
         }
         return furniturePrototype[objectType];
+    }
+    /// <summary>
+    /// Character改变时调用委托
+    /// </summary>
+    /// <param name="tile"></param>
+    public Character CreateCharacter(Tile tile)
+    {
+        Character character = new Character(tile);
+        charactersList.Add(character);
+        if (character != null)
+        {
+            cbCharacterCreated(character);
+        }
+        return character;
+    }
+    /// <summary>
+    /// 设置路径示例
+    /// </summary>
+    public void SetupPathfingingExample()
+    {
+        int l = width / 2 - 5;
+        int b = height / 2 - 5;
+
+        for (int x = l - 5; x < l + 15; x++)
+        {
+            for (int y = b - 5; y < b + 15; y++)
+            {
+                tiles[x, y].TileType = TileType.Floor;
+
+
+                if (x == l || x == (l + 9) || y == b || y == (b + 9))
+                {
+                    if (x != (l + 9) && y != (b + 4))
+                    {
+                        PlaceFurniture("Wall", tiles[x, y]);
+                    }
+                }
+            }
+        }
     }
 }

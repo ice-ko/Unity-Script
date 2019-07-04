@@ -39,6 +39,16 @@ public class BuildModeController : MonoBehaviour
         buindModeObjectType = objecttype;
     }
     /// <summary>
+    /// 建造示例围墙
+    /// </summary>
+    public void SetMode_BuilWallExample()
+    {
+        // 墙不是瓷砖！ Wall是存在于tile的TOP上的“Furniture”。
+        WorldController.instance.world.SetupPathfingingExample();
+        //测试路径点
+        Path_TileGraph tileGraph = new Path_TileGraph(WorldController.instance.world);
+    }
+    /// <summary>
     /// 建造任务
     /// </summary>
     /// <param name="t"></param>

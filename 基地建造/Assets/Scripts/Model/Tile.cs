@@ -29,6 +29,21 @@ public class Tile
     public int x;
     public int y;
 
+    public float movementCost
+    {
+        get
+        {
+            if (tileType == TileType.Empty)
+            {
+                return 0;
+            }
+            if (furniture == null)
+            {
+                return 1;
+            }
+            return 1 * furniture.movementedCost;
+        }
+    }
 
     // FIXME：如果作业正在等待，这似乎是一种可怕的标记方式
     //在瓷砖上 这在设置/清除中容易出错。
@@ -75,17 +90,80 @@ public class Tile
     /// </summary>
     /// <param name="tile"></param>
     /// <returns></returns>
-    public bool IsNeighbour(Tile tile)
+    public bool IsNeighbour(Tile tile, bool diagOkay)
     {
-        if (this.x == tile.x && (this.y == tile.y + 1 || this.y == tile.y - 1))
+
+        //检查两者之间是否只有一个差异
+        //平铺坐标 是这样，那么我们是垂直或水平的邻居。
+        return
+            //检查hori / vert邻接
+            Mathf.Abs(this.x - tile.x) + Mathf.Abs(this.y - tile.y) == 1 ||
+            ////检查diag邻接
+            (diagOkay && (Mathf.Abs(this.x - tile.x) == 1 && Mathf.Abs(this.y - tile.y) == 1));
+
+        //if (this.x == tile.x && (this.y == tile.y + 1 || this.y == tile.y - 1))
+        //{
+        //    return true;
+        //}
+        //if (this.y == tile.y && (this.x == tile.x + 1 || this.x == tile.x - 1))
+        //{
+        //    return true;
+        //}
+        //if (diagOkay)
+        //{
+        //    if (this.x== tile.x+1&&this.y== tile.y+1||this.y==tile.y-1)
+        //    {
+        //        return true;
+        //    }
+        //    if (this.x == tile.x - 1 && this.y == tile.y + 1 || this.y == tile.y - 1)
+        //    {
+        //        return true;
+        //    }
+        //}
+        //return false;
+    }
+    /// <summary>
+    /// 得到邻居
+    /// </summary>
+    /// <param name="diagOkay"></param>
+    /// <returns></returns>
+    public Tile[] GetNeighbours(bool diagOkay) {
+        Tile[] tiles;
+        if (!diagOkay)
         {
-            return true;
+            //Tile 四个方向: N E S W
+            tiles = new Tile[4];
         }
-        if (this.y == tile.y && (this.x == tile.x + 1 || this.x == tile.x - 1))
+        else
         {
-            return true;
+            //Tile 八个方向: N E S W NE SE SW NW
+            tiles = new Tile[8];
         }
-        return false;
+        Tile n;
+        //可以为null，但没关系。
+        n = world.GetTileAt(x, y + 1);
+        tiles[0] = n;  
+        n = world.GetTileAt(x + 1, y);
+        tiles[1] = n;  
+        n = world.GetTileAt(x, y - 1);
+        tiles[2] = n;  
+        n = world.GetTileAt(x - 1, y);
+        tiles[3] = n; 
+
+        if (diagOkay == true)
+        {
+            //可以为null，但没关系。
+            n = world.GetTileAt(x + 1, y + 1);
+            tiles[4] = n; 
+            n = world.GetTileAt(x + 1,y - 1);
+            tiles[5] = n;  
+            n = world.GetTileAt(x - 1, y - 1);
+            tiles[6] = n; 
+            n = world.GetTileAt(x - 1, y + 1);
+            tiles[7] = n; 
+        }
+
+        return tiles;
     }
 }
 /// <summary>

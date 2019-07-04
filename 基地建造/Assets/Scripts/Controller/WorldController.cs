@@ -17,11 +17,14 @@ public class WorldController : MonoBehaviour
             instance = this;
         }
         world = new World();
-       
+
         //设置摄像机位置
         Camera.main.transform.position = new Vector3(world.width / 2, world.height / 2, Camera.main.transform.position.z);
     }
-
+    private void Update()
+    {
+        world.Update(Time.deltaTime);
+    }
     /// <summary>
     /// 获取空间坐标处的tile
     /// </summary>

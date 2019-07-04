@@ -11,7 +11,7 @@ public class TileSpriteController : MonoBehaviour
 
     public World world { get { return WorldController.instance.world; } }
     public Dictionary<Tile, GameObject> tileGameObjectMap;
-   
+
     void Start()
     {
         //
@@ -31,7 +31,9 @@ public class TileSpriteController : MonoBehaviour
                 tile_go.name = "Tile_" + x + "_" + y;
                 tile_go.transform.position = new Vector3(tile_data.x, tile_data.y, 0);
                 //添加空的默认sprite
-                tile_go.AddComponent<SpriteRenderer>().sprite = emptySprite;
+                SpriteRenderer sprite = tile_go.AddComponent<SpriteRenderer>();
+                sprite.sprite = emptySprite;
+                sprite.sortingLayerName = "Tiles";
                 tile_go.transform.parent = transform;
                 //
             }
@@ -40,7 +42,7 @@ public class TileSpriteController : MonoBehaviour
         //注册委托
         world.RegisterTileChanged(OnTileTypeChanged);
     }
-   
+
     /// <summary>
     /// 删除所有存储的tile信息
     /// </summary>
@@ -74,9 +76,9 @@ public class TileSpriteController : MonoBehaviour
         {
             tile_go.GetComponent<SpriteRenderer>().sprite = floorSprite;
         }
-        else
+        else if (tile_data.TileType == TileType.Empty)
         {
-            tile_go.GetComponent<SpriteRenderer>().sprite = null;
+            tile_go.GetComponent<SpriteRenderer>().sprite = emptySprite;
         }
     }
 }

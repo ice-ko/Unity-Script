@@ -26,6 +26,18 @@ public class JobQueue
         }
     }
     /// <summary>
+    /// 出列
+    /// </summary>
+    /// <returns></returns>
+    public Job Dequeue()
+    {
+        if (jobsQueue.Count == 0)
+        {
+            return null;
+        }
+        return jobsQueue.Dequeue();
+    }
+    /// <summary>
     /// 注册任务创建的回调
     /// </summary>
     /// <param name="action"></param>
