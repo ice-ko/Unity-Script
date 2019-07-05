@@ -12,20 +12,24 @@ public class Character
     {
         get
         {
-            return Mathf.Lerp(currTile.x, destTile.x, movementPercentage);
+            return Mathf.Lerp(currTile.x, nextTile.x, movementPercentage);
         }
     }
     public float Y
     {
         get
         {
-            return Mathf.Lerp(currTile.y, destTile.y, movementPercentage);
+            return Mathf.Lerp(currTile.y, nextTile.y, movementPercentage);
         }
     }
     //当前
     public Tile currTile;
     //如果我们没有移动，那么destTile = currTile
     Tile destTile;
+    //下一个寻路点
+    Tile nextTile;
+    //A*寻路
+    Path_AStar path_AStar;
     //当我们从currTile转移到destTile时，从0到1
     float movementPercentage;
 
@@ -36,6 +40,20 @@ public class Character
     Job myJob;
     public void Update(float deltaTime)
     {
+        Update_DoJob(deltaTime);
+        Update_DoMovement(deltaTime);
+
+
+
+    }
+    /// <summary>
+    /// 更新任务
+    /// </summary>
+    /// <param name="deltaTime"></param>
+    /// <returns></returns>
+    void Update_DoJob(float deltaTime)
+    {
+
         if (myJob == null)
         {
             //获取新的工作任务
@@ -48,14 +66,49 @@ public class Character
             }
         }
         // 我们到了吗？
-        if (currTile == destTile)
+         if (currTile == destTile)
+        //if (path_AStar != null && path_AStar.Length() == 1)
         {
             if (myJob != null)
             {
                 myJob.DoWork(deltaTime);
             }
+        }
+    }
+    /// <summary>
+    /// 更新移动
+    /// </summary>
+    /// <param name="deltaTime"></param>
+    void Update_DoMovement(float deltaTime)
+    {
+        if (currTile == destTile)
+        {
+            path_AStar = null;
             return;
         }
+        if (nextTile == null || nextTile == currTile)
+        {
+            //获取下一个寻路点
+            if (path_AStar == null || path_AStar.Length() == 0)
+            {
+                //生存到目的地寻路
+                path_AStar = new Path_AStar(currTile.world, currTile, destTile);
+                if (path_AStar.Length() == 0)
+                {
+                    AbandonJob();
+                    path_AStar = null;
+                    return;
+                }
+            }
+            //获取下一个路径tile
+            nextTile = path_AStar.Dequeue();
+
+        }
+        //距离目标还是一个路径节点时返回
+        //if (path_AStar.Length() == 1)
+        //{
+        //    return;
+        //}
         //从A点到B点的总距离是多少？
         //我们将使用欧几里德距离现在......
         //但是当我们进行寻路系统时，我们很可能会这样做
@@ -71,7 +124,7 @@ public class Character
         // 到目的地的需要多久？
         float percThisFrame = distThisFrame / distToTravel;
 
-        // 将其添加到旅行的总体百分比。
+        // 
         movementPercentage += percThisFrame;
 
         if (movementPercentage >= 1)
@@ -81,7 +134,7 @@ public class Character
             //到达目的地
 
             // 我们到达了目的地
-            currTile = destTile;
+            currTile = nextTile;
             movementPercentage = 0;
             // 我们真的想保留任何超车运动吗？
         }
@@ -90,9 +143,16 @@ public class Character
             cbCharacterChanged(this);
         }
     }
+    public void AbandonJob()
+    {
+        nextTile = destTile = currTile;
+        path_AStar = null;
+        currTile.world.jobsQueue.Enqueue(myJob);
+        myJob = null;
+    }
     public Character(Tile tile)
     {
-        currTile = destTile = tile;
+        currTile = destTile = nextTile = tile;
     }
     /// <summary>
     /// 设置目的地

@@ -20,7 +20,11 @@ public class JobSpriteController : MonoBehaviour
     /// <param name="job"></param>
     void OnJobCreated(Job job)
     {
-
+        //无法建造时跳过
+        if (jobGameObjectMap.ContainsKey(job))
+        {
+            return;
+        }
         GameObject job_go = new GameObject();
         jobGameObjectMap.Add(job, job_go);
         //设置属性

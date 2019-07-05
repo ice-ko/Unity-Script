@@ -123,10 +123,10 @@ public class Tile
         //return false;
     }
     /// <summary>
-    /// 得到邻居
-    /// </summary>
-    /// <param name="diagOkay"></param>
-    /// <returns></returns>
+	/// 获取邻居Tile。
+	/// </summary>
+	/// <returns>返回邻居tile。</returns>
+	/// <param name="diagOkay">是否对角线运动？.</param>
     public Tile[] GetNeighbours(bool diagOkay) {
         Tile[] tiles;
         if (!diagOkay)

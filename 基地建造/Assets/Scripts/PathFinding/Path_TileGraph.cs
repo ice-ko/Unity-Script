@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class Path_TileGraph
 {
-    Dictionary<Tile, Path_Node<Tile>> nodes;
+    public Dictionary<Tile, Path_Node<Tile>> nodes;
     public Path_TileGraph(World world)
     {
         //遍历世界上所有的瓷砖
@@ -24,12 +24,12 @@ public class Path_TileGraph
             {
                 Tile tile = world.GetTileAt(x, y);
                 //移动成本为0的瓷砖是不能进行移动的位置
-                if (tile.movementCost > 0)
-                {
-                    Path_Node<Tile> n = new Path_Node<Tile>();
-                    n.data = tile;
-                    nodes.Add(tile, n);
-                }
+                //if (tile.movementCost > 0)
+                //{
+                Path_Node<Tile> n = new Path_Node<Tile>();
+                n.data = tile;
+                nodes.Add(tile, n);
+                // }
             }
         }
 
@@ -48,21 +48,55 @@ public class Path_TileGraph
             //如果邻居是可步行的，则为相关节点创建边缘。
             for (int i = 0; i < neighbours.Length; i++)
             {
-                if (neighbours[i] != null && neighbours[i].movementCost > 0)
+                //if (neighbours[i] != null && neighbours[i].movementCost > 0)
+                if (neighbours[i] != null && neighbours[i].movementCost > 0 && IsClippingCorner(tile, neighbours[i]) == false)
                 {
-                    //这个邻居存在且可以步行，所以创造一个边缘。
-                    Path_Edge<Tile> e = new Path_Edge<Tile>();
-                    e.cost = neighbours[i].movementCost;
-                    e.node = nodes[neighbours[i]];
+                    {
+                        //这个邻居存在且可以步行，所以创造一个边缘。
+                        Path_Edge<Tile> e = new Path_Edge<Tile>();
+                        e.cost = neighbours[i].movementCost;
+                        e.node = nodes[neighbours[i]];
 
-                    //将边添加到我们的临时（和可扩展的！）列表中
-                    edges.Add(e);
+                        //将边添加到我们的临时（和可扩展的！）列表中
+                        edges.Add(e);
 
-                    edgeCount++;
+                        edgeCount++;
+                    }
                 }
+                n.path_Edges = edges.ToArray();
             }
-            n.path_Edges = edges.ToArray();
         }
-        Debug.Log("Path_TileGraph: Created " + edgeCount + " edges.");
+        /// <summary>
+        /// 是否斜角
+        /// </summary>
+        /// <param name="curr"></param>
+        /// <param name="neigh"></param>
+        /// <returns></returns>
+        bool IsClippingCorner(Tile curr, Tile neigh)
+        {
+            //如果从curr到neigh的运动是对角线的（例如N-E）
+            //然后检查以确保我们没有斜角（例如N和E都可以走路）
+            int dX = curr.x - neigh.x;
+            int dY = curr.y - neigh.y;
+
+            if (Mathf.Abs(dX) + Mathf.Abs(dY) == 2)
+            {
+                //我们是对角的
+                if (curr.world.GetTileAt(curr.x - dX, curr.y).movementCost == 0)
+                {
+                    //东方或西方是不可行的，因此这将是一个斜角的运动。
+                    return true;
+                }
+
+                if (curr.world.GetTileAt(curr.x, curr.y - dY).movementCost == 0)
+                {//北或南是不可行的，因此这将是一个斜角的运动。
+                    return true;
+                }
+
+                //如果我们到达这里，我们是对角线，但不是斜角
+            }
+            //如果我们在这里，我们要么不斜角，要么不对角
+            return false;
+        }
     }
 }

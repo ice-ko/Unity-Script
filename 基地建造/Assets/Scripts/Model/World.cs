@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class World
+public class World : IXmlSerializable
 {
     Tile[,] tiles;
     //人物
     List<Character> charactersList;
     //用于导航我们的世界地图的寻路图。
-    Path_TileGraph tileGraph;
+    public Path_TileGraph tileGraph;
 
     Dictionary<string, Furniture> furniturePrototype = new Dictionary<string, Furniture>();
     //地图宽高
@@ -71,9 +74,9 @@ public class World
     /// <returns></returns>
     public Tile GetTileAt(int x, int y)
     {
-        if (x > width || x < 0 || y > height || y < 0)
+        if (x >= width || x < 0 || y >= height || y < 0)
         {
-            Debug.LogError("Tile (" + x + "," + y + ") is out of range.");
+            //Debug.LogError("Tile (" + x + "," + y + ") is out of range.");
             return null;
         }
         return tiles[x, y];
@@ -245,5 +248,30 @@ public class World
                 }
             }
         }
+    }
+
+    public XmlSchema GetSchema()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ReadXml(XmlReader reader)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void WriteXml(XmlWriter writer)
+    {
+        writer.WriteAttributeString("Width", width.ToString());
+        writer.WriteAttributeString("Height", height.ToString());
+
+        //writer.WriteStartAttribute("Width");
+        //writer.WriteValue(width);
+        //writer.WriteEndElement();
+    }
+
+    public World()
+    {
+
     }
 }
