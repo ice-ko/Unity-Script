@@ -36,6 +36,7 @@ public class TileSpriteController : MonoBehaviour
                 sprite.sortingLayerName = "Tiles";
                 tile_go.transform.parent = transform;
                 //
+                OnTileTypeChanged(tile_data);
             }
         }
 

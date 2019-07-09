@@ -19,12 +19,17 @@ public class FurnitureSpriteController : MonoBehaviour
 
         //注册委托
         world.RegisterFurnitureCreated(OnFurnitureCreated);
+
+        foreach (Furniture item in world.furnituresList)
+        {
+            OnFurnitureCreated(item);
+        }
     }
     void LoadSprites()
     {
         //加载Sprite
         furnitureSprite = new Dictionary<string, Sprite>();
-        Sprite[] sprites = Resources.LoadAll<Sprite>("Images/Furniture/Wall");
+        Sprite[] sprites = Resources.LoadAll<Sprite>("Images/Furniture");
         foreach (var item in sprites)
         {
             furnitureSprite.Add(item.name, item);

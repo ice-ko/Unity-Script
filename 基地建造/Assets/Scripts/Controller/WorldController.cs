@@ -13,7 +13,7 @@ public class WorldController : MonoBehaviour
 
     public World world;
 
-    bool loadWorld = false;
+    static bool loadWorld = false;
 
     void Awake()
     {
@@ -69,28 +69,39 @@ public class WorldController : MonoBehaviour
     /// </summary>
     public void SaveWorld()
     {
-        XmlSerializer serializer = new XmlSerializer(typeof(World));
-        TextWriter writer = new StringWriter();
-        serializer.Serialize(writer, world);
-        writer.Close();
-
-        Debug.Log(writer.ToString());
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(World));
+            TextWriter writer = new StringWriter();
+            serializer.Serialize(writer, world);
+            writer.Close();
+            Debug.Log(writer.ToString());
+            PlayerPrefs.SetString("SaveGame00", writer.ToString());
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+     
     }
     /// <summary>
     /// 加载
     /// </summary>
     public void LoadWorld()
     {
-        loadWorld = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        loadWorld = true;
     }
     /// <summary>
     /// 创建
     /// </summary>
     public void CreateWorldFromSaveFile()
     {
-        world = new World(100,100);
-
+        XmlSerializer serializer = new XmlSerializer(typeof(World));
+        TextReader reader = new StringReader(PlayerPrefs.GetString("SaveGame00"));
+        Debug.Log(reader.ToString());
+        world = (World)serializer.Deserialize(reader);
+        reader.Close();
         //设置摄像机位置
         Camera.main.transform.position = new Vector3(world.width / 2, world.height / 2, Camera.main.transform.position.z);
     }

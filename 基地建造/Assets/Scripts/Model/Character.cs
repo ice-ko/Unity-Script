@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 using UnityEngine;
 
 /// <summary>
 /// 人物信息
 /// </summary>
-public class Character
+public class Character : IXmlSerializable
 {
     public float X
     {
@@ -66,7 +69,7 @@ public class Character
             }
         }
         // 我们到了吗？
-         if (currTile == destTile)
+        if (currTile == destTile)
         //if (path_AStar != null && path_AStar.Length() == 1)
         {
             if (myJob != null)
@@ -99,27 +102,43 @@ public class Character
                     path_AStar = null;
                     return;
                 }
+                //获取下一个路径tile
+                nextTile = path_AStar.Dequeue();
             }
             //获取下一个路径tile
             nextTile = path_AStar.Dequeue();
 
         }
-        //距离目标还是一个路径节点时返回
-        //if (path_AStar.Length() == 1)
-        //{
-        //    return;
-        //}
+        if (nextTile.IsEnterable() == Enterability.Never)
+        {
+            //很可能是墙建成了，所以我们只需要重置我们的寻路信息。
+            // FIXME：理想情况下，当墙壁产生时，我们应立即使路径无效，
+            //这样我们就不会浪费一大堆时间走向死胡同。
+            //为了节省CPU，也许我们只能经常检查？
+            //或者我们应该注册OnTileChanged事件的回调？
+            nextTile = null;
+            path_AStar = null;
+            return;
+        }
+        else if (nextTile.IsEnterable() == Enterability.Soon)
+        {
+            //我们现在无法进入，但我们应该可以进入
+            //未来 这可能是一个DOOR。
+            //所以我们不要保佑我们的运动/路径，但我们确实会回来
+            //现在并不实际处理运动。
+            return;
+        }
         //从A点到B点的总距离是多少？
         //我们将使用欧几里德距离现在......
         //但是当我们进行寻路系统时，我们很可能会这样做
         //切换到曼哈顿或切比雪夫的距离
         float distToTravel = Mathf.Sqrt(
-            Mathf.Pow(currTile.x - destTile.x, 2)
-            + Mathf.Pow(currTile.y - destTile.y, 2)
+            Mathf.Pow(currTile.x - nextTile.x, 2)
+            + Mathf.Pow(currTile.y - nextTile.y, 2)
             );
 
-        // 这个更新可以运动多长时间？
-        float distThisFrame = speed * deltaTime;
+        // 移动速度（通过门的时 缓慢通过）
+        float distThisFrame = speed / nextTile.movementCost * deltaTime;
 
         // 到目的地的需要多久？
         float percThisFrame = distThisFrame / distToTravel;
@@ -191,5 +210,21 @@ public class Character
             return;
         }
         myJob = null;
+    }
+
+    public XmlSchema GetSchema()
+    {
+        return null;
+    }
+
+    public void ReadXml(XmlReader reader)
+    {
+
+    }
+
+    public void WriteXml(XmlWriter writer)
+    {
+        writer.WriteAttributeString("X", X.ToString());
+        writer.WriteAttributeString("Y", Y.ToString());
     }
 }

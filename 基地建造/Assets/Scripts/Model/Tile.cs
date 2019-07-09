@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class Tile
+public class Tile : IXmlSerializable
 {
-    TileType tileType = TileType.Empty;
+    TileType _type = TileType.Empty;
 
     public TileType TileType
     {
         get
         {
-            return tileType;
+            return _type;
         }
         set
         {
-            tileType = value;
-            cbTileTypeChanged(this);
+            TileType oldType = _type;
+            _type = value;
+            if (cbTileTypeChanged != null && oldType != _type)
+            {
+                cbTileTypeChanged(this);
+            }
+
         }
     }
 
@@ -29,11 +37,12 @@ public class Tile
     public int x;
     public int y;
 
+
     public float movementCost
     {
         get
         {
-            if (tileType == TileType.Empty)
+            if (_type == TileType.Empty)
             {
                 return 0;
             }
@@ -41,7 +50,7 @@ public class Tile
             {
                 return 1;
             }
-            return 1 * furniture.movementedCost;
+            return 1 * furniture.movementCost;
         }
     }
 
@@ -127,7 +136,8 @@ public class Tile
 	/// </summary>
 	/// <returns>返回邻居tile。</returns>
 	/// <param name="diagOkay">是否对角线运动？.</param>
-    public Tile[] GetNeighbours(bool diagOkay) {
+    public Tile[] GetNeighbours(bool diagOkay)
+    {
         Tile[] tiles;
         if (!diagOkay)
         {
@@ -142,29 +152,60 @@ public class Tile
         Tile n;
         //可以为null，但没关系。
         n = world.GetTileAt(x, y + 1);
-        tiles[0] = n;  
+        tiles[0] = n;
         n = world.GetTileAt(x + 1, y);
-        tiles[1] = n;  
+        tiles[1] = n;
         n = world.GetTileAt(x, y - 1);
-        tiles[2] = n;  
+        tiles[2] = n;
         n = world.GetTileAt(x - 1, y);
-        tiles[3] = n; 
+        tiles[3] = n;
 
         if (diagOkay == true)
         {
             //可以为null，但没关系。
             n = world.GetTileAt(x + 1, y + 1);
-            tiles[4] = n; 
-            n = world.GetTileAt(x + 1,y - 1);
-            tiles[5] = n;  
+            tiles[4] = n;
+            n = world.GetTileAt(x + 1, y - 1);
+            tiles[5] = n;
             n = world.GetTileAt(x - 1, y - 1);
-            tiles[6] = n; 
+            tiles[6] = n;
             n = world.GetTileAt(x - 1, y + 1);
-            tiles[7] = n; 
+            tiles[7] = n;
         }
 
         return tiles;
     }
+
+    public XmlSchema GetSchema()
+    {
+        return null;
+    }
+
+    public void ReadXml(XmlReader reader)
+    {
+        TileType = (TileType)int.Parse(reader.GetAttribute("Type"));
+    }
+
+    public void WriteXml(XmlWriter writer)
+    {
+        writer.WriteAttributeString("X", x.ToString());
+        writer.WriteAttributeString("Y", y.ToString());
+        writer.WriteAttributeString("Type", ((int)TileType).ToString());
+    }
+
+    public Enterability IsEnterable()
+    {
+        if (movementCost == 0)
+        {
+            return Enterability.Never;
+        }
+        if (furniture!=null&&furniture.IsEnterable!=null)
+        {
+            return furniture.IsEnterable(furniture);
+        }
+        return Enterability.Yes;
+    }
+
 }
 /// <summary>
 /// 类型
@@ -180,4 +221,8 @@ public enum TileType
     /// </summary>
     Floor
 
+}
+public enum Enterability
+{
+    Yes, Never, Soon
 }

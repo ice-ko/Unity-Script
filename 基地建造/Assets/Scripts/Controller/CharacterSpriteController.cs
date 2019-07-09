@@ -16,7 +16,14 @@ public class CharacterSpriteController : MonoBehaviour
 
         //注册委托
         world.RegisterCharacterCreated(OnCharacterCreated);
-        Character character = world.CreateCharacter(world.GetTileAt(world.width / 2, world.height / 2));
+
+        //创建角色
+        foreach (Character item in world.charactersList)
+        {
+            OnCharacterCreated(item);
+        }
+
+       // Character character = world.CreateCharacter(world.GetTileAt(world.width / 2, world.height / 2));
        // character.SetDestination(world.GetTileAt(world.width / 2 + 5, world.height / 2));
     }
 

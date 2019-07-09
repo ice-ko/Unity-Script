@@ -1,12 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 using UnityEngine;
 
 /// <summary>
 /// Furnitures就像墙壁，门和家具（例如沙发）
 /// </summary>
-public class Furniture
+public class Furniture : IXmlSerializable
 {
+
+    public Dictionary<string, float> furnParameters;
+    public System.Action<Furniture, float> updateActions;
+    public System.Func<Furniture,Enterability> IsEnterable;
+
+    public void Update(float deltaTime)
+    {
+        Debug.Log("Update: " + updateActions);
+        if (updateActions != null)
+        {
+            updateActions(this, deltaTime);
+        }
+    }
+
     //这表示对象的BASE图块 - 但实际上，大对象实际上可能占用
     //多层瓷砖
     public Tile tile;
@@ -17,39 +34,56 @@ public class Furniture
     //例如，一张“粗糙”的瓷砖（成本为2），表格（成本为3）着火（成本为3）
     //总移动成本为（2 + 3 + 3 = 8），因此您将以1/8正常速度移动此平铺。
     // SPECIAL：如果movementCost = 0，则此图块无法通过。 （例如墙）。
-    float movementCost = 1f;
+    public float movementCost = 5f;
     //例如，沙发可能是3x2（实际图形似乎只覆盖3x1区域，但额外的行是用于腿部空间。）
     int width;
     int height;
     //链接到邻居
     public bool linksToNeighbour = false;
-    public float movementedCost;
     //
     System.Action<Furniture> cbOnChanged;
     //位置验证
     public System.Func<Tile, bool> funcPositionValidation;
 
+    public Furniture()
+    {
+        furnParameters = new Dictionary<string, float>();
+    }
+    public Furniture(Furniture other)
+    {
+        this.objectType = other.objectType;
+        this.movementCost = other.movementCost;
+        this.width = other.width;
+        this.height = other.height;
+        this.linksToNeighbour = other.linksToNeighbour;
+
+        this.furnParameters = new Dictionary<string, float>(other.furnParameters);
+        if (other.updateActions != null)
+        {
+            this.updateActions = (System.Action<Furniture, float>)other.updateActions.Clone();
+        }
+        this.IsEnterable = other.IsEnterable;
+    }
     /// <summary>
-    /// 创建原型
+    /// 创建家具建造
     /// </summary>
     /// <param name="objectType">类型</param>
-    /// <param name="movementCost">是否可以移动</param>
+    /// <param name="linksToNeighbour"></param>
+    /// <param name="movementCost">移动速度</param>
     /// <param name="width"></param>
     /// <param name="height"></param>
     /// <returns></returns>
-    public static Furniture CreatePrototype(string objectType, bool linksToNeighbour, float movementCost = 1f, int width = 1,
+    public Furniture(string objectType, bool linksToNeighbour, float movementCost = 1f, int width = 1,
     int height = 1)
     {
-        var info = new Furniture
-        {
-            objectType = objectType,
-            movementCost = movementCost,
-            width = width,
-            height = height,
-            linksToNeighbour = linksToNeighbour,
-        };
-        info.funcPositionValidation = info.IsValidPosition;
-        return info;
+        this.objectType = objectType;
+        this.movementCost = movementCost;
+        this.width = width;
+        this.height = height;
+        this.linksToNeighbour = linksToNeighbour;
+        this.funcPositionValidation = this.__IsValidPosition;
+
+        furnParameters = new Dictionary<string, float>();
     }
     /// <summary>
     /// 放置对象
@@ -59,21 +93,13 @@ public class Furniture
     /// <returns></returns>
     public static Furniture PlaceObject(Furniture proto, Tile tile)
     {
-        if (!proto.funcPositionValidation(tile))
+        if (proto.funcPositionValidation != null && !proto.funcPositionValidation(tile))
         {
             //Debug.LogError("PlaceObject  - 位置有效性函数返回FALSE。");
             return null;
         }
-        var info = new Furniture
-        {
-            objectType = proto.objectType,
-            movementCost = proto.movementCost,
-            width = proto.width,
-            height = proto.height,
-            linksToNeighbour = proto.linksToNeighbour,
-            tile = tile
-        };
-
+        Furniture info = proto.Clone();
+        info.tile = tile;
         if (tile.PlaceObject(info) == false)
         {
             return null;
@@ -91,17 +117,17 @@ public class Furniture
                 t.furniture.cbOnChanged(t.furniture);
             }
             t = tile.world.GetTileAt(x + 1, y);
-            if (t != null && t.furniture != null && t.furniture.objectType == info.objectType)
+            if (t != null && t.furniture != null && t.furniture.cbOnChanged != null && t.furniture.objectType == info.objectType)
             {
                 t.furniture.cbOnChanged(t.furniture);
             }
             t = tile.world.GetTileAt(x, y - 1);
-            if (t != null && t.furniture != null && t.furniture.objectType == info.objectType)
+            if (t != null && t.furniture != null && t.furniture.cbOnChanged != null && t.furniture.objectType == info.objectType)
             {
                 t.furniture.cbOnChanged(t.furniture);
             }
             t = tile.world.GetTileAt(x - 1, y);
-            if (t != null && t.furniture != null && t.furniture.objectType == info.objectType)
+            if (t != null && t.furniture != null && t.furniture.cbOnChanged != null && t.furniture.objectType == info.objectType)
             {
                 t.furniture.cbOnChanged(t.furniture);
             }
@@ -127,22 +153,71 @@ public class Furniture
     }
     public bool IsValidPosition(Tile tile)
     {
-        if (tile.TileType != TileType.Floor)
+        return funcPositionValidation(tile);
+    }
+    public bool __IsValidPosition(Tile t)
+    {
+        //确保瓷砖是FLOOR
+        if (t.TileType != TileType.Floor)
         {
             return false;
         }
-        if (tile.furniture != null)
+        //确保瓷砖还没有家具
+        if (t.furniture != null)
         {
             return false;
         }
+
         return true;
     }
     public bool IsValidPosition_Door(Tile tile)
     {
-        if (!IsValidPosition(tile))
+        if (!__IsValidPosition(tile))
         {
             return false;
         }
         return true;
     }
+
+    public XmlSchema GetSchema()
+    {
+        return null;
+    }
+
+    public void ReadXml(XmlReader reader)
+    {
+
+        objectType = reader.GetAttribute("objectType");
+        movementCost = float.Parse(reader.GetAttribute("movementCost"));
+        if (reader.ReadToDescendant("Param"))
+        {
+            do
+            {
+                var k = reader.GetAttribute("Name");
+                var v =int.Parse(reader.GetAttribute("Value"));
+                furnParameters[k] = v;
+            } while (reader.ReadToNextSibling("Param"));
+        }
+    }
+
+    public void WriteXml(XmlWriter writer)
+    {
+        writer.WriteAttributeString("X", tile.x.ToString());
+        writer.WriteAttributeString("Y", tile.y.ToString());
+        writer.WriteAttributeString("objectType", objectType);
+        writer.WriteAttributeString("movementCost", movementCost.ToString());
+        foreach (string item in furnParameters.Keys)
+        {
+            writer.WriteStartElement("Param");
+            writer.WriteAttributeString("Name",item);
+            writer.WriteAttributeString("Value", furnParameters[item].ToString());
+            writer.WriteEndElement();
+        }
+    }
+    virtual public Furniture Clone()
+    {
+        return new Furniture(this);
+    }
+
+
 }

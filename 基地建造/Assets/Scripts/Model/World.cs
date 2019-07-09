@@ -10,11 +10,12 @@ public class World : IXmlSerializable
 {
     Tile[,] tiles;
     //人物
-    List<Character> charactersList;
+    public List<Character> charactersList;
+    public List<Furniture> furnituresList;
     //用于导航我们的世界地图的寻路图。
     public Path_TileGraph tileGraph;
 
-    Dictionary<string, Furniture> furniturePrototype = new Dictionary<string, Furniture>();
+    Dictionary<string, Furniture> furniturePrototypes = new Dictionary<string, Furniture>();
     //地图宽高
     public int width;
     public int height;
@@ -34,6 +35,11 @@ public class World : IXmlSerializable
     ///</ summary>
     public World(int width = 100, int height = 100)
     {
+        SetupWorld(width, height);
+        Character character = CreateCharacter(GetTileAt(width / 2, height / 2));
+    }
+    void SetupWorld(int width, int height)
+    {
         jobsQueue = new JobQueue();
 
         this.width = width;
@@ -52,21 +58,36 @@ public class World : IXmlSerializable
         CreateFurniturePrototype();
 
         charactersList = new List<Character>();
+        furnituresList = new List<Furniture>();
+
         var characterInfo = new Character(this.tiles[width / 2, height / 2]);
     }
-
     public void Update(float deltaTime)
     {
         foreach (Character item in charactersList)
         {
             item.Update(deltaTime);
         }
+        foreach (Furniture item in furnituresList)
+        {
+            item.Update(deltaTime);
+        }
     }
+    /// <summary>
+    /// 创建房屋家具字典
+    /// </summary>
     void CreateFurniturePrototype()
     {
-        // 类型、是否可以链接邻居、是否可以移动、宽、高（墙，不能移动，1,1）
-        Furniture wallPrototype = Furniture.CreatePrototype("Wall", true, 0, 1, 1);
-        furniturePrototype.Add("Wall", wallPrototype);
+        // 类型、是否可以链接邻居、移动速度、宽、高（墙，移动速度，宽，高）
+        furniturePrototypes.Add("Wall", new Furniture("Wall", true, 0, 1, 1));
+        furniturePrototypes.Add("Door", new Furniture("Door", false, 1, 1, 1));
+
+        furniturePrototypes["Door"].furnParameters["openess"] = 0;
+        furniturePrototypes["Door"].furnParameters["is_opening"] = 0;
+        Debug.Log("ddd");
+        furniturePrototypes["Door"].updateActions += FurnitureActions.Door_UpdateAction;
+
+        furniturePrototypes["Door"].IsEnterable = FurnitureActions.Door_IsEnterable;
     }
     /// <summary>
     /// 获取tile
@@ -106,24 +127,28 @@ public class World : IXmlSerializable
     /// </summary>
     /// <param name="objecttype"></param>
     /// <param name="tile"></param>
-    public void PlaceFurniture(string objecttype, Tile tile)
+    public Furniture PlaceFurniture(string objecttype, Tile tile)
     {
-        if (!furniturePrototype.ContainsKey(objecttype))
+        if (!furniturePrototypes.ContainsKey(objecttype))
         {
-            return;
+            return null;
         }
-        Furniture obj = Furniture.PlaceObject(furniturePrototype[objecttype], tile);
+        Furniture furniture = Furniture.PlaceObject(furniturePrototypes[objecttype], tile);
 
-        if (obj == null)
+        if (furniture == null)
         {
-            return;
+            return null;
         }
+
+        furnituresList.Add(furniture);
+
         if (cbFurnitureCreated != null)
         {
-            cbFurnitureCreated(obj);
+            cbFurnitureCreated(furniture);
             //重置寻路点
             InvalidateTileGraph();
         }
+        return furniture;
     }
     /// <summary>
     /// 注册已创建的 Furniture
@@ -200,15 +225,15 @@ public class World : IXmlSerializable
     /// <returns></returns>
     public bool IsFurniturePlacementValid(string furnitureType, Tile tile)
     {
-        return furniturePrototype[furnitureType].funcPositionValidation(tile);
+        return furniturePrototypes[furnitureType].IsValidPosition(tile);
     }
     public Furniture GetFurniture(string objectType)
     {
-        if (!furniturePrototype.ContainsKey(objectType))
+        if (!furniturePrototypes.ContainsKey(objectType))
         {
             return null;
         }
-        return furniturePrototype[objectType];
+        return furniturePrototypes[objectType];
     }
     /// <summary>
     /// Character改变时调用委托
@@ -218,7 +243,7 @@ public class World : IXmlSerializable
     {
         Character character = new Character(tile);
         charactersList.Add(character);
-        if (character != null)
+        if (character != null && cbCharacterCreated != null)
         {
             cbCharacterCreated(character);
         }
@@ -249,27 +274,135 @@ public class World : IXmlSerializable
             }
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public XmlSchema GetSchema()
     {
-        throw new NotImplementedException();
+        return null;
     }
-
+    /// <summary>
+    /// 读取xml
+    /// </summary>
+    /// <param name="reader"></param>
     public void ReadXml(XmlReader reader)
     {
-        throw new NotImplementedException();
-    }
+        width = int.Parse(reader.GetAttribute("Width"));
+        height = int.Parse(reader.GetAttribute("Height"));
 
+        SetupWorld(width, height);
+
+        while (reader.Read())
+        {
+            switch (reader.Name)
+            {
+                case "Tiles":
+                    ReadXml_Tiles(reader);
+                    break;
+                case "Furnitures":
+                    ReadXml_Furnitures(reader);
+                    break;
+                case "Characters":
+                    ReadXml_Characters(reader);
+                    break;
+            }
+        }
+    }
+    /// <summary>
+    /// 写入xml
+    /// </summary>
+    /// <param name="writer"></param>
     public void WriteXml(XmlWriter writer)
     {
         writer.WriteAttributeString("Width", width.ToString());
         writer.WriteAttributeString("Height", height.ToString());
 
-        //writer.WriteStartAttribute("Width");
-        //writer.WriteValue(width);
-        //writer.WriteEndElement();
+        writer.WriteStartElement("Tiles");
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (tiles[x, y].TileType!=TileType.Empty)
+                {
+                    writer.WriteStartElement("Tile");
+                    tiles[x, y].WriteXml(writer);
+                    writer.WriteEndElement();
+                }
+             
+            }
+        }
+        writer.WriteEndElement();
+
+        writer.WriteStartElement("Furnitures");
+        foreach (Furniture furn in furnituresList)
+        {
+            writer.WriteStartElement("Furniture");
+            furn.WriteXml(writer);
+            writer.WriteEndElement();
+
+        }
+        writer.WriteEndElement();
+
+        writer.WriteStartElement("Characters");
+        foreach (Character c in charactersList)
+        {
+            writer.WriteStartElement("Character");
+            c.WriteXml(writer);
+            writer.WriteEndElement();
+
+        }
+        writer.WriteEndElement();
+    }
+    /// <summary>
+    /// 读取tile xml
+    /// </summary>
+    /// <param name="reader"></param>
+    void ReadXml_Tiles(XmlReader reader)
+    {
+        if (reader.ReadToDescendant("Tile"))
+        {
+            do
+            {
+                int x = int.Parse(reader.GetAttribute("X"));
+                int y = int.Parse(reader.GetAttribute("Y"));
+                tiles[x, y].ReadXml(reader);
+            } while (reader.ReadToNextSibling("Tile"));
+        }
+
+
     }
 
+    void ReadXml_Furnitures(XmlReader reader)
+    {
+        if (reader.ReadToDescendant("Furniture"))
+        {
+            do
+            {
+                int x = int.Parse(reader.GetAttribute("X"));
+                int y = int.Parse(reader.GetAttribute("Y"));
+                Furniture furn = PlaceFurniture(reader.GetAttribute("objectType"), tiles[x, y]);
+                furn.ReadXml(reader);
+            }
+            while (reader.ReadToNextSibling("Furniture"));
+        }
+
+
+    }
+    void ReadXml_Characters(XmlReader reader)
+    {
+        if (reader.ReadToDescendant("Character"))
+        {
+            do
+            {
+                int x = int.Parse(reader.GetAttribute("X"));
+                int y = int.Parse(reader.GetAttribute("Y"));
+
+                Character c = CreateCharacter(tiles[x, y]);
+                c.ReadXml(reader);
+            } while (reader.ReadToNextSibling("Character"));
+        }
+    }
     public World()
     {
 
