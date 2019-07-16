@@ -69,13 +69,9 @@ public class Character : IXmlSerializable
             }
         }
         // 我们到了吗？
-        if (currTile == destTile)
-        //if (path_AStar != null && path_AStar.Length() == 1)
+        if (myJob != null && currTile == destTile)
         {
-            if (myJob != null)
-            {
-                myJob.DoWork(deltaTime);
-            }
+            myJob.DoWork(deltaTime);
         }
     }
     /// <summary>

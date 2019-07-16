@@ -13,11 +13,10 @@ public class Furniture : IXmlSerializable
 
     public Dictionary<string, float> furnParameters;
     public System.Action<Furniture, float> updateActions;
-    public System.Func<Furniture,Enterability> IsEnterable;
+    public System.Func<Furniture, Enterability> IsEnterable;
 
     public void Update(float deltaTime)
     {
-        Debug.Log("Update: " + updateActions);
         if (updateActions != null)
         {
             updateActions(this, deltaTime);
@@ -35,13 +34,15 @@ public class Furniture : IXmlSerializable
     //总移动成本为（2 + 3 + 3 = 8），因此您将以1/8正常速度移动此平铺。
     // SPECIAL：如果movementCost = 0，则此图块无法通过。 （例如墙）。
     public float movementCost = 5f;
+    //房间附件
+    public bool roomEnclosure;
     //例如，沙发可能是3x2（实际图形似乎只覆盖3x1区域，但额外的行是用于腿部空间。）
     int width;
     int height;
     //链接到邻居
     public bool linksToNeighbour = false;
     //
-    System.Action<Furniture> cbOnChanged;
+    public System.Action<Furniture> cbOnChanged;
     //位置验证
     public System.Func<Tile, bool> funcPositionValidation;
 
@@ -74,7 +75,7 @@ public class Furniture : IXmlSerializable
     /// <param name="height"></param>
     /// <returns></returns>
     public Furniture(string objectType, bool linksToNeighbour, float movementCost = 1f, int width = 1,
-    int height = 1)
+    int height = 1, bool roomEnclosure = false)
     {
         this.objectType = objectType;
         this.movementCost = movementCost;
@@ -82,6 +83,7 @@ public class Furniture : IXmlSerializable
         this.height = height;
         this.linksToNeighbour = linksToNeighbour;
         this.funcPositionValidation = this.__IsValidPosition;
+        this.roomEnclosure = roomEnclosure;
 
         furnParameters = new Dictionary<string, float>();
     }
@@ -194,7 +196,7 @@ public class Furniture : IXmlSerializable
             do
             {
                 var k = reader.GetAttribute("Name");
-                var v =int.Parse(reader.GetAttribute("Value"));
+                var v = int.Parse(reader.GetAttribute("Value"));
                 furnParameters[k] = v;
             } while (reader.ReadToNextSibling("Param"));
         }
@@ -209,7 +211,7 @@ public class Furniture : IXmlSerializable
         foreach (string item in furnParameters.Keys)
         {
             writer.WriteStartElement("Param");
-            writer.WriteAttributeString("Name",item);
+            writer.WriteAttributeString("Name", item);
             writer.WriteAttributeString("Value", furnParameters[item].ToString());
             writer.WriteEndElement();
         }

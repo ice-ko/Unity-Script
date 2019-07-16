@@ -9,28 +9,33 @@ public static class FurnitureActions
 {
     public static void Door_UpdateAction(Furniture furn, float deltaTime)
     {
-       Debug.Log("Door_UpdateAction: " + furn.furnParameters["openess"]);
+
         if (furn.furnParameters["is_opening"] >= 1)
         {
-            furn.furnParameters["openess"] += deltaTime;
-            if (furn.furnParameters["openess"] >= 1)
+            furn.furnParameters["openness"] += deltaTime * 4;   // FIXME: Maybe a door open speed parameter?
+            if (furn.furnParameters["openness"] >= 1)
             {
                 furn.furnParameters["is_opening"] = 0;
             }
         }
         else
         {
-            furn.furnParameters["openess"] -= deltaTime;
+            furn.furnParameters["openness"] -= deltaTime * 4;
         }
 
-        furn.furnParameters["openess"] = Mathf.Clamp01(furn.furnParameters["openess"]);
+        furn.furnParameters["openness"] = Mathf.Clamp01(furn.furnParameters["openness"]);
+
+        if (furn.cbOnChanged != null)
+        {
+            furn.cbOnChanged(furn);
+        }
     }
 
     public static Enterability Door_IsEnterable(Furniture furn)
     {
         furn.furnParameters["is_opening"] = 1;
 
-        if (furn.furnParameters["openess"] >= 1)
+        if (furn.furnParameters["openness"] >= 1)
         {
             return Enterability.Yes;
         }

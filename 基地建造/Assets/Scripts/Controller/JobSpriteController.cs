@@ -36,6 +36,24 @@ public class JobSpriteController : MonoBehaviour
         sprite.sprite = furniture.GetSpriteFurniture(job.jobObjectType);
         sprite.color = new Color(1f, 1f, 1f, 0.25f);
         sprite.sortingLayerName = "Jobs";
+
+        if (job.jobObjectType == "Door")
+        {
+            //上边的tile
+            Tile upTile = job.tile.world.GetTileAt(job.tile.x, job.tile.y + 1);
+            //下边的tile
+            Tile downTile = job.tile.world.GetTileAt(job.tile.x, job.tile.y - 1);
+            if (upTile != null && downTile != null && upTile.furniture != null && downTile.furniture != null)
+            {
+                if (upTile.furniture.objectType == "Wall" && downTile.furniture.objectType == "Wall")
+                {
+                    //旋转90度
+                    job_go.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    //缩放
+                    job_go.transform.Translate(1f, 0, 0, Space.World);
+                }
+            }
+        }
         //注册委托
         job.RegisterJobCompleteCallback(OnJobEnded);
         job.RegisterJobCancelCallback(OnJobEnded);

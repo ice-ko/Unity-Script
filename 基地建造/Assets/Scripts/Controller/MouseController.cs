@@ -33,6 +33,14 @@ public class MouseController : MonoBehaviour
         lastFramePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lastFramePosition.z = 0;
     }
+    public Vector3 GetMousePosition()
+    {
+        return currFramePosition;
+    }
+    public Tile GetMouseOverTile()
+    {
+        return WorldController.instance.world.GetTileAt((int)currFramePosition.x, (int)currFramePosition.y);
+    }
     /// <summary>
     ///获取当前位置的tile
     /// </summary>

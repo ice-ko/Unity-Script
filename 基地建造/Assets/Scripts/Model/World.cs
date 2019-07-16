@@ -11,7 +11,10 @@ public class World : IXmlSerializable
     Tile[,] tiles;
     //人物
     public List<Character> charactersList;
+    //建筑家具
     public List<Furniture> furnituresList;
+    //房间
+    public List<Room> roomsList;
     //用于导航我们的世界地图的寻路图。
     public Path_TileGraph tileGraph;
 
@@ -38,6 +41,23 @@ public class World : IXmlSerializable
         SetupWorld(width, height);
         Character character = CreateCharacter(GetTileAt(width / 2, height / 2));
     }
+    public Room GetOutsideRoom()
+    {
+        return roomsList[0];
+    }
+    public void DeleteRoom(Room r)
+    {
+        if (r == GetOutsideRoom())
+        {
+            return;
+        }
+        roomsList.Remove(r);
+        r.UnAssignAllTiles();
+    }
+    public void AddRoom(Room r)
+    {
+        roomsList.Add(r);
+    }
     void SetupWorld(int width, int height)
     {
         jobsQueue = new JobQueue();
@@ -46,12 +66,17 @@ public class World : IXmlSerializable
         this.height = height;
 
         tiles = new Tile[width, height];
+        //
+        roomsList = new List<Room>();
+        roomsList.Add(new Room());
+        //
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
                 tiles[x, y] = new Tile(this, x, y);
                 tiles[x, y].RegisterTileTypeChangedCallback(OnTileChanged);
+                tiles[x, y].room = GetOutsideRoom();
             }
         }
 
@@ -79,12 +104,11 @@ public class World : IXmlSerializable
     void CreateFurniturePrototype()
     {
         // 类型、是否可以链接邻居、移动速度、宽、高（墙，移动速度，宽，高）
-        furniturePrototypes.Add("Wall", new Furniture("Wall", true, 0, 1, 1));
-        furniturePrototypes.Add("Door", new Furniture("Door", false, 1, 1, 1));
+        furniturePrototypes.Add("Wall", new Furniture("Wall", true, 0, 1, 1, true));
+        furniturePrototypes.Add("Door", new Furniture("Door", false, 1, 1, 1, true));
 
-        furniturePrototypes["Door"].furnParameters["openess"] = 0;
+        furniturePrototypes["Door"].furnParameters["openness"] = 0;
         furniturePrototypes["Door"].furnParameters["is_opening"] = 0;
-        Debug.Log("ddd");
         furniturePrototypes["Door"].updateActions += FurnitureActions.Door_UpdateAction;
 
         furniturePrototypes["Door"].IsEnterable = FurnitureActions.Door_IsEnterable;
@@ -141,12 +165,19 @@ public class World : IXmlSerializable
         }
 
         furnituresList.Add(furniture);
+        if (furniture.roomEnclosure)
+        {
+            Room.DoRoomFloodFill(furniture);
+        }
 
         if (cbFurnitureCreated != null)
         {
             cbFurnitureCreated(furniture);
-            //重置寻路点
-            InvalidateTileGraph();
+            if (furniture.movementCost != 1)
+            {
+                //重置寻路点
+                InvalidateTileGraph();
+            }
         }
         return furniture;
     }
@@ -323,13 +354,13 @@ public class World : IXmlSerializable
         {
             for (int y = 0; y < height; y++)
             {
-                if (tiles[x, y].TileType!=TileType.Empty)
+                if (tiles[x, y].TileType != TileType.Empty)
                 {
                     writer.WriteStartElement("Tile");
                     tiles[x, y].WriteXml(writer);
                     writer.WriteEndElement();
                 }
-             
+
             }
         }
         writer.WriteEndElement();

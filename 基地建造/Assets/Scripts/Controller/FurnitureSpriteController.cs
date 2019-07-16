@@ -38,62 +38,97 @@ public class FurnitureSpriteController : MonoBehaviour
     /// <summary>
     /// 创建Furniture
     /// </summary>
-    /// <param name="obj"></param>
-    public void OnFurnitureCreated(Furniture obj)
+    /// <param name="furn"></param>
+    public void OnFurnitureCreated(Furniture furn)
     {
         // 创建链接到此数据的可视GameObject。
-
-        // FIXME：不考虑多瓦片对象也不考虑旋转对象
-
-        //这会创建一个新的GameObject并将其添加到我们的场景中。
-        GameObject obj_go = new GameObject();
+        GameObject furn_go = new GameObject();
         //将我们的tile / GO对添加到字典中。
-        furnitureGameObjectMap.Add(obj, obj_go);
+        furnitureGameObjectMap.Add(furn, furn_go);
 
-        obj_go.name = obj.objectType + "_" + obj.tile.x + "_" + obj.tile.y;
-        obj_go.transform.position = new Vector3(obj.tile.x, obj.tile.y, 0);
-        obj_go.transform.parent = transform;
+        furn_go.name = furn.objectType + "_" + furn.tile.x + "_" + furn.tile.y;
+        furn_go.transform.position = new Vector3(furn.tile.x, furn.tile.y, 0);
+        furn_go.transform.parent = transform;
+
+        if (furn.objectType == "Door")
+        {
+            //上边的tile
+            Tile upTile = world.GetTileAt(furn.tile.x, furn.tile.y + 1);
+            //下边的tile
+            Tile downTile = world.GetTileAt(furn.tile.x, furn.tile.y - 1);
+            if (upTile != null && downTile != null && upTile.furniture != null && downTile.furniture != null)
+            {
+                if (upTile.furniture.objectType == "Wall" && downTile.furniture.objectType == "Wall")
+                {
+                    //旋转90度
+                    furn_go.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    //缩放
+                    furn_go.transform.Translate(1f,0,0,Space.World);
+                }
+            }
+        }
+
         // FIXME：我们假设对象必须是墙，所以请 
         //添加SpriteRenderer
-        var sr = obj_go.AddComponent<SpriteRenderer>();
-        sr.sprite = GetSpriteForFurniture(obj);
+        var sr = furn_go.AddComponent<SpriteRenderer>();
+        sr.sprite = GetSpriteForFurniture(furn);
         sr.sortingLayerName = "Furniture";
         //注册我们的回调，以便我们的GameObject随时更新
-        obj.RegisterOnChangedCallback(OnFurnitureChanged);
+        furn.RegisterOnChangedCallback(OnFurnitureChanged);
     }
     /// <summary>
     /// 获取已安装对象的精灵
     /// </summary>
-    /// <param name="obj"></param>
+    /// <param name="furn"></param>
     /// <returns></returns>
-    Sprite GetSpriteForFurniture(Furniture obj)
+    Sprite GetSpriteForFurniture(Furniture furn)
     {
-        if (!obj.linksToNeighbour)
+        var spriteName = furn.objectType;
+        if (!furn.linksToNeighbour)
         {
-            return furnitureSprite[obj.objectType];
+            if (furn.objectType == "Door")
+            {
+                if (furn.furnParameters["openness"] < 0.1f)
+                {
+                    spriteName = "Door";
+                }
+                else if (furn.furnParameters["openness"] < 0.5f)
+                {
+                    spriteName = "Door_open_1";
+                }
+                else if (furn.furnParameters["openness"] < 0.9f)
+                {
+                    spriteName = "Door_open_2";
+                }
+                else
+                {
+                    spriteName = "Door_open_3";
+                }
+            }
+            return furnitureSprite[spriteName];
         }
 
-        var spriteName = obj.objectType + "_";
+        spriteName = furn.objectType + "_";
         //判断方向
-        int x = obj.tile.x; int y = obj.tile.y;
+        int x = furn.tile.x; int y = furn.tile.y;
         Tile tile;
         tile = world.GetTileAt(x, y + 1);
-        if (tile != null && tile.furniture != null && tile.furniture.objectType == obj.objectType)
+        if (tile != null && tile.furniture != null && tile.furniture.objectType == furn.objectType)
         {
             spriteName += "N";
         }
         tile = world.GetTileAt(x + 1, y);
-        if (tile != null && tile.furniture != null && tile.furniture.objectType == obj.objectType)
+        if (tile != null && tile.furniture != null && tile.furniture.objectType == furn.objectType)
         {
             spriteName += "E";
         }
         tile = world.GetTileAt(x, y - 1);
-        if (tile != null && tile.furniture != null && tile.furniture.objectType == obj.objectType)
+        if (tile != null && tile.furniture != null && tile.furniture.objectType == furn.objectType)
         {
             spriteName += "S";
         }
         tile = world.GetTileAt(x - 1, y);
-        if (tile != null && tile.furniture != null && tile.furniture.objectType == obj.objectType)
+        if (tile != null && tile.furniture != null && tile.furniture.objectType == furn.objectType)
         {
             spriteName += "W";
         }

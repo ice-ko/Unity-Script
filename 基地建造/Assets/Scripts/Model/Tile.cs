@@ -33,11 +33,14 @@ public class Tile : IXmlSerializable
     LooseObject looseObject;
     public Furniture furniture;
 
+
     public World world;
+    public Room room;
+
     public int x;
     public int y;
-
-
+    //移动成本
+    const float baseTileMovementCost = 1;
     public float movementCost
     {
         get
@@ -48,9 +51,9 @@ public class Tile : IXmlSerializable
             }
             if (furniture == null)
             {
-                return 1;
+                return baseTileMovementCost;
             }
-            return 1 * furniture.movementCost;
+            return baseTileMovementCost * furniture.movementCost;
         }
     }
 
@@ -136,7 +139,7 @@ public class Tile : IXmlSerializable
 	/// </summary>
 	/// <returns>返回邻居tile。</returns>
 	/// <param name="diagOkay">是否对角线运动？.</param>
-    public Tile[] GetNeighbours(bool diagOkay)
+    public Tile[] GetNeighbours(bool diagOkay=false)
     {
         Tile[] tiles;
         if (!diagOkay)
@@ -199,13 +202,44 @@ public class Tile : IXmlSerializable
         {
             return Enterability.Never;
         }
-        if (furniture!=null&&furniture.IsEnterable!=null)
+        if (furniture != null && furniture.IsEnterable != null)
         {
             return furniture.IsEnterable(furniture);
         }
         return Enterability.Yes;
     }
-
+    /// <summary>
+    /// 北
+    /// </summary>
+    /// <returns></returns>
+    public Tile North()
+    {
+        return world.GetTileAt(x, y + 1);
+    }
+    /// <summary>
+    /// 南
+    /// </summary>
+    /// <returns></returns>
+    public Tile South()
+    {
+        return world.GetTileAt(x, y - 1);
+    }
+    /// <summary>
+    /// 东
+    /// </summary>
+    /// <returns></returns>
+    public Tile East()
+    {
+        return world.GetTileAt(x + 1, y);
+    }
+    /// <summary>
+    /// 西
+    /// </summary>
+    /// <returns></returns>
+    public Tile West()
+    {
+        return world.GetTileAt(x - 1, y);
+    }
 }
 /// <summary>
 /// 类型
