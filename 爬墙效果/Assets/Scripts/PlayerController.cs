@@ -4,125 +4,128 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 10f;//移动速度
-    public float jumpForce = 16f;//跳跃力
-    public float slideSpeed = 0.2f;//滑动速度
-    public float movementForceInAir = 10f;//空战的移动速度
-    public bool isGround;//是否在地面
-    public int amountOfJumps = 2;//跳跃次数
+    public float speed = 10f;
+    public float jumpForce = 10f;
+    //墙上滑行速度
+    public float wallSlideSpeed = 3f;
 
-    //
-    public Transform groundCheck;//地面检查位置
-    public float groundCheckRadius;//地面检查半径
-    public LayerMask whatIsGround;//检查的层
-    public Transform wallCheck;//墙检查位置
-    public float wallCheckDistance;//检查距离
-    //
-    private Rigidbody2D rig2d;
-    private Animator animator;
-    private float move;//移动方向
-    private int amountOfJumpsLeft;//已跳跃数
-    private bool isTouchingWall;//是否触碰到墙
 
-    private int facingDirection = 1;//当前朝向方向
-    private bool isFacingRight = true;
-    private bool isWallSliding;//是否在墙上滑行
+    public float wallJumpLerp = 10;
+
+    //是否跳跃
+    private bool isJump = false;
+    //抓住墙
+    public bool grabWall = false;
+    //墙上跳跃
+    public bool wallJumped = false;
+
+    private Rigidbody2D rb;
+    CollisionController collisionController;
     void Start()
     {
-        rig2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        amountOfJumps = amountOfJumpsLeft;
+        rb = GetComponent<Rigidbody2D>();
+        collisionController = GetComponent<CollisionController>();
+        // animator = GetComponent<Animator>();
     }
     void Update()
     {
+
+        if (collisionController.isWall && !collisionController.isGround && rb.velocity.y < 0)
+        {
+            if (rb.velocity.y < -wallSlideSpeed)
+            {
+                Vector2 speed = new Vector2(0, wallSlideSpeed);
+                rb.velocity = -speed;
+            }
+        }
+        //抓墙动作
+        if (Input.GetKeyDown(KeyCode.LeftShift) && collisionController.isWall)
+        {
+            rb.gravityScale = 0;
+            grabWall = true;
+        }
+        //松开抓墙动作
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            rb.gravityScale = 5;
+            grabWall = false;
+        }
+        //跳跃
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            isJump = true;
+            if (collisionController.isGround)
+            {
+                Jump(Vector2.up);
+            }
+            else if (collisionController.isWall)
+            {
+                WallJump();
+            }
         }
-        CheckIfWallSliding();
     }
     private void FixedUpdate()
     {
-        //检查是否在地面
-        isGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        //检查墙
-        isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
-        //移动
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        rig2d.velocity = new Vector2(h * moveSpeed, rig2d.velocity.y);
-        if (h != 0)
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        Vector2 dir = new Vector2(x, y);
+        Walk(dir);
+        if (grabWall)
         {
-            move = h;
-            Flip();
-            animator.SetBool("IsMove", true);
+            WallSlide(dir);
+        }
+    }
+    /// <summary>
+    /// 行走
+    /// </summary>
+    /// <param name="dir"></param>
+    private void Walk(Vector2 dir)
+    {
+        if (!wallJumped)
+        {
+            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
         }
         else
         {
-            animator.SetBool("IsMove", false);
+            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(dir.x * speed, rb.velocity.y)), wallJumpLerp * Time.deltaTime);
         }
-        if (rig2d.velocity.y < 0 && isTouchingWall)
-        {
-            isWallSliding = isTouchingWall;
-            rig2d.velocity = new Vector2(moveSpeed*movementForceInAir,rig2d.velocity.y);
-        }
-        //
-        CheckIfCanJump();
-        animator.SetBool("IsGround", isGround);
-        animator.SetBool("IsClimbingWall", isWallSliding);
-        animator.SetFloat("yVelocity", rig2d.velocity.y);
     }
     /// <summary>
-    /// 翻转朝向
+    /// 爬墙
     /// </summary>
-    private void Flip()
+    /// <param name="dir"></param>
+    private void WallSlide(Vector2 dir)
     {
-        //
-        if (!isWallSliding)
+        if (!collisionController.isWall)
         {
-            facingDirection *= -1;
-            transform.localScale = new Vector3(move, transform.localScale.y);
+            return;
         }
+        //抓墙时上下行走
+        rb.velocity = new Vector2(rb.velocity.x, dir.y * speed);
     }
     /// <summary>
     /// 跳跃
     /// </summary>
-    public void Jump()
+    /// <param name="dir"></param>
+    private void Jump(Vector2 dir)
     {
-        if (amountOfJumpsLeft > 0 )
-        {
-            rig2d.velocity = new Vector2(rig2d.velocity.x, jumpForce);
-            amountOfJumpsLeft--;
-        }
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.velocity += dir * jumpForce;
     }
     /// <summary>
-    /// 检查是否可以跳跃
+    /// 墙上跳跃
     /// </summary>
-    private void CheckIfCanJump()
+    private void WallJump()
     {
-        if (isGround && rig2d.velocity.y <= 0)
-        {
-            amountOfJumpsLeft = amountOfJumps;
-        }
+
+        Vector2 wallDir = collisionController.isRightWall ? Vector2.left : Vector2.right;
+        Jump((Vector2.up / 1f + wallDir / 1f));
+        wallJumped = true;
     }
-    private void CheckIfWallSliding()
+    IEnumerator RestoringGravity()
     {
-        if (isTouchingWall && !isGround && rig2d.velocity.y < 0)
-        {
-            isWallSliding = true;
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
-    private void OnDrawGizmos()
-    {
-        //绘制圆
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        //绘制线
-        var pos = wallCheck.position;
-        pos.x = pos.x + wallCheckDistance;
-        Gizmos.DrawLine(wallCheck.position, pos);
+        rb.gravityScale = 5;
+        yield return new WaitForSeconds(0.3f);
+        rb.gravityScale = 0;
     }
 }
