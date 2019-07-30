@@ -1,0 +1,2202 @@
+fileFormatVersion: 2
+guid: f3eae97f0c6ab2348b19cf085a7d70aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6709407935123758332
+    second: 2-Enemy-Bold Pirate 0
+  - first:
+      213: -1037379342207038337
+    second: 2-Enemy-Bold Pirate 1
+  - first:
+      213: 1383077239690114923
+    second: 2-Enemy-Bold Pirate 2
+  - first:
+      213: -2208911351228279232
+    second: 2-Enemy-Bold Pirate 3
+  - first:
+      213: 4669412564738362697
+    second: 2-Enemy-Bold Pirate 4
+  - first:
+      213: 3614057728067601459
+    second: 2-Enemy-Bold Pirate 5
+  - first:
+      213: -1389500503400632611
+    second: 2-Enemy-Bold Pirate 6
+  - first:
+      213: -2039041609354634061
+    second: 2-Enemy-Bold Pirate 7
+  - first:
+      213: 2130707316880833301
+    second: 2-Enemy-Bold Pirate 8
+  - first:
+      213: 7345589891619645202
+    second: 2-Enemy-Bold Pirate 9
+  - first:
+      213: 1330100709866228239
+    second: 2-Enemy-Bold Pirate 10
+  - first:
+      213: 7864924194714285174
+    second: 2-Enemy-Bold Pirate 11
+  - first:
+      213: -2345585551273781552
+    second: 2-Enemy-Bold Pirate 12
+  - first:
+      213: 9007351329102457045
+    second: 2-Enemy-Bold Pirate 13
+  - first:
+      213: -2089747893640719527
+    second: 2-Enemy-Bold Pirate 14
+  - first:
+      213: -329136227437072132
+    second: 2-Enemy-Bold Pirate 15
+  - first:
+      213: 4647357033606602029
+    second: 2-Enemy-Bold Pirate 16
+  - first:
+      213: 1317266434070459727
+    second: 2-Enemy-Bold Pirate 17
+  - first:
+      213: 1021975406714844219
+    second: 2-Enemy-Bold Pirate 18
+  - first:
+      213: 6379986723557548203
+    second: 2-Enemy-Bold Pirate 19
+  - first:
+      213: -8079145680124088970
+    second: 2-Enemy-Bold Pirate 20
+  - first:
+      213: 7499977067894065118
+    second: 2-Enemy-Bold Pirate 21
+  - first:
+      213: 1264253684065164196
+    second: 2-Enemy-Bold Pirate 22
+  - first:
+      213: -5798545928267958336
+    second: 2-Enemy-Bold Pirate 23
+  - first:
+      213: -3923627660941752488
+    second: 2-Enemy-Bold Pirate 24
+  - first:
+      213: 7538217427417787617
+    second: 2-Enemy-Bold Pirate 25
+  - first:
+      213: 1429188703915036573
+    second: 2-Enemy-Bold Pirate 26
+  - first:
+      213: -3225862672824089773
+    second: 2-Enemy-Bold Pirate 27
+  - first:
+      213: -4056586304406846755
+    second: 2-Enemy-Bold Pirate 28
+  - first:
+      213: 696061117584737284
+    second: 2-Enemy-Bold Pirate 29
+  - first:
+      213: 8598323988581593345
+    second: 2-Enemy-Bold Pirate 30
+  - first:
+      213: -1490410473298493949
+    second: 2-Enemy-Bold Pirate 31
+  - first:
+      213: -6128241698990694992
+    second: 2-Enemy-Bold Pirate 32
+  - first:
+      213: 7700997732779806869
+    second: 2-Enemy-Bold Pirate 33
+  - first:
+      213: -3412002484372420637
+    second: 2-Enemy-Bold Pirate 34
+  - first:
+      213: -8036634701744928047
+    second: 2-Enemy-Bold Pirate 35
+  - first:
+      213: -325273386682769562
+    second: 2-Enemy-Bold Pirate 36
+  - first:
+      213: -9195963378356296733
+    second: 2-Enemy-Bold Pirate 37
+  - first:
+      213: 5994378731354479351
+    second: 2-Enemy-Bold Pirate 38
+  - first:
+      213: 8007302270272307346
+    second: 2-Enemy-Bold Pirate 39
+  - first:
+      213: 8964827275530309215
+    second: 2-Enemy-Bold Pirate 40
+  - first:
+      213: 7786169881880275315
+    second: 2-Enemy-Bold Pirate 41
+  - first:
+      213: 491843055781700028
+    second: 2-Enemy-Bold Pirate 42
+  - first:
+      213: -4193967995007972408
+    second: 2-Enemy-Bold Pirate 43
+  - first:
+      213: 35497166377309241
+    second: 2-Enemy-Bold Pirate 44
+  - first:
+      213: 4605736812893932645
+    second: 2-Enemy-Bold Pirate 45
+  - first:
+      213: 1712891582747864404
+    second: 2-Enemy-Bold Pirate 46
+  - first:
+      213: 5290311792537885372
+    second: 2-Enemy-Bold Pirate 47
+  - first:
+      213: -3544808954001112322
+    second: 2-Enemy-Bold Pirate 48
+  - first:
+      213: -4157761008512440508
+    second: 2-Enemy-Bold Pirate 49
+  - first:
+      213: -8968742530332861155
+    second: 2-Enemy-Bold Pirate 50
+  - first:
+      213: -8205341938548849240
+    second: 2-Enemy-Bold Pirate 51
+  - first:
+      213: -7316806116408712590
+    second: 2-Enemy-Bold Pirate 52
+  - first:
+      213: 768104844926647711
+    second: 2-Enemy-Bold Pirate 53
+  - first:
+      213: 7504191922720842399
+    second: 2-Enemy-Bold Pirate 54
+  - first:
+      213: -2336458500746221532
+    second: 2-Enemy-Bold Pirate 55
+  - first:
+      213: -4371073081611821254
+    second: 2-Enemy-Bold Pirate 56
+  - first:
+      213: 3711635314649399053
+    second: 2-Enemy-Bold Pirate 57
+  - first:
+      213: 6170424979325141109
+    second: 2-Enemy-Bold Pirate 58
+  - first:
+      213: 4945954853223031118
+    second: 2-Enemy-Bold Pirate 59
+  - first:
+      213: 4533051046194625140
+    second: 2-Enemy-Bold Pirate 60
+  - first:
+      213: 5119189460611874761
+    second: 2-Enemy-Bold Pirate 61
+  - first:
+      213: -3540468121159256601
+    second: 2-Enemy-Bold Pirate 62
+  - first:
+      213: 4153398477582998107
+    second: 2-Enemy-Bold Pirate 63
+  - first:
+      213: -3445278304245338199
+    second: 2-Enemy-Bold Pirate 64
+  - first:
+      213: 2414911108231154082
+    second: 2-Enemy-Bold Pirate 65
+  - first:
+      213: -207549001351168881
+    second: 2-Enemy-Bold Pirate 66
+  - first:
+      213: 680130105455133224
+    second: 2-Enemy-Bold Pirate 67
+  - first:
+      213: 578094506660787943
+    second: 2-Enemy-Bold Pirate 68
+  - first:
+      213: -6433143782772954173
+    second: 2-Enemy-Bold Pirate 69
+  - first:
+      213: -6953504653230344391
+    second: 2-Enemy-Bold Pirate 70
+  - first:
+      213: -2857119733098615931
+    second: 2-Enemy-Bold Pirate 71
+  - first:
+      213: 8623892136652939109
+    second: 2-Enemy-Bold Pirate 72
+  - first:
+      213: 266195505097829522
+    second: 2-Enemy-Bold Pirate 73
+  - first:
+      213: -6021903270026377762
+    second: 2-Enemy-Bold Pirate 74
+  - first:
+      213: 7695950485427770287
+    second: 2-Enemy-Bold Pirate 75
+  - first:
+      213: -2461046228103012259
+    second: 2-Enemy-Bold Pirate 76
+  - first:
+      213: 2417244522111153783
+    second: 2-Enemy-Bold Pirate 77
+  - first:
+      213: 7525402584914297529
+    second: 2-Enemy-Bold Pirate 78
+  - first:
+      213: -8142100505992039864
+    second: 2-Enemy-Bold Pirate 79
+  - first:
+      213: -4871678996169143801
+    second: 2-Enemy-Bold Pirate 80
+  - first:
+      213: -1246890552963336201
+    second: 2-Enemy-Bold Pirate 81
+  - first:
+      213: -8561104209572663974
+    second: 2-Enemy-Bold Pirate 82
+  - first:
+      213: 7383305717568248764
+    second: 2-Enemy-Bold Pirate 83
+  - first:
+      213: 3221579093454749368
+    second: 2-Enemy-Bold Pirate 84
+  - first:
+      213: -3059954933764779155
+    second: 2-Enemy-Bold Pirate 85
+  - first:
+      213: 9069414450670606674
+    second: 2-Enemy-Bold Pirate 86
+  - first:
+      213: 7489761634308536290
+    second: 2-Enemy-Bold Pirate 87
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d2877826a019474c9a143abadee945e
+      internalID: -6709407935123758332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acafbec4cb60124cba07add3dbcc544
+      internalID: -1037379342207038337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c668755a6acf742950181f3cf6d0ac
+      internalID: 1383077239690114923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da8f4f3cc78342418d219e2769a5a27
+      internalID: -2208911351228279232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f05c2926d1b244a9267bcc40287feb
+      internalID: 4669412564738362697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 5
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6028dff910f591488d05b687c7d12c5
+      internalID: 3614057728067601459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b95993488884e84f91f983290a63591
+      internalID: -1389500503400632611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 7
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f0c87ec56a90b4a906722665a8a4e0
+      internalID: -2039041609354634061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 8
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01b9d3b393d7b04691145c27dc5dd8c
+      internalID: 2130707316880833301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 9
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79c37036d4b3b747a48cf67be87f977
+      internalID: 7345589891619645202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 10
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0f0629c45180b4a9c3de51222ea54b
+      internalID: 1330100709866228239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 11
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e0d6b99cd8f594789ca66dc583d6d9
+      internalID: 7864924194714285174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 12
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c23c1337dec4647853530ac8c6ed00
+      internalID: -2345585551273781552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 13
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063dadb3aa7520f4ba712ca9e734c8c9
+      internalID: 9007351329102457045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 14
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82cf6adfacc517489e4753fa7ab14ff
+      internalID: -2089747893640719527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 15
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 445
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8843eded8a8859748a414cff4fda9d79
+      internalID: -329136227437072132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52da7eb69f268094c80306da376ead93
+      internalID: 4647357033606602029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3f63de97f905c4a972383e8e90cd8c
+      internalID: 1317266434070459727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c481bba882ed148b9d4cd3b9359f82
+      internalID: 1021975406714844219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 19
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dbced41a4ab32942afd98fe5f44c76f
+      internalID: 6379986723557548203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 20
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3078ac11603a0e4392bf40bc049c767
+      internalID: -8079145680124088970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 21
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebb20836c0ad17458173bd7ddb85214
+      internalID: 7499977067894065118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 22
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06f972373f0e174c807b59de74f454b
+      internalID: 1264253684065164196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 23
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f9a3a4e38b37c4aaa0e67feb242341
+      internalID: -5798545928267958336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 24
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c8d665ca07287428a4637bcc2bef81
+      internalID: -3923627660941752488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 25
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cabe09b3266d1840925f5aaef6cd1bd
+      internalID: 7538217427417787617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 26
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb083deb306a415439ab07d629f4ae08
+      internalID: 1429188703915036573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 27
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4301920dc13ffa44ba0a47932e6e544d
+      internalID: -3225862672824089773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 28
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b637194936c653942ba59551c7224496
+      internalID: -4056586304406846755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2675db17bea72bf4bb1742dc4d531122
+      internalID: 696061117584737284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 30
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5876a7b10cc2a4b95820afd73fcfee
+      internalID: 8598323988581593345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 31
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 378
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c43391c82c7311418925d68b64e7ffb
+      internalID: -1490410473298493949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b33a3508bb861440a9a6a11dc931d57
+      internalID: -6128241698990694992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 33
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa182f72ca8b7d54d88a2b761b49f277
+      internalID: 7700997732779806869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 34
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2155331b4d871bd44905a6a11dfada0a
+      internalID: -3412002484372420637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 35
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f351e969f32a2040ab8aa11947b9eb0
+      internalID: -8036634701744928047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 36
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efad5a9fcb6c604aac17ee05de4951a
+      internalID: -325273386682769562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 37
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50e25055e376904c9068e8cf51a7b48
+      internalID: -9195963378356296733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 38
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e0ebf5c466b7349954821ffca277c9
+      internalID: 5994378731354479351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 39
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ff4de8a90932644879e0364fa20e6e
+      internalID: 8007302270272307346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 40
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2836884540ed3b94eb0d225f57763340
+      internalID: 8964827275530309215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 41
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5071a1033eb640647a11acdfe18d36e6
+      internalID: 7786169881880275315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 42
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e149ef38ad64e0045aff6ccadd51c30a
+      internalID: 491843055781700028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 43
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071c67f5c758583498f2ae99bf79b037
+      internalID: -4193967995007972408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 44
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8849662a974fd64183685be0257a1e9
+      internalID: 35497166377309241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 45
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32eedccb4c019014d84f0e296ba70e04
+      internalID: 4605736812893932645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 46
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e73ea3d480ec4240ab490e93d52238b
+      internalID: 1712891582747864404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 47
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 311
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d202087e38e4b8947974bf4b0e6e5c91
+      internalID: 5290311792537885372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549d0999975b63146a30ff967e27c9e2
+      internalID: -3544808954001112322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 49
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583e50e485b765540a37c51a69be1aa5
+      internalID: -4157761008512440508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 50
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bb799e17a977547b23946fbe2a7a8d
+      internalID: -8968742530332861155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 51
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f97f70afc390445b6c00512e60f0ed
+      internalID: -8205341938548849240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 52
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4aea3b8ba59c542a9432dc3ce06d50
+      internalID: -7316806116408712590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 53
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201d7fae7ba48ef49a33fb37647a6dda
+      internalID: 768104844926647711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 54
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081296ff77c161b4fbb09a767bee7097
+      internalID: 7504191922720842399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 55
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b4bb405e0050254f8f36143f99b3c0f
+      internalID: -2336458500746221532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 56
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd8fd6a63774a7448f99bcb18680b86
+      internalID: -4371073081611821254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 57
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5fef1d6f861284987c3c24fdd638e4
+      internalID: 3711635314649399053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 58
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a730c01ed25a7bf4186730ae80ed5185
+      internalID: 6170424979325141109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 59
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7de671550258f4e8619fd2211e8d39
+      internalID: 4945954853223031118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 60
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bdc87c82f99df841b66402040226f74
+      internalID: 4533051046194625140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 61
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6fd4e32a907634d8d5f7e3e301762f
+      internalID: 5119189460611874761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 62
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1247b3a053dbf46bac4dea8f01d646
+      internalID: -3540468121159256601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 63
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 244
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70493bf2f940dd42bab298b8919f806
+      internalID: 4153398477582998107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9290e2ad841d84ba732b212164aa5b
+      internalID: -3445278304245338199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 65
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998727b4d8a948d44a3dabbc5e9cd157
+      internalID: 2414911108231154082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 66
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60369180c7c1874486281707f02d175
+      internalID: -207549001351168881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 67
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8387f4d86f063469c4f3e39b847a69
+      internalID: 680130105455133224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 68
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c01fa9e6189534a8b095e952f4c31a
+      internalID: 578094506660787943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 69
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871652b4a8c0cd74695ced62c8b81fd7
+      internalID: -6433143782772954173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 70
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bb09a8e14227849af25081b0cba167
+      internalID: -6953504653230344391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 71
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98a31d9548f550478e347fc27d0d3a2
+      internalID: -2857119733098615931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 72
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e60b2ae85075e5449536f868d9badca
+      internalID: 8623892136652939109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 73
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa4f05db36870e4e84f1d79c767e18b
+      internalID: 266195505097829522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 74
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e291904d526fc874a970751bff952969
+      internalID: -6021903270026377762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 75
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfc734309972524b8d1dad7c2a3d983
+      internalID: 7695950485427770287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 76
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820886c87ada69042adaf40ba52785aa
+      internalID: -2461046228103012259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 77
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e582cbd723bc9c499676fe2c0f92dde
+      internalID: 2417244522111153783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 78
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1156e5aaee19ad40a0054357448bb8f
+      internalID: 7525402584914297529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 79
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 177
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03d7b4afd946814ebd8a57cce01e1f6
+      internalID: -8142100505992039864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0898c7f79dbac43a4900ec48bc74ad
+      internalID: -4871678996169143801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 81
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6717a4ba31a9a9d4ca8f8afb9921eaed
+      internalID: -1246890552963336201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 82
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b743a9afbf4a1374b8ad847985ed2f53
+      internalID: -8561104209572663974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 83
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74009fbe728b8a42b63f9abd7d81fd8
+      internalID: 7383305717568248764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 84
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78243f92eaf393943bdca15a136d75c0
+      internalID: 3221579093454749368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 85
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df93ef1dcdd16541909b2823d47a46d
+      internalID: -3059954933764779155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 86
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9652a43c25a6baa49aec17f10fefa396
+      internalID: 9069414450670606674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2-Enemy-Bold Pirate 87
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 110
+        width: 63
+        height: 67
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f560cfadf7438d5468fb2e85d388abbb
+      internalID: 7489761634308536290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6afca49ec0d5eed4486ea03834855db2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

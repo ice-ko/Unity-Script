@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Ground
+  - Bomb
+  - OtherObjects
+  - Table
+  - Chair
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Other Objects
+  - Player
+  - Bomb
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 1
+  - name: Bg
+    uniqueID: 3863543835
+    locked: 1
+  - name: Stage Property
+    uniqueID: 3840743747
+    locked: 0
+  - name: Enemy
+    uniqueID: 2487268341
+    locked: 0
+  - name: Player
+    uniqueID: 2948946177
+    locked: 0
