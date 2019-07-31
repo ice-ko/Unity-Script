@@ -1,0 +1,2490 @@
+fileFormatVersion: 2
+guid: bc495a89cfcee1a44aa58093e9df0c1a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4064383822059286220
+    second: 1-Player-Bomb Guy 0
+  - first:
+      213: 4410725628008857996
+    second: 1-Player-Bomb Guy 1
+  - first:
+      213: -9218275387607648225
+    second: 1-Player-Bomb Guy 2
+  - first:
+      213: 1790586835641674546
+    second: 1-Player-Bomb Guy 3
+  - first:
+      213: 5846319505716127090
+    second: 1-Player-Bomb Guy 4
+  - first:
+      213: -4499860101500591419
+    second: 1-Player-Bomb Guy 5
+  - first:
+      213: -8688595169296987207
+    second: 1-Player-Bomb Guy 6
+  - first:
+      213: 102872165280542020
+    second: 1-Player-Bomb Guy 7
+  - first:
+      213: -4540260857950542625
+    second: 1-Player-Bomb Guy 8
+  - first:
+      213: 2368306857788001774
+    second: 1-Player-Bomb Guy 9
+  - first:
+      213: 2397662454433621494
+    second: 1-Player-Bomb Guy 10
+  - first:
+      213: -6286639271030613706
+    second: 1-Player-Bomb Guy 11
+  - first:
+      213: 2364563507300017857
+    second: 1-Player-Bomb Guy 12
+  - first:
+      213: -5571850979967566525
+    second: 1-Player-Bomb Guy 13
+  - first:
+      213: -2007944528368957650
+    second: 1-Player-Bomb Guy 14
+  - first:
+      213: 4492286851430642185
+    second: 1-Player-Bomb Guy 15
+  - first:
+      213: -7501772696941558680
+    second: 1-Player-Bomb Guy 16
+  - first:
+      213: -6515178768900958254
+    second: 1-Player-Bomb Guy 17
+  - first:
+      213: 3599071203797427
+    second: 1-Player-Bomb Guy 18
+  - first:
+      213: -6388508652986740084
+    second: 1-Player-Bomb Guy 19
+  - first:
+      213: 4154130779962352364
+    second: 1-Player-Bomb Guy 20
+  - first:
+      213: 5373965732319568080
+    second: 1-Player-Bomb Guy 21
+  - first:
+      213: -7316843994449126119
+    second: 1-Player-Bomb Guy 22
+  - first:
+      213: -1126596391870377351
+    second: 1-Player-Bomb Guy 23
+  - first:
+      213: -7660756094246215592
+    second: 1-Player-Bomb Guy 24
+  - first:
+      213: -5922840493689819573
+    second: 1-Player-Bomb Guy 25
+  - first:
+      213: 5244144350130207795
+    second: 1-Player-Bomb Guy 26
+  - first:
+      213: 5547717974652791631
+    second: 1-Player-Bomb Guy 27
+  - first:
+      213: 417156585142119036
+    second: 1-Player-Bomb Guy 28
+  - first:
+      213: 3309877823491727736
+    second: 1-Player-Bomb Guy 29
+  - first:
+      213: 7225904333966633471
+    second: 1-Player-Bomb Guy 30
+  - first:
+      213: 7899508207148086416
+    second: 1-Player-Bomb Guy 31
+  - first:
+      213: -1483706761274298351
+    second: 1-Player-Bomb Guy 32
+  - first:
+      213: 8162168908018346092
+    second: 1-Player-Bomb Guy 33
+  - first:
+      213: 3060083078881198521
+    second: 1-Player-Bomb Guy 34
+  - first:
+      213: 639302037308830001
+    second: 1-Player-Bomb Guy 35
+  - first:
+      213: 3996157196120345331
+    second: 1-Player-Bomb Guy 36
+  - first:
+      213: -8752345348466179896
+    second: 1-Player-Bomb Guy 37
+  - first:
+      213: -6828483119552754789
+    second: 1-Player-Bomb Guy 38
+  - first:
+      213: -6192087146002474161
+    second: 1-Player-Bomb Guy 39
+  - first:
+      213: 5662478622712635832
+    second: 1-Player-Bomb Guy 40
+  - first:
+      213: -3373322428302085321
+    second: 1-Player-Bomb Guy 41
+  - first:
+      213: 3301391475540609471
+    second: 1-Player-Bomb Guy 42
+  - first:
+      213: 7808524580721620436
+    second: 1-Player-Bomb Guy 43
+  - first:
+      213: -1393242102087551187
+    second: 1-Player-Bomb Guy 44
+  - first:
+      213: 6374984889110779398
+    second: 1-Player-Bomb Guy 45
+  - first:
+      213: -4750811367901801823
+    second: 1-Player-Bomb Guy 46
+  - first:
+      213: 1594109921482671842
+    second: 1-Player-Bomb Guy 47
+  - first:
+      213: -4718253097782141096
+    second: 1-Player-Bomb Guy 48
+  - first:
+      213: 319593791498491396
+    second: 1-Player-Bomb Guy 49
+  - first:
+      213: 2948139160248883541
+    second: 1-Player-Bomb Guy 50
+  - first:
+      213: -250347561090256315
+    second: 1-Player-Bomb Guy 51
+  - first:
+      213: -360076024966072648
+    second: 1-Player-Bomb Guy 52
+  - first:
+      213: -6628807797393859686
+    second: 1-Player-Bomb Guy 53
+  - first:
+      213: -513917057358921335
+    second: 1-Player-Bomb Guy 54
+  - first:
+      213: 8937635513605833908
+    second: 1-Player-Bomb Guy 55
+  - first:
+      213: -2290339628293926007
+    second: 1-Player-Bomb Guy 56
+  - first:
+      213: 7655398379518989822
+    second: 1-Player-Bomb Guy 57
+  - first:
+      213: -6196843346947366307
+    second: 1-Player-Bomb Guy 58
+  - first:
+      213: -660307389698393420
+    second: 1-Player-Bomb Guy 59
+  - first:
+      213: -9083476480305054183
+    second: 1-Player-Bomb Guy 60
+  - first:
+      213: -1890519617570040743
+    second: 1-Player-Bomb Guy 61
+  - first:
+      213: 7264750580846838912
+    second: 1-Player-Bomb Guy 62
+  - first:
+      213: -4983142071341338154
+    second: 1-Player-Bomb Guy 63
+  - first:
+      213: 1158198920654003678
+    second: 1-Player-Bomb Guy 64
+  - first:
+      213: -8781981330807170953
+    second: 1-Player-Bomb Guy 65
+  - first:
+      213: 2540522647426300788
+    second: 1-Player-Bomb Guy 66
+  - first:
+      213: 5615791397937497876
+    second: 1-Player-Bomb Guy 67
+  - first:
+      213: -3584279992630642751
+    second: 1-Player-Bomb Guy 68
+  - first:
+      213: -8122711433608302140
+    second: 1-Player-Bomb Guy 69
+  - first:
+      213: -5921912773105394680
+    second: 1-Player-Bomb Guy 70
+  - first:
+      213: 4791657449209553623
+    second: 1-Player-Bomb Guy 71
+  - first:
+      213: 5263725884567886138
+    second: 1-Player-Bomb Guy 72
+  - first:
+      213: -1349148049754645651
+    second: 1-Player-Bomb Guy 73
+  - first:
+      213: -3235674880702989663
+    second: 1-Player-Bomb Guy 74
+  - first:
+      213: 3482032711632951498
+    second: 1-Player-Bomb Guy 75
+  - first:
+      213: 1939595970059526566
+    second: 1-Player-Bomb Guy 76
+  - first:
+      213: 750494027304946655
+    second: 1-Player-Bomb Guy 77
+  - first:
+      213: -218408836042390929
+    second: 1-Player-Bomb Guy 78
+  - first:
+      213: 3974757249140382373
+    second: 1-Player-Bomb Guy 79
+  - first:
+      213: -6690514589788536717
+    second: 1-Player-Bomb Guy 80
+  - first:
+      213: -626298982242633415
+    second: 1-Player-Bomb Guy 81
+  - first:
+      213: -4636775192191507293
+    second: 1-Player-Bomb Guy 82
+  - first:
+      213: -7823505902011941863
+    second: 1-Player-Bomb Guy 83
+  - first:
+      213: 1093555610004022551
+    second: 1-Player-Bomb Guy 84
+  - first:
+      213: 7286566049446282832
+    second: 1-Player-Bomb Guy 85
+  - first:
+      213: 769341762589983219
+    second: 1-Player-Bomb Guy 86
+  - first:
+      213: -3298968194231631473
+    second: 1-Player-Bomb Guy 87
+  - first:
+      213: 4649121071085539301
+    second: 1-Player-Bomb Guy 88
+  - first:
+      213: 3322357251100016172
+    second: 1-Player-Bomb Guy 89
+  - first:
+      213: 6510504746186419765
+    second: 1-Player-Bomb Guy 90
+  - first:
+      213: -6098291759130744438
+    second: 1-Player-Bomb Guy 91
+  - first:
+      213: -8773160582334724101
+    second: 1-Player-Bomb Guy 92
+  - first:
+      213: -2376869626840784863
+    second: 1-Player-Bomb Guy 93
+  - first:
+      213: -6697063273610762104
+    second: 1-Player-Bomb Guy 94
+  - first:
+      213: 1374337913181483068
+    second: 1-Player-Bomb Guy 95
+  - first:
+      213: -5726032977116261195
+    second: 1-Player-Bomb Guy 96
+  - first:
+      213: 349338394952907272
+    second: 1-Player-Bomb Guy 97
+  - first:
+      213: 2393866374001232521
+    second: 1-Player-Bomb Guy 98
+  - first:
+      213: -4637663315165094110
+    second: 1-Player-Bomb Guy 99
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5701020de56ff45983ece007872272
+      internalID: 4064383822059286220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b18a93574590346afebaf2f78c7497
+      internalID: 4410725628008857996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebba329104bc44b4c9bf138ac97d9c58
+      internalID: -9218275387607648225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 821426bfbbc2fc84490e2f7f9f77b18a
+      internalID: 1790586835641674546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ab14b46fdec1a4284e97cc27e0dc6b
+      internalID: 5846319505716127090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1943c86af09c1b3408068590d7cf90cb
+      internalID: -4499860101500591419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3be6841e42d64444b20a322873b2bcc
+      internalID: -8688595169296987207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7174d895ca5d8b4b85d6483388b38c1
+      internalID: 102872165280542020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd3eb6d4eb91be458b87349ef149487
+      internalID: -4540260857950542625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fff29f689753fd4f8b33e452cf1a675
+      internalID: 2368306857788001774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630bd7cb84052da439da06271b56a4dc
+      internalID: 2397662454433621494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd2a0487996c2f43b392492aa7458bc
+      internalID: -6286639271030613706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 12
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642180537d2b29942b70de654f16f029
+      internalID: 2364563507300017857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 13
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579a769bc1b030744b258c4f5c79fdaf
+      internalID: -5571850979967566525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 14
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fe6bf5782540d4681069409f2e6f42
+      internalID: -2007944528368957650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1f1b8322fd06d4c8a0504377d5e08c
+      internalID: 4492286851430642185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 16
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 454
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b270d0d839f3e024dbe69716115bc213
+      internalID: -7501772696941558680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab1531de2ad7574c809686b868c2ac2
+      internalID: -6515178768900958254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737fe55c8b01ce94a9bcc50756fadf93
+      internalID: 3599071203797427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76940550881c5da41a0a39a8653a58f7
+      internalID: -6388508652986740084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893b7351868b47c4eb308b06673d778c
+      internalID: 4154130779962352364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf109d44382a13442ba34a872d726a79
+      internalID: 5373965732319568080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e84825f15420a549b8cef3da649237f
+      internalID: -7316843994449126119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953de82c6afc61147a26a4c585117b8a
+      internalID: -1126596391870377351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8295ea37e00b946882bef32d038a4b
+      internalID: -7660756094246215592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67233bd807d8a14b926622cddf4e95c
+      internalID: -5922840493689819573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4962515697dd14aa4660e3cd50d841
+      internalID: 5244144350130207795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 27
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e465f992037336d4593d8cd36227710b
+      internalID: 5547717974652791631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 28
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe8f911be6950b4ea970b1b9789cdac
+      internalID: 417156585142119036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 29
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca38448c08d2ec44a4c99f49f759883
+      internalID: 3309877823491727736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 30
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad32a5cc1385be642971dcc4b9ee9234
+      internalID: 7225904333966633471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 31
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ee6c9339ab99c4da05fe81f24e3e40
+      internalID: 7899508207148086416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 32
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea109aca328e50140b35c5b0b08263ed
+      internalID: -1483706761274298351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 33
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 396
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a016952bd8097254a91d705961ce398d
+      internalID: 8162168908018346092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bfe78c4ef2a6244b70bae0c05e4fa0
+      internalID: 3060083078881198521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee4c267cf37aed64e80ea3cd1f7749ff
+      internalID: 639302037308830001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 36
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89f5308b68754d45addd5214f9e049d
+      internalID: 3996157196120345331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 37
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521e626872d909b4cafe9c28ed20b7eb
+      internalID: -8752345348466179896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a043bff4dcc0c41b8baf0dfc517189
+      internalID: -6828483119552754789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 39
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cb4b0002fd6fe44a1bcaae2791a4fb
+      internalID: -6192087146002474161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 40
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466f7ba65c5ca444d875d729d7dfb624
+      internalID: 5662478622712635832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ac8359eaf3a1d4ab7227ffbde0ce7c
+      internalID: -3373322428302085321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 42
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b841b55da4ca141a1089b3ecbe7158
+      internalID: 3301391475540609471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 43
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adad02aa340373b46864675955baf21a
+      internalID: 7808524580721620436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 44
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3273eae9a5810c546b6813a63a05ba82
+      internalID: -1393242102087551187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 45
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b11b0c4690b324fa2f3dcaf68d0edb
+      internalID: 6374984889110779398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 46
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba4b418f51662a42ac96e6c9e46328b
+      internalID: -4750811367901801823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 47
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4bb1cced2ff5d84d827c45b8bc0cfad
+      internalID: 1594109921482671842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 48
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0fbe1506d1aa54a842777bf507a051
+      internalID: -4718253097782141096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 49
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31396c3da0b135f4d8f20cf9343e8ca6
+      internalID: 319593791498491396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 50
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 338
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d260cc5dd8be53f41a52aaa2346a3b8f
+      internalID: 2948139160248883541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d623d37a87144f04795104daab08cb7c
+      internalID: -250347561090256315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 52
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57ca5c59ed3b734e92ddecc5bcc1426
+      internalID: -360076024966072648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 53
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a1f354f8d27de4c8650ec29b5c14ac
+      internalID: -6628807797393859686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 54
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02f96b181f31dc4e9498d5b35ad8b8f
+      internalID: -513917057358921335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 55
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01dfcb9d8d36c7b41931e8622eed7b3e
+      internalID: 8937635513605833908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 56
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a931b06a9e9eca94d95dc6baab899338
+      internalID: -2290339628293926007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 57
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77aec7459f8884c449a2034a2d00f985
+      internalID: 7655398379518989822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 58
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd52021378578084d97e7b131d5808e8
+      internalID: -6196843346947366307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 59
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c9f3268e7593b45a3cd99c8a16e89d
+      internalID: -660307389698393420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 60
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b14c615d881cc564cbd30fa831cf28a0
+      internalID: -9083476480305054183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 61
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b81669fb74a36b478048314f5014174
+      internalID: -1890519617570040743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 62
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b50d00e9a11be34d8d63499da7b4e89
+      internalID: 7264750580846838912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 63
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c88c73151e5a7479cdb6fb08d85345
+      internalID: -4983142071341338154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 64
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7bf34c7c7085ef43a09236f95d15a4f
+      internalID: 1158198920654003678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 65
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0955ec7881da1cf4e86d28c9defa3932
+      internalID: -8781981330807170953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 66
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 977375e763100db4888735a502c5eaa4
+      internalID: 2540522647426300788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 67
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 280
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd10e136c6a3f1449629fbc96e1ab8a
+      internalID: 5615791397937497876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184f554aebbf9ad41a8a82348bbe6a1e
+      internalID: -3584279992630642751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 69
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e6e32ebc4b4924782c5d5f11da1987
+      internalID: -8122711433608302140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 70
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a414256f5d409b4f9537dd526f3b837
+      internalID: -5921912773105394680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 71
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa8a426e43e5624f9bee672e0f26ee8
+      internalID: 4791657449209553623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 72
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d5e6e00dd0e304680e694764cb1216
+      internalID: 5263725884567886138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 73
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80afe62fe9304f4ab672145c392f13b
+      internalID: -1349148049754645651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 74
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108e72058416d3743a0167eb3940e33a
+      internalID: -3235674880702989663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 75
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08f6056cdcc3774c8763142f2344080
+      internalID: 3482032711632951498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 76
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f1b27738ee711499c19dd097699e10
+      internalID: 1939595970059526566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 77
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6ce7363b2bcf84085eb11b041aaa25
+      internalID: 750494027304946655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 78
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa381c710e49d948af4fd90045af199
+      internalID: -218408836042390929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 79
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ff3d7390d3eb64e97d0b0555fc23b2
+      internalID: 3974757249140382373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 80
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935cfecb4beda8346813b34da8065f59
+      internalID: -6690514589788536717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 81
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fce1abd667b2f40bacdddbb683d67b
+      internalID: -626298982242633415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 82
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31eab945a0049de46b0afdb203443fb2
+      internalID: -4636775192191507293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 83
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f362364e0431a4b91e5176f74f880c
+      internalID: -7823505902011941863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 84
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 222
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6649df1bbbd823b479c0f7acca0e0c9d
+      internalID: 1093555610004022551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30258d06dc925da4b87d4a1b776fb436
+      internalID: 7286566049446282832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 86
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdbaf55a97f608b4d8a4a8ce20e21500
+      internalID: 769341762589983219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 87
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3c1005ddac367408ef1e8262199707
+      internalID: -3298968194231631473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 88
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c687efa5d6009248b731689a6487b8e
+      internalID: 4649121071085539301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 89
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29cdd68bd6350144ab94b70c4cdb472
+      internalID: 3322357251100016172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 90
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7256bd7a33d3f4f844c7b4f9b9fd65
+      internalID: 6510504746186419765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 91
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a606228bd36b949b40153e02fdad27
+      internalID: -6098291759130744438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 92
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2029333ff785a794f8b1f7e7f08ac259
+      internalID: -8773160582334724101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 93
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0ab2cfa33e3a44881e18ae7f306616
+      internalID: -2376869626840784863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 94
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3f7d8026cc63a4ba61955c0c55b845
+      internalID: -6697063273610762104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 95
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac01c1d93c897d64cbc451e1db0cb357
+      internalID: 1374337913181483068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 96
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a983416ac15f647b80565612d0a479
+      internalID: -5726032977116261195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 97
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61646d3e3ad496a4282ab67ca064374e
+      internalID: 349338394952907272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 98
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfb10450e7b8884fa6255bf4bc1d8c2
+      internalID: 2393866374001232521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-Player-Bomb Guy 99
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 164
+        width: 58
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 133792b2889b696419c3b9960912665d
+      internalID: -4637663315165094110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6bd916e8bb2d15d46bb29e4739632ec2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
