@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2_Ablation_ShaderGraph
+  m_Shader: {fileID: -6465566751694194690, guid: 6e841b397d1ba9d46b620f883e6e3f39,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_194C3B0D: 50
+    - Vector1_B3D6724C: 0.01
+    - Vector1_C143084: 50
+    - Vector1_F244C543: 0.5
+    m_Colors:
+    - Color_4BC753F7: {r: 0.05654451, g: 0.3060056, b: 0.7849708, a: 0}
+    - Color_D9485F3E: {r: 0.20366131, g: 0.552795, b: 1.389261, a: 0}
