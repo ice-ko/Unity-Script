@@ -10502,6 +10502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1183831756}
+  dragTilemap: {fileID: 1630339111}
+  baseTile: {fileID: 11400000, guid: 0ae79fcea33a7f940bf61b9b31ce5429, type: 2}
   circleCursorPrefab: {fileID: 6061891289567069385, guid: 90320e6ab6b3cfe4ea1614c664593de1,
     type: 3}
   dragPreviewGameObjects: []
