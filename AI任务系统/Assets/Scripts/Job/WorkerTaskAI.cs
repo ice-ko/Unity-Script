@@ -23,8 +23,8 @@ public class WorkerTaskAI : MonoBehaviour
     /// 等待时间
     /// </summary>
     private float waitingTimer;
-    private TaskSystem taskSystem;
-    public void Setup(IWorker worker, TaskSystem taskSystem)
+    private TaskSystem<Task> taskSystem;
+    public void Setup(IWorker worker, TaskSystem<Task> taskSystem)
     {
         this.worker = worker;
         this.taskSystem = taskSystem;
@@ -56,7 +56,7 @@ public class WorkerTaskAI : MonoBehaviour
     private void RequestNextTask()
     {
         CMDebug.TextPopup("请求下一个任务", transform.position);
-        TaskSystem.Task task = taskSystem.RequestNextTask();
+        TaskBase task = taskSystem.RequestNextTask();
         if (task == null)
         {
             state = State.WaitingForNextTask;
@@ -64,24 +64,48 @@ public class WorkerTaskAI : MonoBehaviour
         else
         {
             state = State.ExecutingTask;
-            if (task is TaskSystem.Task.MoveToPosition)
+            if (task is Task.MoveToPosition)
             {
-                ExecuteTask_MoveToPosition(task as TaskSystem.Task.MoveToPosition);
+                ExecuteTask_MoveToPosition(task as Task.MoveToPosition);
                 return;
             }
-            if (task is TaskSystem.Task.Victory)
+            if (task is Task.Victory)
             {
-                ExecuteTask_Victory(task as TaskSystem.Task.Victory);
+                ExecuteTask_Victory(task as Task.Victory);
+                return;
+            }
+            if (task is Task.ShellFloorCleanUp)
+            {
+                ExecuteTask_ShellFloorCleanUp(task as Task.ShellFloorCleanUp);
+                return;
+            }
+            if (task is Task.TaskWeaponToWeaponSlot)
+            {
+                ExecuteTask_TaskWeaponToWeaponSlot(task as Task.TaskWeaponToWeaponSlot);
                 return;
             }
         }
     }
+
+    private void ExecuteTask_TaskWeaponToWeaponSlot(Task.TaskWeaponToWeaponSlot task)
+    {
+        worker.MoveTo(task.weaponPosition, () =>
+        {
+            task.grabWeapon(this);
+            worker.MoveTo(task.weaponSlotPosition, () =>
+            {
+                 task.dropWeapon();
+                 state = State.WaitingForNextTask;
+             });
+        });
+    }
+
     /// <summary>
     /// 执行任务_移动到指定位置
     /// </summary>
     /// <param name="task">The task.</param>
     /// <exception cref="System.NotImplementedException"></exception>
-    private void ExecuteTask_MoveToPosition(TaskSystem.Task.MoveToPosition task)
+    private void ExecuteTask_MoveToPosition(Task.MoveToPosition task)
     {
         CMDebug.TextPopup("ExecuteTask_MoveToPosition", transform.position);
         worker.MoveTo(task.targetPosition, () =>
@@ -90,7 +114,7 @@ public class WorkerTaskAI : MonoBehaviour
             // Destroy(gameObject.GetComponent<MoveHandler>());
         });
     }
-    private void ExecuteTask_Victory(TaskSystem.Task.Victory task)
+    private void ExecuteTask_Victory(Task.Victory task)
     {
         CMDebug.TextPopup("ExecuteTask_Victory", transform.position);
         worker.PlayVictoryAnimation(() =>
@@ -98,4 +122,20 @@ public class WorkerTaskAI : MonoBehaviour
             state = State.WaitingForNextTask;
         });
     }
+    /// <summary>
+    /// 执行清理任务
+    /// </summary>
+    /// <param name="task"></param>
+    private void ExecuteTask_ShellFloorCleanUp(Task.ShellFloorCleanUp task)
+    {
+        worker.MoveTo(task.targetPosition, () =>
+        {
+            worker.PlayCleanUpAnimation(() =>
+            {
+                task.cleanUpAction();
+                state = State.WaitingForNextTask;
+            });
+        });
+    }
+
 }

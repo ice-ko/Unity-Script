@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using V_AnimationSystem;
-using V_ObjectSystem;
 
 public class Worker : IWorker
 {
@@ -29,14 +28,8 @@ public class Worker : IWorker
     {
         gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Run");
         var move = gameObject.GetComponent<MoveHandler>();
-        if (move == null)
-        {
-            move = gameObject.AddComponent<MoveHandler>();
-        }
-        move.speed = 5f;
+        move.onArrivedAtPosition = onArrivedAtPosition;
         move.targetPosition = position;
-        //调用委托
-        onArrivedAtPosition?.Invoke();
     }
     /// <summary>
     /// 播放胜利动画。
@@ -54,6 +47,9 @@ public class Worker : IWorker
     public void PlayCleanUpAnimation(Action onAnimationComplete)
     {
         //animator.SetTrigger("Victory");
+        var anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        anim.SetTrigger("Victory");
         onAnimationComplete?.Invoke();
     }
+
 }

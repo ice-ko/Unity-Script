@@ -467,10 +467,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90a644288c4064439499b13d16269b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
   goldNode: {fileID: 0}
   warehouse: {fileID: 0}
+  refuseSprite: {fileID: 21300000, guid: 2ba23bc65505da741a617496edaabbe0, type: 3}
+  weaponSlotSprite: {fileID: 21300000, guid: 1612e62ff8b0e3c41bac07f6ccb801cc, type: 3}
+  weaponSprite: {fileID: -4198525477892069919, guid: 0f9e17a89e06cfd4cb45004f5715950b,
+    type: 3}
   character: {fileID: 4078046638632115541, guid: 011bc6271ce44f34bbb00f909128df8f,
     type: 3}
+  type: 0
 --- !u!4 &1445074528
 Transform:
   m_ObjectHideFlags: 0
