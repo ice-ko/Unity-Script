@@ -9,12 +9,10 @@ public class WaterTile : Tile
     /// <summary>
     /// An array with all the waterTiles that we have in our game
     /// </summary>
-    [SerializeField]
-    private Sprite[] waterSprites;
+    public Sprite[] waterSprites;
 
     //A preview of the tile
-    [SerializeField]
-    private Sprite preview;
+    public Sprite preview;
 
     /// <summary>
     /// Refreshes this tile when something changes

@@ -3,15 +3,16 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8db929c002cf2e44d8ced7be536267aa, type: 3}
-  m_Name: New Watertile
+  m_Name: water
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 24e0eacb551f5394eb721a806b4d4533, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea852a990c1aac44083f093c11ca87f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -84,4 +85,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 11f1046a472b48e45b555f6399c52f7c, type: 3}
   - {fileID: 21300000, guid: 24e0eacb551f5394eb721a806b4d4533, type: 3}
   - {fileID: 21300000, guid: ba06a4d18c98f5741aa1c426e546763d, type: 3}
-  preview: {fileID: 21300000, guid: 24e0eacb551f5394eb721a806b4d4533, type: 3}
+  preview: {fileID: 21300000, guid: ea852a990c1aac44083f093c11ca87f0, type: 3}
