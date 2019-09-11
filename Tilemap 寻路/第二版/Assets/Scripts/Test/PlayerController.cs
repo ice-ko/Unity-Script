@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (path != null)
         {
             //移向目标
-            transform.parent.position = Vector2.MoveTowards(transform.parent.position, destination, 2 * Time.deltaTime);
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, destination, speed * Time.deltaTime);
             //计算距离
             float distance = Vector2.Distance(destination, transform.parent.position);
             if (distance <= 0f)

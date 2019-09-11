@@ -579,7 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 512991216}
   astar: {fileID: 213765118}
-  speed: 15
+  speed: 35
 --- !u!212 &213765120
 SpriteRenderer:
   m_ObjectHideFlags: 0
