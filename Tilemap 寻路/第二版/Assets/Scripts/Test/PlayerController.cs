@@ -30,23 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 min, max;
 
-    /// <summary>
-    /// Player 的方向
-    /// </summary>
-    private Vector2 direction;
-
-    public Vector2 Direction
-    {
-        get
-        {
-            return direction;
-        }
-
-        set
-        {
-            direction = value;
-        }
-    }
     void Start()
     {
 
