@@ -23,7 +23,10 @@ public class AStarTilemap : MonoBehaviour
             return instance;
         }
     }
-    #endregion    
+    #endregion        
+    /// <summary>
+    /// tilemap 地面图层
+    /// </summary>
     public Tilemap tilemap;
 
     private Node current;
@@ -45,7 +48,10 @@ public class AStarTilemap : MonoBehaviour
 
 
     private Vector3Int startPos, goalPos;
-
+    /// <summary>
+    /// tilemap大小
+    /// </summary>
+    private Vector3 min, max;
     public Tilemap MyTilemap
     {
         get
@@ -60,6 +66,12 @@ public class AStarTilemap : MonoBehaviour
         {
             return noDiagonalTiles;
         }
+    }
+
+    private void Start()
+    {
+        min = tilemap.CellToWorld(tilemap.cellBounds.min);
+        max = tilemap.CellToWorld(tilemap.cellBounds.max);
     }
     /// <summary>
     /// 算法指定的开始。
@@ -121,7 +133,7 @@ public class AStarTilemap : MonoBehaviour
     {
         List<Node> neighbours = new List<Node>();
         //这两个for循环确保我们当前节点周围的所有节点
-        for (int x = -1; x <= 1; x++) 
+        for (int x = -1; x <= 1; x++)
         {
             for (int y = -1; y <= 1; y++)
             {
@@ -176,7 +188,7 @@ public class AStarTilemap : MonoBehaviour
                 //额外检查包含邻居的开放集
                 CalcValues(current, neighbour, goalPos, gScore);
 
-                if (!openList.Contains(neighbour)) 
+                if (!openList.Contains(neighbour))
                 {
                     //然后我们需要将节点添加到开放列表中
                     openList.Add(neighbour);
@@ -224,7 +236,7 @@ public class AStarTilemap : MonoBehaviour
         if (Math.Abs(x - y) % 2 == 1)
         {
             //垂直或水平节点的gscore为10
-            gScore = 10; 
+            gScore = 10;
         }
         else
         {
@@ -246,7 +258,7 @@ public class AStarTilemap : MonoBehaviour
         closedList.Add(current);
 
 
-        if (openList.Count > 0) 
+        if (openList.Count > 0)
         {
             //按f值对列表进行排序，以便更容易选择具有最低F val的节点
             current = openList.OrderBy(x => x.F).First();
@@ -260,7 +272,7 @@ public class AStarTilemap : MonoBehaviour
     private Stack<Vector3> GeneratePath(Node current)
     {
         //如果我们当前的节点是目标，那么我们找到了一条路径
-        if (current.Position == goalPos) 
+        if (current.Position == goalPos)
         {
             //创建一个包含最终路径的堆栈
             Stack<Vector3> finalPath = new Stack<Vector3>();
@@ -322,6 +334,18 @@ public class AStarTilemap : MonoBehaviour
             allNodes.Add(position, node);
             return node;
         }
+    }
+   
+    /// <summary>
+    ///设置玩家的限制，这样他就无法离开游戏地图
+    /// </summary>
+    /// <param name="min">玩家的最低位置</param>
+    /// <param name="max">玩家的最大位置</param>
+    public Vector3 SetLimits(Transform transform)
+    {
+        return new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x),
+              Mathf.Clamp(transform.position.y, min.y, max.y),
+              transform.position.z);
     }
 }
 

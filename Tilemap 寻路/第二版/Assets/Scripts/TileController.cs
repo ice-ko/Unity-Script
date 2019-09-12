@@ -27,13 +27,12 @@ public class TileController : MonoBehaviour
 
 
     private TileType tileType;
-    private GameObject tileUI;
+
+    public GameObject tileUI;
 
     void Start()
     {
-        Vector3 minTile = tilemap.CellToWorld(tilemap.cellBounds.min);
-        Vector3 maxTile = tilemap.CellToWorld(tilemap.cellBounds.max);
-        PlayerController.Instance.SetLimits(minTile, maxTile);
+
     }
 
     void Update()
@@ -72,7 +71,7 @@ public class TileController : MonoBehaviour
                 AStarTilemap.Instance.waterTiles.Add(clickPos); break;
         }
 
-        Astar.Instance.changedTiles.Add(clickPos);
+        //Astart.Instance.changedTiles.Add(clickPos);
     }
     public void ChangeTileType(int type)
     {
@@ -92,6 +91,10 @@ public class TileController : MonoBehaviour
         }
         tileUI.transform.position = UtilityClass.GetWorldToScreenPos();
         tileUI.SetActive(true);
+    }
+    public bool IsBuild()
+    {
+        return tileUI == null || !tileUI.activeInHierarchy ? false : true;
     }
 }
 public enum TileType

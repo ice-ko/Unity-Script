@@ -20,15 +20,17 @@ public class PlayerController : MonoBehaviour
             return instance;
         }
     }
-    #endregion    
+    #endregion
+    #region 寻路   
     public Tilemap tilemap;
     public AStarTilemap astar;
     public float speed;
     private Stack<Vector3> path;
     //目的地
     private Vector3 destination;
+    #endregion
 
-    private Vector3 min, max;
+
 
     void Start()
     {
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&& !TileController.Instance.IsBuild())
         {
             var pos = tilemap.WorldToCell(UtilityClass.GetMouseWorldPos());
             Debug.Log("点击" + pos);
@@ -48,10 +50,8 @@ public class PlayerController : MonoBehaviour
             }
         }
         ClickToMove();
-        //设置角色始终保持在格子中心
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x),
-            Mathf.Clamp(transform.position.y, min.y, max.y),
-            transform.position.z);
+        //设置角色限制
+        transform.position = astar.SetLimits(transform);
     }
     /// <summary>
     /// 获取路径
@@ -86,15 +86,5 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-    }
-    /// <summary>
-    ///设置玩家的限制，这样他就无法离开游戏世界
-    /// </summary>
-    /// <param name="min">玩家的最低位置</param>
-    /// <param name="max">玩家的最大位置</param>
-    public void SetLimits(Vector3 min, Vector3 max)
-    {
-        this.min = min;
-        this.max = max;
     }
 }
