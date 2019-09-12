@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90a644288c4064439499b13d16269b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 15
   goldNode: {fileID: 0}
   warehouse: {fileID: 0}
   refuseSprite: {fileID: 21300000, guid: 2ba23bc65505da741a617496edaabbe0, type: 3}

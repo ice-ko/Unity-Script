@@ -45,6 +45,7 @@ public class CharacterHandler : MonoBehaviour
         worker = Worker.Create(character, new Vector3(10, 10));
         var workerTransporterTaskAI = worker.gameObject.AddComponent<WorkerTransporterTaskAI>();
         workerTransporterTaskAI.Setup(worker, transporterTask);
+        workerTransporterTaskAI.gameObject.name = "运输工人";
 
         var weaponSlotGo = CreateWeaponSlot(new Vector3(-10, -10));
         weaponSlot = new WeaponSlot(weaponSlotGo.transform);
@@ -87,7 +88,6 @@ public class CharacterHandler : MonoBehaviour
                                 },
                                 dropWeapon = () =>
                                 {
-                                    weapon.transform.SetParent(null);
                                     weaponSlot.SetWeaponTransform(weapon.transform);
                                 }
                             };
@@ -224,15 +224,17 @@ public class CharacterHandler : MonoBehaviour
 
             if (weaponTransform != null)
             {
-                Debug.Log("2222");
                 TransporterTask.TakeWeaponFromSlotToPosition task = new TransporterTask.TakeWeaponFromSlotToPosition
                 {
                     weaponPosition = GetPosition(),
                     targetPosition = GetPosition() + new Vector3(-50, 0),
                     grabWeapon = (WorkerTransporterTaskAI taskAI) =>
                     {
-                        weaponTransform.SetParent(taskAI.transform);
-                       // SetWeaponTransform(null);
+                        Debug.Log(weaponTransform.name);
+                        Debug.Log(taskAI.transform.name);
+                        this.weaponTransform.SetParent(taskAI.transform);
+                        weaponTransform.parent = taskAI.transform;
+                       SetWeaponTransform(null);
                     },
                     dropWeapon = () =>
                     {

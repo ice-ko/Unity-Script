@@ -18,7 +18,7 @@ public class QueuedTask<T> where T : TaskBase
 }
 public abstract class TaskBase
 {
-  
+
 }
 public class TaskSystem<T> where T : TaskBase
 {

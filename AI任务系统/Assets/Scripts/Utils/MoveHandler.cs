@@ -12,7 +12,6 @@ public class MoveHandler : MonoBehaviour
     public Action onArrivedAtPosition;
     Rigidbody2D rb;
 
-    bool isPos = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,20 +20,31 @@ public class MoveHandler : MonoBehaviour
 
     void Update()
     {
-        float dis = (targetPosition - transform.position).sqrMagnitude;
-        if (dis < 1 && onArrivedAtPosition != null)
+     
+        if (targetPosition == Vector3.zero)
         {
-            //移动到指定位置后触发委托有问题
-           // Action iss= onArrivedAtPosition();
+            return;
         }
-        float step = CharacterHandler.Instance.speed * Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, step);
-        transform.localPosition = new Vector3(
-            Mathf.Lerp(transform.localPosition.x, targetPosition.x, step),
-            Mathf.Lerp(transform.localPosition.y, targetPosition.y, step),
-            Mathf.Lerp(transform.localPosition.z, targetPosition.z, step));
-
+        // float step = CharacterHandler.Instance.speed * Time.deltaTime;
+        //transform.position = Vector3.Lerp(transform.position, targetPosition, step);
+        //transform.localPosition = new Vector3(
+        //    Mathf.Lerp(transform.localPosition.x, targetPosition.x, step),
+        //    Mathf.Lerp(transform.localPosition.y, targetPosition.y, step),
+        //    Mathf.Lerp(transform.localPosition.z, targetPosition.z, step));
+        //计算距离
+        float distance = Vector2.Distance(targetPosition, transform.position);
+        if (distance <= 0)
+        {
+            targetPosition = Vector3.zero;
+            onArrivedAtPosition?.Invoke();
+        }
+        else
+        {
+            //移向目标
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, CharacterHandler.Instance.speed * Time.deltaTime);
+        }
     }
+
     private void FixedUpdate()
     {
         //float dis = (targetPosition - transform.position).sqrMagnitude;
