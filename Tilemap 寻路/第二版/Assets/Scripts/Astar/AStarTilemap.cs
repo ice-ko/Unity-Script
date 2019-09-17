@@ -140,8 +140,8 @@ public class AStarTilemap : MonoBehaviour
                 if (y != 0 || x != 0)
                 {
                     Vector3Int neighbourPosition = new Vector3Int(parentPosition.x - x, parentPosition.y - y, parentPosition.z);
-
-                    if (neighbourPosition != startPos && !waterTiles.Contains(neighbourPosition))
+                    //排除开始位置、障碍位置、未铺设tile的位置
+                    if (neighbourPosition != startPos && !waterTiles.Contains(neighbourPosition)&& tilemap.GetTile(neighbourPosition))
                     {
                         Node neighbour = GetNode(neighbourPosition);
                         neighbours.Add(neighbour);
