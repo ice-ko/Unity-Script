@@ -52,8 +52,11 @@ public class MoveTargetPosition : SingleObject<MoveTargetPosition>
             SimplePool.Despawn(WorkerTaskAI.Instance.currentTask.PrefabGame);
             TaskHandler.Instance.taskSystem.EnqueueTask(() =>
             {
-                return WorkerTaskAI.Instance.currentTask; 
+                return WorkerTaskAI.Instance.currentTask;
             });
+            //重置任务状态
+            WorkerTaskAI.Instance.state = WorkerTaskAI.State.WaitingForNextTask;
+            //
         }
     }
     /// <summary>

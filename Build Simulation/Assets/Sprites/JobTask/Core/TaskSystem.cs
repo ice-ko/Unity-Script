@@ -37,6 +37,10 @@ public abstract class TaskBase
     /// 预制游戏对象
     /// </summary>
     public GameObject PrefabGame { get; set; }
+    /// <summary>
+    /// 父级
+    /// </summary>
+    public GameObject Parent { get; set; }
 }
 /// <summary>
 /// 任务系统
@@ -117,7 +121,7 @@ public class TaskSystem<T> where T : TaskBase
         {
             QueuedTask<T> queuedTask = queuedTaskList[i];
             T task = queuedTask.DequeueTask();
-            if (task != null)
+            if (task != null && !taskList.Contains(task))
             {
                 AddTask(task);
                 queuedTaskList.RemoveAt(i);

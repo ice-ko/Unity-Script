@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 基础菜单中的类型
+/// 菜单类型
 /// </summary>
-public enum BaseMenuType
+public enum MenuType
 {
     /// <summary>
     /// 采矿
     /// </summary>
     Mining,
+    /// <summary>
+    /// 砍伐
+    /// </summary>
+    Felling,
 }

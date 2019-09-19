@@ -20,6 +20,7 @@ public class WorkerTaskAI : SingleObject<WorkerTaskAI>
         /// </summary>
         ExecutingTask,
     }
+
     IWorker worker;
     /// <summary>
     /// 当前状态
@@ -82,7 +83,7 @@ public class WorkerTaskAI : SingleObject<WorkerTaskAI>
                 ExecuteTask_ShellFloorCleanUp(task as MiningTask.Excavate);
                 return;
             }
-          
+
         }
     }
     /// <summary>
@@ -94,9 +95,14 @@ public class WorkerTaskAI : SingleObject<WorkerTaskAI>
         currentTask = task;
         worker.MoveTo(task.TargetPosition, () =>
         {
-            task.ExcavateAction();
-            state = State.WaitingForNextTask;
+            task.ExcavateAction(task);
         });
     }
-
+    /// <summary>
+    /// 完成工作更新任务状态
+    /// </summary>
+    public void FinishTheWork()
+    {
+        state = State.WaitingForNextTask;
+    }
 }

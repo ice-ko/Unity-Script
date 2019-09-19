@@ -13,7 +13,7 @@ public class UIBaseMenuController : MonoBehaviour
 
     public GameObject toolTip;
 
-    private ButtonType buttonType;
+    private MenuType type;
     void Start()
     {
 
@@ -25,20 +25,9 @@ public class UIBaseMenuController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             RaycastHit2D hit = Physics2D.Raycast(UtilityClass.GetMouseWorldPos(), Vector2.zero);
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.GetComponent<MaterialController>().type == type)
             {
-                switch (buttonType.type)
-                {
-                    case BaseMenuType.Mining:
-                        GameObject go = SimplePool.Spawn(toolTip,Vector3.zero,Quaternion.identity);
-                        go.transform.SetParent(hit.collider.transform, false);
-                        go.GetComponent<SpriteRenderer>().sprite = baseSpriteDic[buttonType.type];
-                        go.transform.position = hit.collider.transform.position;
-                        MiningController.Instance.MiningTask(go, UtilityClass.GetMouseWorldPos());
-                        break;
-                    default:
-                        break;
-                }
+                Create(hit.collider.transform);
             }
         }
         if (Input.GetMouseButtonDown(1) && tooltip.gameObject.activeInHierarchy)
@@ -47,20 +36,39 @@ public class UIBaseMenuController : MonoBehaviour
         }
     }
 
-    public void Mining(ButtonType button)
+    public void Mining(MaterialController material)
     {
-        if (baseUISpriteDic.ContainsKey(button.type))
+        if (baseUISpriteDic.ContainsKey(material.type))
         {
-            tooltip.GetComponent<Image>().sprite = baseUISpriteDic[button.type];
-            tooltip.transform.position = UtilityClass.GetMouseWorldPos();
+            tooltip.GetComponent<Image>().sprite = baseUISpriteDic[material.type];
+            tooltip.transform.position = UtilityClass.GetWorldToScreenPos();
             tooltip.gameObject.SetActive(true);
 
-            buttonType = button;
+            type = material.type;
         }
     }
 
     public void ShowOrHide(GameObject go)
     {
         go.SetActive(!go.activeInHierarchy);
+    }
+
+    private void Create(Transform transform)
+    {
+        GameObject go = SimplePool.Spawn(toolTip, transform.position, Quaternion.identity);
+        go.transform.SetParent(transform, false);
+        go.GetComponent<SpriteRenderer>().sprite = baseSpriteDic[type];
+        go.transform.position = transform.position;
+        //
+        switch (type)
+        {
+            case MenuType.Mining:
+                MiningController.Instance.MiningTask(go, UtilityClass.GetMouseWorldPos());
+                break;
+            case MenuType.Felling:
+                TreeController.Instance.FellingTreeTask(go, UtilityClass.GetMouseWorldPos());
+                break;
+        }
+
     }
 }

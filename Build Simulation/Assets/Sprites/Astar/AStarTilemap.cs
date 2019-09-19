@@ -32,6 +32,7 @@ public class AStarTilemap : MonoBehaviour
     private Node current;
 
     private Stack<Vector3> path;
+    private Stack<Vector3Int> pathTile;
 
     private HashSet<Node> openList;
 
@@ -104,7 +105,8 @@ public class AStarTilemap : MonoBehaviour
         openList.Add(current);
 
         path = null;
-        var pathTile = new Stack<Vector3Int>();
+       // pathTile = null;
+
         while (openList.Count > 0 && path == null)
         {
             List<Node> neighbours = FindNeighbours(current.Position);
@@ -115,15 +117,17 @@ public class AStarTilemap : MonoBehaviour
 
             path = GeneratePath(current);
 
-            pathTile = GeneratePathTile(current);
+            //pathTile = GeneratePathTile(current);
         }
-
-        AstarDebug.Instance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, pathTile);
 
         if (path != null)
         {
             return path;
         }
+
+        //AstarDebug.Instance.Reset(allNodes);
+
+        //AstarDebug.Instance.CreateTiles(openList, closedList, allNodes, startPos, goalPos, pathTile);
         return null;
 
     }

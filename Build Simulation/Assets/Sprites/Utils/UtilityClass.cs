@@ -24,7 +24,7 @@ public class UtilityClass
     public static Vector3 GetWorldToScreenPos()
     {
         Vector2 position;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("Canvas").transform as RectTransform, Input.mousePosition, null, out position);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(GameObject.Find("MenuUICanvas").transform as RectTransform, Input.mousePosition, null, out position);
         return position;
     }
 }

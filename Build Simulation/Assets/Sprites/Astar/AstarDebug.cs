@@ -145,6 +145,8 @@ public class AstarDebug : MonoBehaviour
     /// </summary>
     public void Reset(Dictionary<Vector3Int, Node> allNodes)
     {
+        tilemap.ClearAllTiles();
+
         foreach (var go in debugObjects)
         {
             Destroy(go);

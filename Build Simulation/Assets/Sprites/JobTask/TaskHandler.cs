@@ -10,8 +10,6 @@ public class TaskHandler : SingleObject<TaskHandler>
     public GameObject character;
     public Tilemap tilemap;
 
-    public TileDictionary tileDic;
-
     public TaskSystem<Task> taskSystem;
     private static TaskSystem<TransporterTask> transporterTask;
     private void Start()
