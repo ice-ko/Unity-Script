@@ -22,7 +22,7 @@ public class OreDictionary : SerializableDictionaryBase<OreType, Sprite> { }
 /// 木材sprite
 /// </summary>
 [System.Serializable]
-public class TreeDictionary : SerializableDictionaryBase<TreeType, Sprite> { }
+public class TreeDictionary : SerializableDictionaryBase<PluckType, Sprite> { }
 /// <summary>
 /// 工作量
 /// </summary>
