@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 圆形遮罩镂空引导
+/// 圆形遮罩镂空
 /// </summary>
 public class CircleGuidance : MonoBehaviour
 {

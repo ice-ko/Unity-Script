@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 矩形遮罩镂空引导
+/// 矩形遮罩镂空
 /// </summary>
 public class RectGuidance : MonoBehaviour
 {
