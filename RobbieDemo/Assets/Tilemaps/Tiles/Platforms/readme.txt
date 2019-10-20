@@ -1,0 +1,1 @@
+This file is here so Git does not remove this folder. Feel free to disregard.

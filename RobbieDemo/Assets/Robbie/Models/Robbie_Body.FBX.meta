@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: e430d1524aee8a044bd3b9f00f018b16
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Hand1
+    100002: Hand1Outline
+    100004: Hand2
+    100006: Hand2Outline
+    100008: HandBone001
+    100010: HandBone002
+    100012: HandBone003
+    100014: HandBone004
+    100016: Head
+    100018: HeadBone
+    100020: HeadOutline
+    100022: Leg1
+    100024: Leg1Outline
+    100026: Leg2
+    100028: Leg2Outline
+    100030: LegBone001
+    100032: LegBone002
+    100034: LegBone003
+    100036: LegBone004
+    100038: LegBone005
+    100040: LegBone006
+    100042: //RootNode
+    100044: Torso
+    100046: TorsoBone
+    100048: TorsoBone001
+    100050: TorsoBone002
+    100052: TorsoBone003
+    100054: TorsoBone004
+    100056: TorsoBone006
+    100058: TorsoOutline
+    400000: Hand1
+    400002: Hand1Outline
+    400004: Hand2
+    400006: Hand2Outline
+    400008: HandBone001
+    400010: HandBone002
+    400012: HandBone003
+    400014: HandBone004
+    400016: Head
+    400018: HeadBone
+    400020: HeadOutline
+    400022: Leg1
+    400024: Leg1Outline
+    400026: Leg2
+    400028: Leg2Outline
+    400030: LegBone001
+    400032: LegBone002
+    400034: LegBone003
+    400036: LegBone004
+    400038: LegBone005
+    400040: LegBone006
+    400042: //RootNode
+    400044: Torso
+    400046: TorsoBone
+    400048: TorsoBone001
+    400050: TorsoBone002
+    400052: TorsoBone003
+    400054: TorsoBone004
+    400056: TorsoBone006
+    400058: TorsoOutline
+    2100000: 07 - Default
+    2100002: LegOutline
+    2100004: 01 - Default
+    2100006: TorsoOutline
+    2100008: 02 - Default
+    2100010: HeadOutline
+    2100012: 03 - Default
+    2100014: HandOutline
+    2100016: 09 - Default
+    4300000: Leg2
+    4300002: Leg2Outline
+    4300004: Torso
+    4300006: TorsoOutline
+    4300008: Head
+    4300010: HeadOutline
+    4300012: Hand1
+    4300014: Hand1Outline
+    4300016: Hand2
+    4300018: Hand2Outline
+    4300020: Leg1
+    4300022: Leg1Outline
+    9500000: //RootNode
+    13700000: Hand1
+    13700002: Hand1Outline
+    13700004: Hand2
+    13700006: Hand2Outline
+    13700008: Head
+    13700010: HeadOutline
+    13700012: Leg1
+    13700014: Leg1Outline
+    13700016: Leg2
+    13700018: Leg2Outline
+    13700020: Torso
+    13700022: TorsoOutline
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 166aa3f1de8ee474a9d7dbc22c4f6bc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: a83a1896dc727304a9f119b94d73173b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 4546cd7a544c01340a14e6e585e97b49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: fc21ca2698fa14842b2a04999d35ff67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: c35076801cb4d234c98d66a31c6abd2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HandOutline
+    second: {fileID: 2100000, guid: 59394125f94351a44a832ea6689e460d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeadOutline
+    second: {fileID: 2100000, guid: a3818a03bb28d8e41b7c68c442793a45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegOutline
+    second: {fileID: 2100000, guid: 9e5161b37e6639146a03490b7a2dde1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TorsoOutline
+    second: {fileID: 2100000, guid: fc24142f827f24c47ba3d19b6e1a5292, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
