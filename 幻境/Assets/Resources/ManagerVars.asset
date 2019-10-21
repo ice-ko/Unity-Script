@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f487d1c9296a448a3e028c229af0fe, type: 3}
+  m_Name: ManagerVars
+  m_EditorClassIdentifier: 
+  bgTheme:
+  - {fileID: 21300000, guid: 9c7f8abaceea58e4db628c3935ed7c4a, type: 3}
+  - {fileID: 21300000, guid: 5feddf0396f8fd842b6a2034a343e884, type: 3}
+  - {fileID: 21300000, guid: 274864b118ac4f54589e32e7035cd77f, type: 3}
+  - {fileID: 21300000, guid: 81cb795749aefac4ea7663bc3f7f71fb, type: 3}
+  platformThemeSpriteList:
+  - {fileID: 21300002, guid: 20da7e56cbb26b3498b25fb61fa9a7ff, type: 3}
+  - {fileID: 21300012, guid: 20da7e56cbb26b3498b25fb61fa9a7ff, type: 3}
+  - {fileID: 21300004, guid: 20da7e56cbb26b3498b25fb61fa9a7ff, type: 3}
+  - {fileID: 21300000, guid: 20da7e56cbb26b3498b25fb61fa9a7ff, type: 3}
+  normalPlatform: {fileID: 6920954476749853311, guid: ea87001180ddf0c41988e143cd010abf,
+    type: 3}
+  player: {fileID: 1509835272556102, guid: b47bb687b1f44bc4fae186f25c282470, type: 3}
+  deathEffect: {fileID: 3343384271718080222, guid: 311a9731a31e00e4aafef5e8e924bda0,
+    type: 3}
+  diamond: {fileID: 5791276729548754355, guid: 2725869782c5955418d3f2ddec3043e3, type: 3}
+  commonPlarformGroup:
+  - {fileID: 3794007557858146098, guid: 2e3bca4cb29d35d44abcff79178b37f7, type: 3}
+  - {fileID: 7825237290140294323, guid: 7748ac9980323bc4cbe87669ed62f254, type: 3}
+  - {fileID: 7446702656275028344, guid: 8f89be73abaaa1a46a25276f6097926c, type: 3}
+  - {fileID: 3056600863785251649, guid: 6215f11147ed3134cacc3bb4ca4d04b9, type: 3}
+  grassPlarformGroup:
+  - {fileID: 192178932195340398, guid: 3019669bbec0b304ca542f7185ef17f6, type: 3}
+  - {fileID: 8933924444828556167, guid: d66bb5fcf01160b439862a81eebef581, type: 3}
+  winterPlarformGroup:
+  - {fileID: 2244063613664334691, guid: 9e7cc753fd888014b830ff9b77809076, type: 3}
+  - {fileID: 1116587246879077688, guid: 3aa8e0a5c5d62414cb769390730339f7, type: 3}
+  - {fileID: 8932999828544817924, guid: 907666bd23197d645adfa59b76465194, type: 3}
+  spikePlarform:
+  - {fileID: 2748182877030301752, guid: 8d9e3458aa6fc7340913a2c136711f59, type: 3}
+  - {fileID: 7968918007336054355, guid: 2d0ff3dc7b867b349a06d4dae98253e4, type: 3}
+  nextXPos: 0.554
+  nextYPos: 0.7
