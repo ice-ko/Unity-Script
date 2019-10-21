@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1882779308187514}
+  m_IsPrefabParent: 1
+--- !u!1 &1882779308187514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4541103729333886}
+  - component: {fileID: 114568543676866764}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4541103729333886
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882779308187514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.8487816, y: -4.9094725, z: -0.027363667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114568543676866764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882779308187514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0144ec3e94bfc2b4c93062087d4426a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientClip: {fileID: 8300000, guid: 91192d9f301714fadbb007469cab0213, type: 3}
+  musicClip: {fileID: 8300000, guid: 0e5e5220b21cbb24cb45445289715171, type: 3}
+  levelStingClip: {fileID: 8300000, guid: da5a2d5f64bba4bed8b111bc90321579, type: 3}
+  deathStingClip: {fileID: 8300000, guid: 60b51a24836264977999d094348513a3, type: 3}
+  winStingClip: {fileID: 8300000, guid: 8fb46ffce8c8a474d8ccfa66129389d3, type: 3}
+  orbStingClip: {fileID: 8300000, guid: adcdcf962ffee4c3ea97ae70bb6301e4, type: 3}
+  doorOpenStingClip: {fileID: 8300000, guid: 31d197fb35743494fbc89553f65d021f, type: 3}
+  walkStepClips:
+  - {fileID: 8300000, guid: 781ab33301f7d9842867a2970b9f8029, type: 3}
+  - {fileID: 8300000, guid: 16a943bd4c9b2014e887102abc527138, type: 3}
+  - {fileID: 8300000, guid: 6f7f4b7d7f77ebc4fb6d1dabc67b5c4e, type: 3}
+  - {fileID: 8300000, guid: 653b05ae4ae92734ea401d3362060786, type: 3}
+  crouchStepClips:
+  - {fileID: 8300000, guid: efd7da13b157f57418ba6516f5a3d16c, type: 3}
+  - {fileID: 8300000, guid: 4c3827a916c058448a75d15c55498ea2, type: 3}
+  - {fileID: 8300000, guid: f956f4bb7947d9a45ab43b640a7e36f2, type: 3}
+  - {fileID: 8300000, guid: 84608551fea48da44bebec7e3d8cc7d5, type: 3}
+  deathClip: {fileID: 8300000, guid: 4e3f9922651f9428e8b99445e42653dc, type: 3}
+  jumpClip: {fileID: 8300000, guid: d2f7946a4b9b6af4dbdad8620941f424, type: 3}
+  jumpVoiceClip: {fileID: 8300000, guid: 535b3def063d44f088becce52dcdba58, type: 3}
+  deathVoiceClip: {fileID: 8300000, guid: bfe755c2baac648aaa89f65b7534298f, type: 3}
+  orbVoiceClip: {fileID: 8300000, guid: df9a2ecbae44a4f30acf4617630a8ca9, type: 3}
+  winVoiceClip: {fileID: 8300000, guid: 023ff095798cc4c679cddfa944a62ed3, type: 3}
+  ambientGroup: {fileID: 0}
+  musicGroup: {fileID: 0}
+  stingGroup: {fileID: 0}
+  playerGroup: {fileID: 0}
+  voiceGroup: {fileID: 0}
