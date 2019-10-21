@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 646022508}
   - component: {fileID: 646022507}
   - component: {fileID: 646022506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7585,7 +7585,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020237535, y: 0.96559674}
+  m_Offset: {x: 0, y: 0.9}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0.015625, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -7596,7 +7596,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72798127, y: 1.8751448}
+  m_Size: {x: 0.8, y: 1.9}
   m_EdgeRadius: 0
 --- !u!50 &1801513721
 Rigidbody2D:
@@ -7633,6 +7633,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   crouchSpeedDivisor: 3
+  jumpForce: 6.3
+  jumpHoldForce: 1.9
+  jumpHoldDuration: 0.1
+  crouchJumpBoost: 2.5
+  hangingJumpForce: 15
+  isOnGround: 0
+  isCrouch: 0
+  isJump: 0
+  isHeadBlocked: 0
+  isHanging: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  footOffset: 0.4
+  headClearance: 0.5
+  groundDistance: 0.2
+  eyeHeight: 1.5
+  grabDistance: 0.4
+  reachOffset: 0.7
 --- !u!1 &1958141777
 GameObject:
   m_ObjectHideFlags: 0
