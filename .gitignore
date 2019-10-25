@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+/Socket服务器/服务端/Client/bin
+/Socket服务器/服务端/Components/bin
+/Socket服务器/服务端/GameServer/bin
+/Socket服务器/服务端/Server/bin
