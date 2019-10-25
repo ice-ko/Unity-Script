@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>E:\Unity-Script\斗地主\Assets\Plugin\</OutputPath>
+    <DocumentationFile>E:\Unity-Script\斗地主\Assets\Plugin\Components.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

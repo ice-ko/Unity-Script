@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Components</name>
+    </assembly>
+    <members>
+        <member name="T:Components.Code.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Account">
+            <summary>
+            账号信息
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Login">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Registe">
+            <summary>
+            注册
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Regist_Check">
+            <summary>
+            注册用校验
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Login_Check">
+            <summary>
+            登录校验
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.AccountAlreadyExists">
+            <summary>
+            账号已存在
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.AccountEntryIsIllegal">
+            <summary>
+            账号输入不合法
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.ThePasswordIsIllegal">
+            <summary>
+            密码不合法
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.AccountDoesNotExist">
+            <summary>
+            账号不存在
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.AccountOnline">
+            <summary>
+            账号在线
+            </summary>
+        </member>
+        <member name="F:Components.Code.MsgType.AccountPasswordDoesNotMatch">
+            <summary>
+            账号密码不匹配
+            </summary>
+        </member>
+        <member name="T:Components.Model.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:Components.Model.UserInfo.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Components.Model.UserInfo.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+    </members>
+</doc>
