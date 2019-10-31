@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spikes
+  - Orb
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
+  - Post Processing
   - 
   - 
   - 
@@ -41,12 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Backgruond
+    uniqueID: 1128312619
+    locked: 0
   - name: Gruond
     uniqueID: 1578272727
     locked: 0
-  - name: wall
+  - name: Wall
     uniqueID: 3093878749
     locked: 0
   - name: Player
     uniqueID: 384124877
+    locked: 0
+  - name: Shadow
+    uniqueID: 37979653
     locked: 0

@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// 移动X轴
     /// </summary>
-    private float xVelocity;
+    public float xVelocity;
     /// <summary>
     /// 跳跃时间
     /// </summary>
@@ -102,19 +102,19 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// 按下跳跃
     /// </summary>
-    bool jumpPressed;
+    private bool jumpPressed;
     /// <summary>
     /// 长按跳跃
     /// </summary>
-    bool jumpHeld;
+    private bool jumpHeld;
     /// <summary>
     /// 长按蹲下
     /// </summary>
-    bool crouchHeld;
+    private bool crouchHeld;
     /// <summary>
     /// 按下蹲下
     /// </summary>
-    bool crouchPressed;
+    private bool crouchPressed;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (jumpPressed && isOnGround && !isJump && !isHeadBlocked)
         {
-            if (isCrouch & isOnGround)
+            if (isCrouch)
             {
                 StandUp();
                 rb.AddForce(new Vector2(0f, crouchJumpBoost), ForceMode2D.Impulse);
@@ -218,6 +218,8 @@ public class PlayerMovement : MonoBehaviour
             jumpTime = Time.time + jumpHoldDuration;
             //设置给刚体添加力
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+
+            AudioManager.Instance.PlayJumpAudio();
         }
         else if (isJump)
         {
@@ -270,11 +272,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (xVelocity < 0)
         {
-            transform.localScale = new Vector2(-1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if (xVelocity > 0)
         {
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
     /// <summary>
