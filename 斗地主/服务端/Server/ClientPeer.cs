@@ -37,7 +37,7 @@ namespace Server
         {
             this.receiveArgs = new SocketAsyncEventArgs();
             this.receiveArgs.UserToken = this;
-            this.receiveArgs.SetBuffer(new byte[1024],0,1024);
+            this.receiveArgs.SetBuffer(new byte[1024], 0, 1024);
             this.sendArge = new SocketAsyncEventArgs();
             this.sendArge.Completed += SendArgs_Completed;
         }
@@ -111,9 +111,23 @@ namespace Server
         /// </summary>
         /// <param name="client"></param>
         /// <param name="reason"></param>
-        public delegate void SendDisconnect(ClientPeer client ,string reason);
+        public delegate void SendDisconnect(ClientPeer client, string reason);
+        /// <summary>
+        /// 委托方法
+        /// </summary>
         public SendDisconnect sendDisconnect;
-
+        /// <summary>
+        /// 发送网络数据包
+        /// </summary>
+        /// <param name="packet"></param>
+        public void Send(byte[] packet)
+        {
+            sendQueue.Enqueue(packet);
+            if (!isSendProcess)
+            {
+                ProcessSend();
+            }
+        }
         /// <summary>
         /// 发送网络消息
         /// </summary>
@@ -122,12 +136,7 @@ namespace Server
         {
             byte[] data = EncodeHelper.EncodeMsg(msg);
             byte[] packet = EncodeHelper.EncodePacket(data);
-
-            sendQueue.Enqueue(packet);
-            if (!isSendProcess)
-            {
-                ProcessSend();
-            }
+            Send(packet);
         }
         /// <summary>
         /// 处理发送的消息
@@ -145,7 +154,7 @@ namespace Server
             sendArge.SetBuffer(packet, 0, packet.Length);
             //
             bool result = ClientSocket.SendAsync(sendArge);
-            if (result==false)
+            if (result == false)
             {
                 ProcessSend();
             }
@@ -155,10 +164,10 @@ namespace Server
         /// </summary>
         private void ProcessSend()
         {
-            if (sendArge.SocketError!=SocketError.Success)
+            if (sendArge.SocketError != SocketError.Success)
             {
                 //发送错误 客户端断开连接
-                sendDisconnect(this,SocketError.SocketError.ToString());
+                sendDisconnect(this, SocketError.SocketError.ToString());
             }
             else
             {

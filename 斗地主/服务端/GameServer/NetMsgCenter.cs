@@ -1,5 +1,7 @@
-﻿using Components.Code;
-using GameServer.Login;
+﻿using GameServer.Login;
+using GameServer.Module;
+using GameServer.Module.Login;
+using GameServer.Module.Match;
 using Server;
 using System;
 
@@ -10,7 +12,10 @@ namespace GameServer
     /// </summary>
     public class NetMsgCenter : IApplication
     {
-        ILoginServer loginServer = new LoginServer();
+        IHandler loginServer = new LoginHandler();
+        IHandler userServer = new UserHandler();
+        IHandler matchServer = new MatchHandler();
+
         public void onConnect(ClientPeer client)
         {
             throw new NotImplementedException();
@@ -18,6 +23,8 @@ namespace GameServer
 
         public void OnDisconnect(ClientPeer client)
         {
+            matchServer.OnDisconnect(client);
+            userServer.OnDisconnect(client);
             loginServer.OnDisconnect(client);
         }
 
@@ -25,8 +32,12 @@ namespace GameServer
         {
             switch (msg.OpCode)
             {
-                case (int)MsgType.Account:
+                case MsgType.Account:
                     loginServer.OnReceive(client, msg); break;
+                case MsgType.User:
+                    userServer.OnReceive(client, msg); break;
+                case MsgType.Match:
+                    matchServer.OnReceive(client, msg); break;
             }
         }
     }

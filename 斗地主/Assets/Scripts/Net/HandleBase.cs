@@ -7,9 +7,8 @@ public abstract class HandleBase
     /// <summary>
     /// 收到数据时的处理
     /// </summary>
-    /// <param name="subCode"></param>
-    /// <param name="value"></param>
-    public abstract void OnReceive(int subCode, object value);
+    /// <param name="msg"></param>
+    public abstract void OnReceive(SocketMsg msg);
     /// <summary>
     /// 发送消息
     /// </summary>

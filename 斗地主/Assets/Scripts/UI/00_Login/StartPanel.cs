@@ -1,6 +1,4 @@
-﻿using Components.Code;
-using Components.Model;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +15,7 @@ public class StartPanel : UIBase
     {
         switch (eventCode)
         {
-            case UIEvent.start_Code:
+            case UIEvent.Start_Code:
                 SetPanelActive(true); break;
         }
     }
@@ -35,7 +33,7 @@ public class StartPanel : UIBase
 
         SetPanelActive(false);
 
-        Bind(UIEvent.start_Code);
+        Bind(UIEvent.Start_Code);
 
     }
     public override void OnDestroy()
@@ -64,7 +62,7 @@ public class StartPanel : UIBase
             Dispatch(AreaCode.UI, UIEvent.Prompt_Msg, promptMsg);
             return;
         }
-        UserInfo userInfo = new UserInfo
+        UserInfoDto userInfo = new UserInfoDto
         {
             Account = inputAccount.text,
             Password = inputPassword.text
@@ -72,8 +70,8 @@ public class StartPanel : UIBase
         //发送数据
         Dispatch(AreaCode.NET, 0, new SocketMsg
         {
-            OpCode = (int)MsgType.Account,
-            SubCode = (int)MsgType.Login,
+            OpCode = MsgType.Account,
+            SubCode = AccountCode.Login,
             value = userInfo
         });
     }

@@ -1,6 +1,4 @@
-﻿using Components.Code;
-using Components.Model;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,13 +28,13 @@ public class RegistPanel : UIBase
         btnClose.onClick.AddListener(OnCloseClick);
 
         SetPanelActive(false);
-        Bind(UIEvent.regist_Code);
+        Bind(UIEvent.Regist_Code);
     }
     public override void Execute(int eventCode, object message)
     {
         switch (eventCode)
         {
-            case UIEvent.regist_Code:
+            case UIEvent.Regist_Code:
                 SetPanelActive(true); break;
         }
     }
@@ -77,15 +75,15 @@ public class RegistPanel : UIBase
             Dispatch(AreaCode.UI, UIEvent.Prompt_Msg, promptMsg);
             return;
         }
-        UserInfo userInfo = new UserInfo
+        UserInfoDto userInfo = new UserInfoDto
         {
             Account = inputAccount.text,
             Password = inputPassword.text
         };
         Dispatch(AreaCode.NET, 0, new SocketMsg
         {
-            OpCode = (int)MsgType.Account,
-            SubCode = (int)MsgType.Registe,
+            OpCode = MsgType.Account,
+            SubCode = AccountCode.Registe,
             value = userInfo
         });
     }

@@ -1,5 +1,4 @@
-﻿using Components.Code;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,45 +9,50 @@ public class AccoutHandle : HandleBase
 
 
     PromptMsg promptMsg = new PromptMsg();
-    public override void OnReceive(int subCode, object value)
+    public override void OnReceive(SocketMsg msg)
     {
-        switch (subCode)
+        var code = (AccountCode)msg.SubCode;
+        switch (code)
         {
-            case (int)MsgType.Login_Check:
-                LoginResponse((MsgType)value);
+            case AccountCode.Login_Check:
+                LoginResponse((AccountCode)msg.State);
                 break;
-            case (int)MsgType.Regist_Check:
-                RegistResponse((MsgType)value);
+            case AccountCode.Regist_Check:
+                RegistResponse((AccountCode)msg.State);
                 break;
         }
     }
     /// <summary>
     /// 登录请求处理
     /// </summary>
-    /// <param name="msg"></param>
-    private void LoginResponse(MsgType msg)
+    /// <param name="code"></param>
+    private void LoginResponse(AccountCode code)
     {
-        if (msg == MsgType.Success)
+        if (code == AccountCode.Success)
         {
-            Dispatch(AreaCode.SCENE, UIEvent.scene, new LoadSceneMsg
+            Dispatch(AreaCode.SCENE, UIEvent.Scene, new LoadSceneMsg
             {
                 SceneIndex = 1,
                 OnSceneLoaded = () =>
                 {
-                    Debug.Log("加载完成");
+                    Dispatch(AreaCode.NET, 0, new SocketMsg
+                    {
+                        OpCode = MsgType.User,
+                        SubCode =UserCode.GetInfoRequest
+                    });
                 }
             });
             return;
         }
-        switch (msg)
+        switch (code)
         {
-            case MsgType.AccountDoesNotExist:
+            case AccountCode.AccountDoesNotExist:
                 promptMsg.Text = "账号不存在";
                 break;
-            case MsgType.AccountOnline:
+            case AccountCode.AccountOnline:
                 promptMsg.Text = "账号在线";
                 break;
-            case MsgType.AccountPasswordDoesNotMatch:
+            case AccountCode.AccountPasswordDoesNotMatch:
                 promptMsg.Text = "账号密码不匹配";
                 break;
         }
@@ -57,24 +61,24 @@ public class AccoutHandle : HandleBase
     /// <summary>
     /// 注册请求处理
     /// </summary>
-    /// <param name="msg"></param>
-    private void RegistResponse(MsgType msg)
+    /// <param name="code"></param>
+    private void RegistResponse(AccountCode code)
     {
-        if (msg == MsgType.Success)
+        if (code == AccountCode.Success)
         {
             promptMsg.Text = "注册成功";
             Dispatch(AreaCode.UI, UIEvent.Prompt_Msg, promptMsg);
             return;
         }
-        switch (msg)
+        switch (code)
         {
-            case MsgType.AccountAlreadyExists:
+            case AccountCode.AccountAlreadyExists:
                 promptMsg.Text = "账号已存在";
                 break;
-            case MsgType.AccountEntryIsIllegal:
+            case AccountCode.AccountEntryIsIllegal:
                 promptMsg.Text = "账号输入不合法";
                 break;
-            case MsgType.ThePasswordIsIllegal:
+            case AccountCode.ThePasswordIsIllegal:
                 promptMsg.Text = "密码不合法,应在4~16个字符之间";
                 break;
         }

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Components.Code;
-using Components.Model;
 using GameServer.Cache;
+using GameServer.Module;
 using Server;
 using Server.Pool;
 using SqlSugar;
@@ -13,7 +12,7 @@ namespace GameServer.Login
     /// <summary>
     /// 登录服务
     /// </summary>
-    public class LoginServer : ILoginServer
+    public class LoginHandler : IHandler
     {
         AccountCache accountCache = Caches.Account;
 
@@ -25,12 +24,13 @@ namespace GameServer.Login
 
         public void OnReceive(ClientPeer client, SocketMsg msg)
         {
-            var info = msg.value as UserInfo;
-            switch (msg.SubCode)
+            var info = msg.value as UserInfoDto;
+            var code = (AccountCode)msg.SubCode;
+            switch (code)
             {
-                case (int)MsgType.Login:
+                case AccountCode.Login:
                     Login(client, info); break;
-                case (int)MsgType.Registe:
+                case AccountCode.Registe:
                     Regist(client, info); break;
             }
         }
@@ -40,32 +40,32 @@ namespace GameServer.Login
         /// </summary>
         /// <param name="client"></param>
         /// <param name="info"></param>
-        private void Regist(ClientPeer client, UserInfo info)
+        private void Regist(ClientPeer client, UserInfoDto info)
         {
             SingleExecute.Instance.Execute(() =>
             {
                 var msg = new SocketMsg
                 {
-                    OpCode = (int)MsgType.Account,
-                    SubCode = (int)MsgType.Regist_Check,
-                    value = MsgType.Success
+                    OpCode =MsgType.Account,
+                    SubCode = AccountCode.Regist_Check,
+                    State = AccountCode.Success
                 };
                 if (string.IsNullOrEmpty(info.Account))
                 {
-                    msg.value = MsgType.AccountEntryIsIllegal;
+                    msg.State = AccountCode.AccountEntryIsIllegal;
                     client.Send(msg);
                     return;
                 }
 
                 if (string.IsNullOrEmpty(info.Password) || info.Password.Length < 4 || info.Password.Length > 16)
                 {
-                    msg.value = MsgType.ThePasswordIsIllegal;
+                    msg.State =AccountCode.ThePasswordIsIllegal;
                     client.Send(msg);
                     return;
                 }
                 if (accountCache.IsExist(info.Account))
                 {
-                    msg.value = MsgType.AccountAlreadyExists;
+                    msg.State = AccountCode.AccountAlreadyExists;
                     client.Send(msg);
                     return;
                 }
@@ -105,33 +105,33 @@ namespace GameServer.Login
         /// </summary>
         /// <param name="client"></param>
         /// <param name="info"></param>
-        private void Login(ClientPeer client, UserInfo info)
+        private void Login(ClientPeer client, UserInfoDto info)
         {
             SingleExecute.Instance.Execute(() =>
             {
                 var msg = new SocketMsg
                 {
-                    OpCode = (int)MsgType.Account,
-                    SubCode = (int)MsgType.Login_Check,
-                    value = MsgType.Success
+                    OpCode = MsgType.Account,
+                    SubCode = AccountCode.Login_Check,
+                    State = AccountCode.Success
                 };
                 if (!accountCache.IsExist(info.Account))
                 {
-                    msg.value = MsgType.AccountDoesNotExist;
+                    msg.State = AccountCode.AccountDoesNotExist;
                     client.Send(msg);
                     return;
                 }
 
                 if (accountCache.IsOnline(info.Account))
                 {
-                    msg.value = MsgType.AccountOnline;
+                    msg.State = AccountCode.AccountOnline;
                     client.Send(msg);
                     return;
                 }
 
                 if (!accountCache.IsMatch(info.Account, info.Password))
                 {
-                    msg.value = MsgType.AccountPasswordDoesNotMatch;
+                    msg.State = AccountCode.AccountPasswordDoesNotMatch;
                     client.Send(msg);
                     return;
                 }

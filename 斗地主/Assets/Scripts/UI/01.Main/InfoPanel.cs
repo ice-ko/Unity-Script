@@ -27,22 +27,23 @@ public class InfoPanel : UIBase
         switch (eventCode)
         {
             case UIEvent.Refresh_Info_Panel:
-
+                UserCharacterDto userCharacter = message as UserCharacterDto;
+                RefreshView(userCharacter);
                 break;
         }
     }
     /// <summary>
     /// 刷新视图
     /// </summary>
-    void RefreshView(string name,int lv,int exp,int been)
+    void RefreshView(UserCharacterDto info)
     {
-        txt_Name.text = name;
-        txt_Lv.text = "Lv." + lv;
+        txt_Name.text = info.Name;
+        txt_Lv.text = "Lv." + info.Lv;
         //等级和经验的公式：maxExp=lv*100
-        txt_Exp.text = exp + " / " + lv * 100;
-        txt_Beem.text = "x " + been;
+        txt_Exp.text = info.Exp + " / " + info.Lv * 100;
+        txt_Beem.text = "x " + info.Been;
 
-        slider.value = exp / lv * 100;
+        slider.value = info.Exp / info.Lv * 100;
 
     }
 }

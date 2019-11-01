@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+
 /// <summary>
 /// 编码助手
 /// </summary>
@@ -73,15 +74,9 @@ public class EncodeHelper
         {
             using (BinaryWriter bw = new BinaryWriter(ms))
             {
-                bw.Write(msg.OpCode);
-                bw.Write(msg.SubCode);
-                //
-                if (msg.value != null)
-                {
-                    byte[] valueBytes = EncodeObj(msg.value);
-                    bw.Write(valueBytes);
-                }
 
+                bw.Write(EncodeObj(msg));
+                //
                 byte[] data = new byte[(int)ms.Length];
                 Buffer.BlockCopy(ms.GetBuffer(), 0, data, 0, (int)ms.Length);
                 return data;
@@ -99,15 +94,8 @@ public class EncodeHelper
         {
             using (BinaryReader br = new BinaryReader(ms))
             {
-                SocketMsg msg = new SocketMsg();
-                msg.OpCode = br.ReadInt32();
-                msg.SubCode = br.ReadInt32();
-                //
-                if (ms.Length > ms.Position)
-                {
-                    byte[] valueBytes = br.ReadBytes((int)(ms.Length - ms.Position));
-                    msg.value = DecodeObj(valueBytes);
-                }
+                byte[] valueBytes = br.ReadBytes((int)(ms.Length - ms.Position));
+                SocketMsg msg = (SocketMsg)DecodeObj(valueBytes);
                 return msg;
             }
         }

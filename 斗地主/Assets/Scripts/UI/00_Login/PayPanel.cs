@@ -24,10 +24,10 @@ public class PayPanel : UIBase
     }
     void OnStartClick()
     {
-        Dispatch(AreaCode.UI,UIEvent.start_Code,true);
+        Dispatch(AreaCode.UI,UIEvent.Start_Code,true);
     }
     void OnRegistClick()
     {
-        Dispatch(AreaCode.UI, UIEvent.regist_Code, true);
+        Dispatch(AreaCode.UI, UIEvent.Regist_Code, true);
     }
 }

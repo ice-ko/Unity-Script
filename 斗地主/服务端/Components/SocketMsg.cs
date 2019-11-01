@@ -2,31 +2,42 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 /// <summary>
 /// 网络消息
 /// </summary>
-public class SocketMsg
+[Serializable]
+public class SocketMsg 
 {
     /// <summary>
     /// 操作码
     /// </summary>
-    public int OpCode { get; set; }
+    public MsgType OpCode { get; set; }
     /// <summary>
     /// 子操作
     /// </summary>
-    public int SubCode { get; set; }
+    public Enum SubCode { get; set; }
     /// <summary>
     /// 参数
     /// </summary>
     public object value { get; set; }
+    /// <summary>
+    /// 状态
+    /// </summary>
+    public Enum State { get; set; }
 
     public SocketMsg()
     {
     }
-    public SocketMsg(int opCode, int subCode, object value)
+    public SocketMsg(Enum state)
+    {
+        this.State = state;
+    }
+    public SocketMsg(MsgType opCode, Enum subCode, Enum state, object value = null)
     {
         this.OpCode = opCode;
         this.SubCode = subCode;
         this.value = value;
+        this.State = state;
     }
 }

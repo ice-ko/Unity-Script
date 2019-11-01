@@ -23,13 +23,13 @@ public class SceneManagers : ManagerBase
 
     void Start()
     {
-        Add(UIEvent.scene, this);
+        Add(UIEvent.Scene, this);
     }
     public override void Execute(int eventCode, object message)
     {
         switch (eventCode)
         {
-            case UIEvent.scene:
+            case UIEvent.Scene:
                 LoadSceneMsg msg = message as LoadSceneMsg;
                 LoadScene(msg);
                 break;

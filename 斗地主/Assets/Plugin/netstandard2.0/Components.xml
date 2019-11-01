@@ -4,84 +4,331 @@
         <name>Components</name>
     </assembly>
     <members>
-        <member name="T:Components.Code.MsgType">
+        <member name="T:AccountCode">
             <summary>
-            消息类型
+            账号登录操作码 
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.Account">
-            <summary>
-            账号信息
-            </summary>
-        </member>
-        <member name="F:Components.Code.MsgType.Login">
+        <member name="F:AccountCode.Login">
             <summary>
             登录
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.Registe">
+        <member name="F:AccountCode.Registe">
             <summary>
             注册
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.Regist_Check">
+        <member name="F:AccountCode.Regist_Check">
             <summary>
             注册用校验
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.Login_Check">
+        <member name="F:AccountCode.Login_Check">
             <summary>
             登录校验
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.Success">
-            <summary>
-            成功
-            </summary>
-        </member>
-        <member name="F:Components.Code.MsgType.AccountAlreadyExists">
+        <member name="F:AccountCode.AccountAlreadyExists">
             <summary>
             账号已存在
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.AccountEntryIsIllegal">
+        <member name="F:AccountCode.AccountEntryIsIllegal">
             <summary>
             账号输入不合法
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.ThePasswordIsIllegal">
+        <member name="F:AccountCode.ThePasswordIsIllegal">
             <summary>
             密码不合法
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.AccountDoesNotExist">
+        <member name="F:AccountCode.AccountDoesNotExist">
             <summary>
             账号不存在
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.AccountOnline">
+        <member name="F:AccountCode.AccountOnline">
             <summary>
             账号在线
             </summary>
         </member>
-        <member name="F:Components.Code.MsgType.AccountPasswordDoesNotMatch">
+        <member name="F:AccountCode.AccountPasswordDoesNotMatch">
             <summary>
             账号密码不匹配
             </summary>
         </member>
-        <member name="T:Components.Model.UserInfo">
+        <member name="F:AccountCode.Success">
+            <summary>
+            成功 消息状态 当操作成功时返回给客户端的状态
+            </summary>
+        </member>
+        <member name="T:MatchCode">
+            <summary>
+            匹配操作 请求操作码 发送给服务端 返回操作码只能给客户端
+            </summary>
+        </member>
+        <member name="F:MatchCode.Success">
+            <summary>
+            成功 消息状态 当操作成功时返回给客户端的状态
+            </summary>
+        </member>
+        <member name="F:MatchCode.EnterMatch_Request">
+            <summary>
+            进入匹配队列请求
+            </summary>
+        </member>
+        <member name="F:MatchCode.EnterMatch_Result">
+            <summary>
+            进入匹配队列返回
+            </summary>
+        </member>
+        <member name="F:MatchCode.EnterMatch_Broadcast_Result">
+            <summary>
+            进入匹配广播
+            </summary>
+        </member>
+        <member name="F:MatchCode.LeaveMatch_Request">
+            <summary>
+            离开匹配队列请求
+            </summary>
+        </member>
+        <member name="F:MatchCode.LeaveMatch_Broadcast_Result">
+            <summary>
+            离开匹配队列广播返回
+            </summary>
+        </member>
+        <member name="F:MatchCode.Ready_Request">
+            <summary>
+            准备请求
+            </summary>
+        </member>
+        <member name="F:MatchCode.Ready_Broadcast_Result">
+            <summary>
+            准备广播返回
+            </summary>
+        </member>
+        <member name="F:MatchCode.Start_Broadcast_Requst">
+            <summary>
+            开始游戏广播请求
+            </summary>
+        </member>
+        <member name="F:MatchCode.Repeat_Match">
+            <summary>
+            重复匹配
+            </summary>
+        </member>
+        <member name="T:MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:MsgType.Account">
+            <summary>
+            账号登录信息模块
+            </summary>
+        </member>
+        <member name="F:MsgType.User">
+            <summary>
+            用户角色信息模块
+            </summary>
+            
+        </member>
+        <member name="F:MsgType.Match">
+            <summary>
+            匹配模块
+            </summary>
+        </member>
+        <member name="T:UserCode">
+            <summary>
+            用户操作码 请求操作码 发送给服务端 返回操作码只能给客户端
+            </summary>
+        </member>
+        <member name="F:UserCode.Success">
+            <summary>
+            成功 消息状态 当操作成功时返回给客户端的状态
+            </summary>
+        </member>
+        <member name="F:UserCode.GetInfoRequest">
+            <summary>
+            获取数据
+            </summary>
+        </member>
+        <member name="F:UserCode.GetInfoResult">
+            <summary>
+            获取数据返回
+            </summary>
+        </member>
+        <member name="F:UserCode.UserExist">
+            <summary>
+            用户不存在
+            </summary>
+        </member>
+        <member name="F:UserCode.CreateCharacterRequest">
+            <summary>
+            创建角色请求
+            </summary>
+        </member>
+        <member name="F:UserCode.CreateCharacterResult">
+            <summary>
+            创建角色返回
+            </summary>
+        </member>
+        <member name="F:UserCode.OnlineRequest">
+            <summary>
+            上线请求
+            </summary>
+        </member>
+        <member name="F:UserCode.OnlineResult">
+            <summary>
+            上线返回
+            </summary>
+        </member>
+        <member name="F:UserCode.AccountNotOnline">
+            <summary>
+            账号不在线
+            </summary>
+        </member>
+        <member name="F:UserCode.CharacterExExist">
+            <summary>
+            角色存在
+            </summary>
+        </member>
+        <member name="T:EncodeHelper">
+            <summary>
+            编码助手
+            </summary>
+        </member>
+        <member name="M:EncodeHelper.EncodePacket(System.Byte[])">
+            <summary>
+            构造数据包：包头+包尾
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EncodeHelper.DecodePacket(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            解析数据包 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EncodeHelper.EncodeMsg(SocketMsg)">
+            <summary>
+            把socketMsg类转换成字节数组
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EncodeHelper.DecodeMsg(System.Byte[])">
+            <summary>
+            将收到的字节数据数组转换成socketMsg对象
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EncodeHelper.EncodeObj(System.Object)">
+            <summary>
+            系列化对象
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EncodeHelper.DecodeObj(System.Byte[])">
+            <summary>
+            反序列化对象
+            </summary>
+            <param name="valueBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MatchRoomDto">
+            <summary>
+            房间信息
+            </summary>
+        </member>
+        <member name="P:MatchRoomDto.UIdClientDict">
+            <summary>
+            房间内的用户列表
+            </summary>
+        </member>
+        <member name="P:MatchRoomDto.ReadyUIdList">
+            <summary>
+            已经准备的玩家ID列表
+            </summary>
+        </member>
+        <member name="T:UserCharacterDto">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.Been">
+            <summary>
+            豆子数量
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.WinCount">
+            <summary>
+            胜利场次
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.LoseCount">
+            <summary>
+            失败场次
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.RunCount">
+            <summary>
+            逃跑场次
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.Lv">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:UserCharacterDto.Exp">
+            <summary>
+            经验
+            </summary>
+        </member>
+        <member name="T:UserInfoDto">
             <summary>
             用户信息
             </summary>
         </member>
-        <member name="P:Components.Model.UserInfo.Account">
+        <member name="P:UserInfoDto.Account">
             <summary>
             账号
             </summary>
         </member>
-        <member name="P:Components.Model.UserInfo.Password">
+        <member name="P:UserInfoDto.Password">
             <summary>
             密码
+            </summary>
+        </member>
+        <member name="T:SocketMsg">
+            <summary>
+            网络消息
+            </summary>
+        </member>
+        <member name="P:SocketMsg.OpCode">
+            <summary>
+            操作码
+            </summary>
+        </member>
+        <member name="P:SocketMsg.SubCode">
+            <summary>
+            子操作
+            </summary>
+        </member>
+        <member name="P:SocketMsg.value">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:SocketMsg.State">
+            <summary>
+            状态
             </summary>
         </member>
     </members>
