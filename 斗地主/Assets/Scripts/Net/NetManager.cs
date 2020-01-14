@@ -8,7 +8,7 @@ public class NetManager : ManagerBase
 {
     public static NetManager Instance = null;
 
-    private  ClientPeer client = new ClientPeer("127.0.0.1", 9999);
+    private ClientPeer client = new ClientPeer("127.0.0.1", 9999);
 
     private void Start()
     {
@@ -33,6 +33,8 @@ public class NetManager : ManagerBase
     HandleBase accountHandler = new AccoutHandle();
     HandleBase userHandler = new UserHandler();
     HandleBase matchHandler = new MatchHandler();
+    HandleBase chatHandler = new ChatHandler();
+    HandleBase fightHandler = new FightHandler();
     /// <summary>
     /// 接受网络的消息
     /// </summary>
@@ -48,6 +50,12 @@ public class NetManager : ManagerBase
                 break;
             case MsgType.Match:
                 matchHandler.OnReceive(msg);
+                break;
+            case MsgType.Chat:
+                chatHandler.OnReceive(msg);
+                break;
+            case MsgType.Fight:
+                fightHandler.OnReceive(msg);
                 break;
         }
     }

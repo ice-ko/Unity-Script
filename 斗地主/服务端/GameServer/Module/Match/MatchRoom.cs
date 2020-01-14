@@ -57,19 +57,23 @@ namespace GameServer.Module.Match
             UIdClientDict.Add(userId, client);
         }
         /// <summary>
+        /// 玩家准备
+        /// </summary>
+        public void Ready(int userId)
+        {
+            ReadyUIdList.Add(userId);
+        }
+        /// <summary>
         /// 离开房间
         /// </summary>
         /// <param name="userId"></param>
         public void Leave(int userId)
         {
             UIdClientDict.Remove(userId);
-        }
-        /// <summary>
-        /// 玩家准备
-        /// </summary>
-        public void Ready(int userId)
-        {
-            ReadyUIdList.Add(userId);
+            if (ReadyUIdList.Contains(userId))
+            {
+                ReadyUIdList.Remove(userId);
+            }
         }
         /// <summary>
         /// 广播发送信息给房间内所有玩家

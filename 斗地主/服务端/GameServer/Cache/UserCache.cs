@@ -50,7 +50,17 @@ namespace GameServer.Cache
         {
             return userInfo[id];
         }
-
+        /// <summary>
+        /// 更新用户信息
+        /// </summary>
+        /// <param name="info"></param>
+        public void Update(UserCharacterInfo info)
+        {
+            if (userInfo.ContainsKey(info.Id))
+            {
+                userInfo[info.Id] = info;
+            }
+        }
         /// <summary>
         /// 客户端是否在线
         /// </summary>
@@ -112,7 +122,11 @@ namespace GameServer.Cache
         /// <returns></returns>
         public ClientPeer GetClient(int id)
         {
-            return idclientInfo[id];
+            if (idclientInfo.ContainsKey(id))
+            {
+                return idclientInfo[id];
+            }
+            return null;
         }
         /// <summary>
         /// 根据连接对象获取用户id
@@ -123,5 +137,6 @@ namespace GameServer.Cache
         {
             return clientInfo[client];
         }
+        
     }
 }

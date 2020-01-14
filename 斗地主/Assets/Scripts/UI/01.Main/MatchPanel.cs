@@ -108,7 +108,10 @@ public class MatchPanel : UIBase
     /// </summary>
     private void OnEnterClick()
     {
-
+        Dispatch(AreaCode.SCENE, UIEvent.Scene, new LoadSceneMsg
+        {
+            SceneIndex = 2,
+        });
     }
     /// <summary>
     /// 隐藏显示

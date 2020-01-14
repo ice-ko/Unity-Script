@@ -1,7 +1,9 @@
 ﻿using GameServer.Login;
 using GameServer.Module;
+using GameServer.Module.Chat;
 using GameServer.Module.Login;
 using GameServer.Module.Match;
+using GameServer.Module.Fight;
 using Server;
 using System;
 
@@ -14,8 +16,14 @@ namespace GameServer
     {
         IHandler loginServer = new LoginHandler();
         IHandler userServer = new UserHandler();
-        IHandler matchServer = new MatchHandler();
+        MatchHandler matchServer = new MatchHandler();
+        IHandler chatServer = new ChatHandler();
+        FightHandler fightServer = new FightHandler();
 
+        public NetMsgCenter()
+        {
+            matchServer.startFight += fightServer.StartFight;
+        }
         public void onConnect(ClientPeer client)
         {
             throw new NotImplementedException();
@@ -23,6 +31,8 @@ namespace GameServer
 
         public void OnDisconnect(ClientPeer client)
         {
+            fightServer.OnDisconnect(client);
+            chatServer.OnDisconnect(client);
             matchServer.OnDisconnect(client);
             userServer.OnDisconnect(client);
             loginServer.OnDisconnect(client);
@@ -38,6 +48,10 @@ namespace GameServer
                     userServer.OnReceive(client, msg); break;
                 case MsgType.Match:
                     matchServer.OnReceive(client, msg); break;
+                case MsgType.Chat:
+                    chatServer.OnReceive(client, msg); break;
+                case MsgType.Fight:
+                    fightServer.OnReceive(client, msg); break;
             }
         }
     }

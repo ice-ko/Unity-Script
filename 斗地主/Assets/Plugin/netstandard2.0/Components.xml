@@ -64,6 +64,91 @@
             成功 消息状态 当操作成功时返回给客户端的状态
             </summary>
         </member>
+        <member name="T:ChatCode">
+            <summary>
+            聊天操作码
+            </summary>
+        </member>
+        <member name="F:ChatCode.Default">
+            <summary>
+            默认为 0
+            </summary>
+        </member>
+        <member name="F:ChatCode.Result">
+            <summary>
+            返回状态码
+            </summary>
+        </member>
+        <member name="T:FightCode">
+            <summary>
+            战斗操作码
+            </summary>
+        </member>
+        <member name="F:FightCode.Grab_Landlord_CREQ">
+            <summary>
+            抢地主请求
+            </summary>
+        </member>
+        <member name="F:FightCode.Grab_Landlord_Bro">
+            <summary>
+            服务端广播抢地主的结果
+            </summary>
+        </member>
+        <member name="F:FightCode.Turn_Grab_Bro">
+            <summary>
+            服务器广播下一个玩家抢地主的结果
+            </summary>
+        </member>
+        <member name="F:FightCode.Deal_Creq">
+            <summary>
+            客户端发起出牌请求
+            </summary>
+        </member>
+        <member name="F:FightCode.Deal_Result">
+            <summary>
+            服务器响应客户端出牌
+            </summary>
+        </member>
+        <member name="F:FightCode.Deal_Bro">
+            <summary>
+            服务器广播出牌结果
+            </summary>
+        </member>
+        <member name="F:FightCode.Pass_Creq">
+            <summary>
+            客户端发起不出请求
+            </summary>
+        </member>
+        <member name="F:FightCode.Pass_Result">
+            <summary>
+            服务端响应客户端的不出请求
+            </summary>
+        </member>
+        <member name="F:FightCode.Turn_Deal_Bro">
+            <summary>
+            服务器广播转换出牌的结果
+            </summary>
+        </member>
+        <member name="F:FightCode.Leave_Bro">
+            <summary>
+            服务器广播有玩家退出游戏
+            </summary>
+        </member>
+        <member name="F:FightCode.Over_Bro">
+            <summary>
+            服务器广播游戏结束
+            </summary>
+        </member>
+        <member name="F:FightCode.Get_Card_Result">
+            <summary>
+            服务器给客户端卡牌响应
+            </summary>
+        </member>
+        <member name="F:FightCode.Success">
+            <summary>
+             成功 消息状态 当操作成功时返回给客户端的状态
+            </summary>
+        </member>
         <member name="T:MatchCode">
             <summary>
             匹配操作 请求操作码 发送给服务端 返回操作码只能给客户端
@@ -140,6 +225,16 @@
             匹配模块
             </summary>
         </member>
+        <member name="F:MsgType.Chat">
+            <summary>
+            聊天
+            </summary>
+        </member>
+        <member name="F:MsgType.Fight">
+            <summary>
+            战斗
+            </summary>
+        </member>
         <member name="T:UserCode">
             <summary>
             用户操作码 请求操作码 发送给服务端 返回操作码只能给客户端
@@ -195,6 +290,112 @@
             角色存在
             </summary>
         </member>
+        <member name="T:CardHelper">
+            <summary>
+            卡牌
+            </summary>
+        </member>
+        <member name="M:CardHelper.GetWeight(System.Collections.Generic.List{CardDto},CardType)">
+            <summary>
+            获取卡牌的权值
+            </summary>
+            <param name="cardList">选中的卡片</param>
+            <param name="type">出牌类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsSingle(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否单牌
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsDouble(System.Collections.Generic.List{CardDto})">
+            <summary>
+            判断是否是对子
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsStraight(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否是顺子
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsDoubleStraight(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否双顺
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsTripleStraight(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否是飞机
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsThree(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否是三不带
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsThreeAndOne(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否是三带一
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsThreeAndTwo(System.Collections.Generic.List{CardDto})">
+            <summary>
+            是否是三带二
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsBoom(System.Collections.Generic.List{CardDto})">
+            <summary>
+            判断是否是炸弹
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.IsJokerBoom(System.Collections.Generic.List{CardDto})">
+            <summary>
+            判断是不是王炸
+            </summary>
+            <param name="cards"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CardHelper.GetCardType(System.Collections.Generic.List{CardDto})">
+            <summary>
+            获取卡牌类型
+            </summary>
+            <param name="cardList">要出的牌</param>
+        </member>
+        <member name="T:ConstantHelper">
+            <summary>
+            通用常量类
+            </summary>
+        </member>
+        <member name="F:ConstantHelper.typeTextDict">
+            <summary>
+            存储的是聊天内容格式：类型->聊天内容
+            </summary>
+        </member>
+        <member name="M:ConstantHelper.GetChatText(System.Int32)">
+            <summary>
+            获取聊天内容
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
         <member name="T:EncodeHelper">
             <summary>
             编码助手
@@ -241,6 +442,269 @@
             <param name="valueBytes"></param>
             <returns></returns>
         </member>
+        <member name="T:CardColor">
+            <summary>
+            卡牌颜色
+            </summary>
+        </member>
+        <member name="F:CardColor.Club">
+            <summary>
+            梅花
+            </summary>
+        </member>
+        <member name="F:CardColor.Heart">
+            <summary>
+            红桃
+            </summary>
+        </member>
+        <member name="F:CardColor.Spade">
+            <summary>
+            黑桃
+            </summary>
+        </member>
+        <member name="F:CardColor.Square">
+            <summary>
+            方块
+            </summary>
+        </member>
+        <member name="F:CardType.Singe">
+            <summary>
+            单牌
+            </summary>
+        </member>
+        <member name="F:CardType.Double">
+            <summary>
+            对子
+            </summary>
+        </member>
+        <member name="F:CardType.Straight">
+            <summary>
+            顺子
+            </summary>
+        </member>
+        <member name="F:CardType.Double_Straight">
+            <summary>
+            双顺 如：44 55 66
+            </summary>
+        </member>
+        <member name="F:CardType.Triple_Straight">
+            <summary>
+            三顺 如：444 555 666
+            </summary>
+        </member>
+        <member name="F:CardType.Three">
+            <summary>
+            三不带 如：444
+            </summary>
+        </member>
+        <member name="F:CardType.Three_One">
+            <summary>
+            三带一 如：444 5
+            </summary>
+        </member>
+        <member name="F:CardType.Three_Two">
+            <summary>
+            三带二 如：444 55
+            </summary>
+        </member>
+        <member name="F:CardType.Boom">
+            <summary>
+            炸弹
+            </summary>
+        </member>
+        <member name="F:CardType.Joker_Boom">
+            <summary>
+            王炸
+            </summary>
+        </member>
+        <member name="T:CardWeight">
+            <summary>
+            卡片权值
+            </summary>
+        </member>
+        <member name="F:CardWeight.SJOKER">
+             <summary>
+            大王
+             </summary>
+        </member>
+        <member name="F:CardWeight.LJODER">
+            <summary>
+            小王
+            </summary>
+        </member>
+        <member name="F:Identity.Farmer">
+            <summary>
+            农民
+            </summary>
+        </member>
+        <member name="F:Identity.Landlord">
+            <summary>
+            地主
+            </summary>
+        </member>
+        <member name="T:ChatDto">
+            <summary>
+            聊天信息
+            </summary>
+        </member>
+        <member name="P:ChatDto.UserId">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:ChatDto.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:ChatDto.Text">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="T:CardDto">
+            <summary>
+            卡片底牌
+            </summary>
+        </member>
+        <member name="P:CardDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:CardDto.Color">
+            <summary>
+            颜色 例如：红桃
+            </summary>
+        </member>
+        <member name="P:CardDto.Weight">
+            <summary>
+            例如：9  红桃9
+            </summary>
+        </member>
+        <member name="T:DealDto">
+            <summary>
+            发牌传输信息
+            </summary>
+        </member>
+        <member name="P:DealDto.SelectCardList">
+            <summary>
+            选中要出的牌
+            </summary>
+        </member>
+        <member name="P:DealDto.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:DealDto.Weight">
+            <summary>
+            权值
+            </summary>
+        </member>
+        <member name="P:DealDto.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:DealDto.UsetId">
+            <summary>
+            谁出的牌
+            </summary>
+        </member>
+        <member name="P:DealDto.IsRegular">
+            <summary>
+            牌是否合法
+            </summary>
+        </member>
+        <member name="T:GrabDto">
+            <summary>
+            地主
+            </summary>
+        </member>
+        <member name="P:GrabDto.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:GrabDto.TableCardList">
+            <summary>
+            底牌
+            </summary>
+        </member>
+        <member name="P:GrabDto.PlayerCardList">
+            <summary>
+            玩家手牌
+            </summary>
+        </member>
+        <member name="T:OverDto">
+            <summary>
+            游戏结束传输协议
+            </summary>
+        </member>
+        <member name="P:OverDto.WinIdentity">
+            <summary>
+            胜利身份 地主还是农民
+            </summary>
+        </member>
+        <member name="P:OverDto.WinUIdList">
+            <summary>
+            胜利玩家列表
+            </summary>
+        </member>
+        <member name="P:OverDto.BeenCount">
+            <summary>
+            豆子总数
+            </summary>
+        </member>
+        <member name="T:PlayerDto">
+            <summary>
+            玩家数据传输
+            </summary>
+        </member>
+        <member name="P:PlayerDto.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:PlayerDto.Identity">
+            <summary>
+            身份 地主/农民
+            </summary>
+        </member>
+        <member name="P:PlayerDto.CardList">
+            <summary>
+            卡牌列表
+            </summary>
+        </member>
+        <member name="P:PlayerDto.HasCard">
+            <summary>
+            是否有手牌
+            </summary>
+        </member>
+        <member name="P:PlayerDto.CardCount">
+            <summary>
+            当前卡牌数量
+            </summary>
+        </member>
+        <member name="M:PlayerDto.#ctor(System.Int32)">
+            <summary>
+            构造函数初始化
+            </summary>
+            <param name="userId">用户id</param>
+        </member>
+        <member name="M:PlayerDto.Add(CardDto)">
+            <summary>
+            添加卡牌
+            </summary>
+            <param name="card"></param>
+        </member>
+        <member name="M:PlayerDto.Remove(CardDto)">
+            <summary>
+            移除卡牌
+            </summary>
+            <param name="card"></param>
+        </member>
         <member name="T:MatchRoomDto">
             <summary>
             房间信息
@@ -255,6 +719,27 @@
             <summary>
             已经准备的玩家ID列表
             </summary>
+        </member>
+        <member name="P:MatchRoomDto.UIdList">
+            <summary>
+            存储玩家进入的顺序
+            </summary>
+        </member>
+        <member name="P:MatchRoomDto.LeftId">
+            <summary>
+            左边玩家
+            </summary>
+        </member>
+        <member name="P:MatchRoomDto.RightId">
+            <summary>
+            右边玩家
+            </summary>
+        </member>
+        <member name="M:MatchRoomDto.ResetPosition(System.Int32)">
+            <summary>
+            重置玩家位置
+            </summary>
+            <param name="myUserId">自己</param>
         </member>
         <member name="T:UserCharacterDto">
             <summary>

@@ -7,7 +7,7 @@ using System.Text;
 /// </summary>
 public enum MsgType
 {
-  
+
     /// <summary>
     /// 账号登录信息模块
     /// </summary>
@@ -21,10 +21,12 @@ public enum MsgType
     /// 匹配模块
     /// </summary>
     Match,
-
-
-
-
-
-
+    /// <summary>
+    /// 聊天
+    /// </summary>
+    Chat,
+    /// <summary>
+    /// 战斗
+    /// </summary>
+    Fight
 }

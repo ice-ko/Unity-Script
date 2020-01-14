@@ -5,11 +5,20 @@ using GameServer.Cache;
 using GameServer.Model;
 using Server;
 using Server.Pool;
+using System.Linq;
 
 namespace GameServer.Module.Match
 {
+    /// <summary>
+    /// 所有玩家准备完成后的委托
+    /// </summary>
+    /// <param name="uIdList"></param>
+    public delegate void StartFight(List<int> uIdList);
+
     public class MatchHandler : IHandler
     {
+        public StartFight startFight;
+
         private MatchCache matchCache = Caches.MatchCache;
         private UserCache userCache = Caches.User;
 
@@ -60,6 +69,8 @@ namespace GameServer.Module.Match
         {
             SingleExecute.Instance.Execute(() =>
             {
+                socketMsg.State = MatchCode.Success;
+
                 int userId = userCache.GetClientUserId(client);
                 //判断是否已在匹配房间
                 if (matchCache.IsMatching(userId))
@@ -75,21 +86,14 @@ namespace GameServer.Module.Match
                 //广播信息
                 socketMsg.OpCode = MsgType.Match;
                 socketMsg.SubCode = MatchCode.EnterMatch_Broadcast_Result;
-                socketMsg.State = MatchCode.Success;
-                room.Brocast(socketMsg);
+                //新进入房间的玩家信息
+                var userInfo = userCache.GetUserInfo(userId);
+                socketMsg.value = EntityHelper.Mapping<UserCharacterDto, UserCharacterInfo>(userInfo);
+                room.Brocast(socketMsg, client);
                 //返回给客户端数据
-                MatchRoomDto roomDto = new MatchRoomDto
-                {
-                    ReadyUIdList = room.ReadyUIdList
-                };
-
-                foreach (var uId in room.UIdClientDict.Keys)
-                {
-                    var info = userCache.GetUserInfo(uId);
-                    UserCharacterDto userCharacter = EntityHelper.Mapping<UserCharacterDto, UserCharacterInfo>(info);
-                    roomDto.UIdClientDict.Add(uId, userCharacter);
-                }
-                socketMsg.value = roomDto;
+                MatchRoomDto dto = MakeRoomDto(room);
+                socketMsg.SubCode = MatchCode.EnterMatch_Result;
+                socketMsg.value = dto;
 
                 client.Send(socketMsg);
             });
@@ -128,7 +132,8 @@ namespace GameServer.Module.Match
         private void Ready(ClientPeer client)
         {
             socketMsg.State = MatchCode.Success;
-
+            socketMsg.OpCode = MsgType.Match;
+            socketMsg.SubCode = MatchCode.Ready_Broadcast_Result;
             SingleExecute.Instance.Execute(() =>
             {
                 if (!userCache.IsOnline(client))
@@ -142,25 +147,40 @@ namespace GameServer.Module.Match
                 }
                 //准备
                 MatchRoom room = matchCache.GetRoom(userId);
+                if (room.ReadyUIdList.Where(w => w == userId).ToList().Count > 0)
+                {
+                    return;
+                }
                 room.Ready(userId);
-                socketMsg.OpCode = MsgType.Match;
-                socketMsg.SubCode = MatchCode.Ready_Broadcast_Result;
                 socketMsg.value = userId;
-                room.Brocast(socketMsg,client);
+                room.Brocast(socketMsg);
 
                 //检测是否所有玩家都准备了
                 if (room.IsAllReady())
                 {
                     //开始游戏
-                    //TODO
+                    startFight(room.ReadyUIdList);
                     //广播通知所有玩家游戏开始
-                    socketMsg.OpCode = MsgType.Match;
-                    socketMsg.SubCode = MatchCode.Ready_Broadcast_Result;
+                    socketMsg.SubCode = MatchCode.Start_Broadcast_Requst;
                     room.Brocast(socketMsg);
                     //销毁房间
                     matchCache.Destroy(room);
                 }
             });
+        }
+        private MatchRoomDto MakeRoomDto(MatchRoom room)
+        {
+            MatchRoomDto dto = new MatchRoomDto();
+            //给 UIdClientDict 赋值
+            foreach (var uId in room.UIdClientDict.Keys)
+            {
+                var info = userCache.GetUserInfo(uId);
+                UserCharacterDto userCharacter = EntityHelper.Mapping<UserCharacterDto, UserCharacterInfo>(info);
+                dto.UIdClientDict.Add(uId, userCharacter);
+                dto.UIdList.Add(uId);
+            }
+            dto.ReadyUIdList = room.ReadyUIdList;
+            return dto;
         }
     }
 }

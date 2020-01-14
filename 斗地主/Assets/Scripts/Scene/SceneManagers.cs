@@ -66,5 +66,6 @@ public class SceneManagers : ManagerBase
     private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         onSceneLoadAction?.Invoke();
+        onSceneLoadAction = null;
     }
 }

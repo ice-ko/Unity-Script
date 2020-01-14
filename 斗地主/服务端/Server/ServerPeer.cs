@@ -225,6 +225,11 @@ namespace Server
             }
             catch (Exception e)
             {
+                client.Disconnect();
+                //回收当前客户端
+                clientPeerPool.Enqueue(client);
+                //退出信号量并返回上一个计数。
+                acceptSemaphore.Release();
                 Console.WriteLine(e.Message);
             }
         }
